@@ -193,7 +193,7 @@ const Timeline: React.FC = () => {
                   </div>
 
                   {/* Timeline Card */}
-                  <Card className="w-80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
+                  <Card className="w-80 border-0 bg-gradient-to-br from-background/90 to-background/60 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_20px_25px_-5px_hsl(var(--primary)/0.1)] hover:-translate-y-2 group">
                     <CardContent className="p-6">
                       <div className="space-y-3">
                         {/* Date Badge */}

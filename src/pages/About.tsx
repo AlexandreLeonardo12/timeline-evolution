@@ -25,58 +25,83 @@ const About: React.FC = () => {
       </div>
 
       {/* Values Section */}
-      <div className="bg-muted/30 py-16">
-        <div className="container mx-auto px-6">
+      <div className="relative py-20 overflow-hidden">
+        {/* Background with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.05),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.05),transparent_50%)]" />
+        
+        <div className="container mx-auto px-6 relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center text-foreground">
-              Valores-Chave
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
-              Princípios que orientam a minha abordagem à transformação digital
-            </p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Valores-Chave
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Princípios que orientam a minha abordagem à transformação digital
+              </p>
+            </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-timeline-primary" />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Simplicidade Estratégica
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Simplifico processos complexos, desenhando soluções intuitivas e centradas nas pessoas - com planos concretos e garantindo que as entregas são úteis e dentro dos prazos.
-                  </p>
-                </CardContent>
-              </Card>
+              {/* Card 1 */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="relative h-full border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-3xl transition-all duration-500 hover:shadow-[0_20px_25px_-5px_hsl(var(--primary)/0.1)] hover:-translate-y-2 group-hover:bg-gradient-to-br group-hover:from-background group-hover:to-background/60">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
+                        <div className="w-4 h-4 rounded-full bg-white/90" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                        Simplicidade Estratégica
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Simplifico processos complexos, desenhando soluções intuitivas e centradas nas pessoas - com planos concretos e garantindo que as entregas são úteis e dentro dos prazos.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-timeline-completed" />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Arquitetura de negócio flexível
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Concebo soluções com visão de longo prazo, com impacto real e mensurável no dia a dia - respeitando as especificidades do negócio mas adaptáveis ao crescimento e a inovação contínua.
-                  </p>
-                </CardContent>
-              </Card>
+              {/* Card 2 */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-timeline-completed/10 to-timeline-completed/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="relative h-full border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-3xl transition-all duration-500 hover:shadow-[0_20px_25px_-5px_hsl(var(--timeline-completed)/0.1)] hover:-translate-y-2 group-hover:bg-gradient-to-br group-hover:from-background group-hover:to-background/60">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-timeline-completed to-timeline-completed/80 flex items-center justify-center shadow-lg">
+                        <div className="w-4 h-4 rounded-full bg-white/90" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground group-hover:text-timeline-completed transition-colors duration-300">
+                        Arquitetura de negócio flexível
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Concebo soluções com visão de longo prazo, com impacto real e mensurável no dia a dia - respeitando as especificidades do negócio mas adaptáveis ao crescimento e a inovação contínua.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-accent" />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Equilíbrio entre rigor e agilidade
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Compreendo rapidamente estruturas organizacionais, alinho stakeholders e antecipo obstáculos antes de se tornarem problemas. Integro frameworks sólidas com metodologias ágeis, ajustando a abordagem à maturidade e realidade de cada contexto.
-                  </p>
-                </CardContent>
-              </Card>
+              {/* Card 3 */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="relative h-full border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-3xl transition-all duration-500 hover:shadow-[0_20px_25px_-5px_hsl(var(--accent)/0.1)] hover:-translate-y-2 group-hover:bg-gradient-to-br group-hover:from-background group-hover:to-background/60">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center shadow-lg">
+                        <div className="w-4 h-4 rounded-full bg-white/90" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
+                        Equilíbrio entre rigor e agilidade
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Compreendo rapidamente estruturas organizacionais, alinho stakeholders e antecipo obstáculos antes de se tornarem problemas. Integro frameworks sólidas com metodologias ágeis, ajustando a abordagem à maturidade e realidade de cada contexto.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>

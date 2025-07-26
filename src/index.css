@@ -119,6 +119,17 @@ All colors MUST be HSL.
     scrollbar-width: none;
   }
   
+  /* Modern gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(220 70% 50%), hsl(220 85% 65%));
+  --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 85% 45%));
+  --gradient-subtle: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)/0.3));
+  --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)/0.1) 100%);
+  
+  /* Modern shadows */
+  --shadow-elegant: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+  --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+  --shadow-soft: 0 10px 15px -3px hsl(220 14% 14% / 0.1), 0 4px 6px -2px hsl(220 14% 14% / 0.05);
+  
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
