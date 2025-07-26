@@ -37,6 +37,15 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    
+    /* Timeline design tokens */
+    --timeline-primary: 220 90% 56%;
+    --timeline-primary-light: 220 90% 90%;
+    --timeline-completed: 142 71% 45%;
+    --timeline-planned: 220 13% 78%;
+    --timeline-node-size: 1rem;
+    --timeline-line-height: 2px;
+    --timeline-spacing: 6rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +110,16 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

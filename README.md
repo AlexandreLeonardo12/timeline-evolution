@@ -1,8 +1,23 @@
-# Welcome to your Lovable project
+# Alexandre Leonardo - Professional Website
+
+Professional portfolio website featuring an enhanced Timeline component for showcasing certifications and professional development.
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/d90936b7-2a36-44ef-9168-800b5483d344
+
+## Features
+
+### Enhanced Timeline Component
+- **Horizontal scrollable timeline** with smooth navigation
+- **Visual differentiation** between completed and planned milestones
+- **Dynamic data loading** from JSON configuration
+- **Responsive design** for all device sizes
+- **Professional animations** and transitions
+- **Automatic timeline filling** based on current date
+
+### Timeline Data Structure
+The timeline component fetches data from `/public/data/certifications.json`. See [Timeline Structure Documentation](docs/TIMELINE_STRUCTURE.md) for detailed information on maintaining and updating timeline data.
 
 ## How can I edit this code?
 
