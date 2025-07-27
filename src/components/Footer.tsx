@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Mail, Linkedin, Github } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-gradient-to-br from-muted/40 via-background to-muted/20 border-t border-border/50">
@@ -20,8 +22,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Especialista em transformação digital e inovação estratégica, 
-              criando soluções que geram impacto real nas organizações.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-2">
               <Button size="sm" variant="outline" asChild>
@@ -47,14 +48,14 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Navegação</h3>
+            <h3 className="font-semibold text-foreground">{t('footer.navigation')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link 
                   to="/" 
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                  Início
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
@@ -62,7 +63,7 @@ const Footer = () => {
                   to="/about" 
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                  Sobre
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
@@ -70,7 +71,7 @@ const Footer = () => {
                   to="/projects" 
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
-                  Projetos
+                  {t('nav.projects')}
                 </Link>
               </li>
             </ul>
@@ -78,24 +79,24 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Especialidades</h3>
+            <h3 className="font-semibold text-foreground">{t('footer.specialties')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Transformação Digital</li>
-              <li>Gestão de Programas</li>
-              <li>Inovação Estratégica</li>
-              <li>Arquitetura de Processos</li>
+              <li>{t('footer.specialty.digital')}</li>
+              <li>{t('footer.specialty.programs')}</li>
+              <li>{t('footer.specialty.innovation')}</li>
+              <li>{t('footer.specialty.architecture')}</li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Vamos conversar?</h3>
+            <h3 className="font-semibold text-foreground">{t('footer.contact.title')}</h3>
             <p className="text-muted-foreground text-sm">
-              Interessado em colaborar ou saber mais sobre o meu trabalho?
+              {t('footer.contact.description')}
             </p>
             <Button size="sm" asChild>
               <a href="mailto:alexandreleonardo.pt@gmail.com">
-                Contactar
+                {t('footer.contact.cta')}
                 <ExternalLink className="ml-2 h-3 w-3" />
               </a>
             </Button>
@@ -105,10 +106,10 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} Alexandre Leonardo. Todos os direitos reservados.
+            © {currentYear} Alexandre Leonardo. {t('footer.rights')}
           </p>
           <p className="text-muted-foreground text-xs">
-            Desenvolvido com{' '}
+            {t('footer.developed')}{' '}
             <a 
               href="https://lovable.dev" 
               target="_blank" 

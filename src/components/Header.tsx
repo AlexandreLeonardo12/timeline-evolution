@@ -3,11 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
+import ThemeToggle from '@/components/ThemeToggle';
+import LanguageToggle from '@/components/LanguageToggle';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +22,9 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Início', path: '/' },
-    { name: 'Sobre', path: '/about' },
-    { name: 'Projetos', path: '/projects' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.about'), path: '/about' },
+    { name: t('nav.projects'), path: '/projects' },
   ];
 
   return (
@@ -61,12 +65,16 @@ const Header = () => {
                 )}
               </Link>
             ))}
-            <Button size="sm" asChild>
-              <a href="mailto:alexandreleonardo.pt@gmail.com">
-                Contacto
-                <ExternalLink className="ml-2 h-3 w-3" />
-              </a>
-            </Button>
+            <div className="flex items-center space-x-2">
+              <ThemeToggle />
+              <LanguageToggle />
+              <Button size="sm" asChild>
+                <a href="mailto:alexandreleonardo.pt@gmail.com">
+                  {t('nav.contact')}
+                  <ExternalLink className="ml-2 h-3 w-3" />
+                </a>
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -98,10 +106,14 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
+              <div className="flex justify-center space-x-2">
+                <ThemeToggle />
+                <LanguageToggle />
+              </div>
               <Button size="sm" className="w-full" asChild>
                 <a href="mailto:alexandreleonardo.pt@gmail.com">
-                  Contacto
+                  {t('nav.contact')}
                   <ExternalLink className="ml-2 h-3 w-3" />
                 </a>
               </Button>
