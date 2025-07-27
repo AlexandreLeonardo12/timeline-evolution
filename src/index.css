@@ -126,9 +126,10 @@ All colors MUST be HSL.
   --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)/0.1) 100%);
   
   /* Modern shadows */
-  --shadow-elegant: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
-  --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
-  --shadow-soft: 0 10px 15px -3px hsl(220 14% 14% / 0.1), 0 4px 6px -2px hsl(220 14% 14% / 0.05);
+  --shadow-elegant: 0 20px 60px -12px hsl(var(--primary) / 0.25), 0 8px 32px -8px hsl(var(--primary) / 0.3);
+  --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+  --shadow-card: 0 8px 32px -8px hsl(var(--foreground) / 0.08), 0 4px 16px -4px hsl(var(--foreground) / 0.1);
+  --shadow-project: 0 4px 20px -4px hsl(var(--primary) / 0.1), 0 2px 8px -2px hsl(var(--primary) / 0.15);
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
