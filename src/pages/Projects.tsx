@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Calendar, Tag, User, Briefcase, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ContactCTA from '@/components/ContactCTA';
+import SEOHead from '@/components/SEOHead';
 
 interface Project {
   id: string;
@@ -229,7 +231,13 @@ const Projects = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEOHead 
+        title="Projetos - Alexandre Leonardo | Portfolio Profissional"
+        description="Explore os projetos de transformação digital liderados por Alexandre Leonardo. Conheça casos de sucesso em inovação estratégica e desenvolvimento organizacional."
+      />
+      
+      <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
@@ -289,7 +297,11 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
+      {/* Contact CTA */}
+      <ContactCTA />
     </div>
+    </>
   );
 };
 
