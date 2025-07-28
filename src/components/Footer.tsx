@@ -1,9 +1,17 @@
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
+import translations from "../lib/translations";
 
-
-
+/**
+ * Footer component.
+ *
+ * Displays copyright information and simple links to contact, LinkedIn and GitHub.
+ * The link labels are translated according to the current language context.
+ */
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { language } = useLanguage();
+  const t = translations[language].footer;
   return (
     <footer className="w-full border-t mt-8 p-4 flex flex-col items-center justify-center text-center dark:border-gray-700 dark:bg-gray-900">
       <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -14,7 +22,7 @@ export default function Footer() {
           href="mailto:contact@alexandreleonardo.pt"
           className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
         >
-          Contacto
+          {t.contact}
         </a>
         <a
           href="https://www.linkedin.com/in/alexandreleonardo"
@@ -22,7 +30,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
         >
-          LinkedIn
+          {t.linkedin}
         </a>
         <a
           href="https://github.com/AlexandreLeonardo12"
@@ -30,7 +38,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
         >
-          GitHub
+          {t.github}
         </a>
       </div>
     </footer>
