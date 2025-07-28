@@ -1,4 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+/**
+ * Timeline component
+ *
+ * This component renders a horizontally scrollable timeline of
+ * certifications and training events. It fetches data from
+ * `public/data/certifications.json` on mount and displays each
+ * timeline item in a card with relevant details. Navigation buttons
+ * allow users to scroll left and right through the timeline. The
+ * component is self‑contained and can be reused or extended by
+ * adjusting the `TimelineItem` interface or fetching data from a
+ * different source.
+ */
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Calendar, MapPin } from 'lucide-react';

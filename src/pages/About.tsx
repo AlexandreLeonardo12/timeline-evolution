@@ -1,4 +1,15 @@
 import React from 'react';
+
+/**
+ * About page
+ *
+ * Provides a detailed biography of Alexandre Leonardo, outlines his core
+ * values and displays a timeline of his certifications and training.
+ * At the end of the page a call‑to‑action invites visitors to explore
+ * further projects or get in touch. This page is intentionally rich in
+ * content to give visitors a deep understanding of Alexandre's
+ * professional background.
+ */
 import Timeline from '@/components/Timeline';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -96,6 +107,34 @@ const About: React.FC = () => {
             </div>
             
             <Timeline />
+          </div>
+        </div>
+      </div>
+
+      {/*
+        Call-to-Action Section
+
+        This section encourages visitors to get in touch or explore further after
+        they finish reading the about page. It is intentionally placed only on
+        the About page to avoid repetition across the site. Feel free to
+        customise the text or link destination to better fit future content.
+      */}
+      <div className="bg-muted/30 py-16">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
+              Prontos para o próximo desafio?
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Estou sempre à procura de novos projectos e colaborações.
+              Vamos conversar sobre como posso ajudar a sua organização a evoluir.
+            </p>
+            <a
+              href="/projects"
+              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Ver Projetos
+            </a>
           </div>
         </div>
       </div>

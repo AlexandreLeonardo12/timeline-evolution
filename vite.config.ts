@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -10,10 +9,10 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
+    // Register the React SWC plugin. Additional plugins can be added here.
     react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
+    // If you need to add custom Vite plugins, include them in this array.
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Projects from "./pages/Projects";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +18,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* The ScrollToTop component ensures that the page scrolls back to the
+            top on every route change. It should be placed inside the router
+            context. */}
+        <ScrollToTop />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+                  <Route path="/projects" element={<Projects />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

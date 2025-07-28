@@ -2,6 +2,15 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Landing page (Home)
+ *
+ * The landing page introduces visitors to Alexandre Leonardo. It features a
+ * headline, sub‑heading and two call‑to‑action buttons directing users to
+ * the About and Projects pages. The page is intentionally minimalistic to
+ * focus attention on the call‑to‑actions.
+ */
+
 const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
@@ -25,9 +34,12 @@ const Index = () => {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-          <Button variant="outline" size="lg">
-            Ver Projetos
-          </Button>
+          {/* Added link around the projects button to navigate to the projects page */}
+          <Link to="/projects">
+            <Button variant="outline" size="lg">
+              Ver Projetos
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
