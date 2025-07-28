@@ -54,7 +54,7 @@ const translations = {
     'projects.viewDetails': 'Ver Detalhes',
     
     // Contact
-    'contact.title': 'Vamos transformar ideias em resultados concretos',
+    'contact.title': 'Prontos para o próximo desafio?',
     'contact.description': 'Se está a enfrentar desafios de transformação digital ou a procurar acelerar a inovação na sua organização, vamos conversar.',
     'contact.cta': 'Iniciar Conversa',
     'contact.email.title': 'Email Direto',

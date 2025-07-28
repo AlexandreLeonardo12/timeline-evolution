@@ -22,80 +22,187 @@ interface Project {
 }
 
 const projects: Project[] = [
+  // Professional Projects - EY
+  {
+    id: 'ey-irn-prr',
+    title: 'Projetos Estratégicos IRN - Plano de Recuperação e Resiliência',
+    subtitle: 'Product Owner & Gestor de Programa | EY',
+    description: 'Gestão integrada de múltiplos projetos estratégicos do Registo Comercial, supervisionando equipa multidisciplinar de 31 elementos.',
+    type: 'professional',
+    status: 'in-progress',
+    year: '2024-Present',
+    challenge: 'Gerir múltiplos projetos com forte componente tecnológica e impacto institucional, coordenando equipas complexas e interdependências entre fornecedores.',
+    solution: 'Implementação de metodologias ágeis com sessões de ideação, análise de stakeholders, definição de roadmaps e gestão de backlog de produto com foco em valor.',
+    results: [
+      'Supervisão operacional de 31 elementos',
+      'Coordenação de múltiplos fornecedores',
+      'Tradução eficaz de necessidades de negócio',
+      'Validação contínua de incrementos de valor'
+    ],
+    technologies: ['Miro', 'Product Management', 'Agile Methodologies', 'Stakeholder Management'],
+    featured: true
+  },
+  
+  // Professional Projects - Wrightia
+  {
+    id: 'wrightia-irn-rc',
+    title: 'Projetos Estratégicos Registo Comercial',
+    subtitle: 'Gestor de Projetos | Wrightia',
+    description: 'Gestão de projetos estratégicos do Registo Comercial, coordenando equipa de 36 elementos e implementando o EOL 2.0.',
+    type: 'professional',
+    status: 'completed',
+    year: '2022-2024',
+    challenge: 'Articular área de negócio com equipas de desenvolvimento, garantindo alinhamento entre objetivos de negócio e soluções tecnológicas.',
+    solution: 'Gestão integral do ciclo de vida dos projetos com implementação do EOL 2.0, facilitação de sessões de trabalho e modelação de processos.',
+    results: [
+      'Implementação bem-sucedida do EOL 2.0',
+      'Simplificação e digitalização de processos',
+      'Coordenação eficaz de 36 elementos',
+      'Alinhamento estratégico entre negócio e tecnologia'
+    ],
+    technologies: ['OpenProject', 'MS Project', 'Bizagi', 'Camunda', 'Excel Avançado'],
+    featured: true
+  },
+
+  // Professional Projects - SmartVision
+  {
+    id: 'smartvision-munlab',
+    title: 'Observatório de Transformação Digital - MunLab',
+    subtitle: 'Business Development Manager | SmartVision',
+    description: 'Liderança do projeto de 150.000€ para transformação digital na CIMAA e municípios associados.',
+    type: 'professional',
+    status: 'completed',
+    year: '2019-2022',
+    challenge: 'Implementar transformação digital estruturada em múltiplos municípios com diferentes níveis de maturidade tecnológica.',
+    solution: 'Análise de requisitos, gestão orçamental, apoio ao procurement e implementação de soluções de modernização administrativa.',
+    results: [
+      'Projeto de 150.000€ executado com sucesso',
+      'Modernização de múltiplos municípios',
+      'Framework replicável desenvolvido',
+      'ROI superior às expectativas'
+    ],
+    technologies: ['Power BI', 'Excel', 'Process Management', 'Digital Transformation'],
+    featured: false
+  },
+
+  {
+    id: 'smartvision-nisa-monforte',
+    title: 'Modernização Administrativa - Nisa e Monforte',
+    subtitle: 'Consultor de Modernização | SmartVision',
+    description: 'Apoio técnico e funcional à modernização administrativa com foco na reorganização interna e transição digital.',
+    type: 'professional',
+    status: 'completed',
+    year: '2021-2022',
+    challenge: 'Implementar novos modelos de atendimento e reorganização interna em contexto de transformação digital municipal.',
+    solution: 'Consultoria especializada em modernização com responsabilidades de gestão de projeto, calendarização e acompanhamento.',
+    results: [
+      'Modernização administrativa completa',
+      'Novos modelos de atendimento implementados',
+      'Reorganização interna eficaz',
+      'Transição digital bem-sucedida'
+    ],
+    technologies: ['Excel', 'Process Management', 'Project Planning'],
+    featured: false
+  },
+
+  {
+    id: 'smartvision-cimac',
+    title: 'Práticas de Atendimento - CIMAC (13 Municípios)',
+    subtitle: 'Business Development Manager | SmartVision',
+    description: 'Implementação de práticas de atendimento presencial e serviços online para 13 municípios da CIMAC.',
+    type: 'professional',
+    status: 'completed',
+    year: '2019-2022',
+    challenge: 'Uniformizar práticas de atendimento e implementar serviços online em 13 municípios com diferentes realidades operacionais.',
+    solution: 'Reengenharia de processos de front-office e back-office com modelação BPMN e implementação de soluções digitais.',
+    results: [
+      'Atendimento uniformizado em 13 municípios',
+      'Serviços online implementados',
+      'Processos otimizados e documentados',
+      'Eficiência operacional aumentada'
+    ],
+    technologies: ['BPMN', 'Bonita Studio', 'Word', 'Excel'],
+    featured: false
+  },
+
+  {
+    id: 'smartvision-lajes-pico',
+    title: 'Atendimento Multicanal - Lajes do Pico',
+    subtitle: 'Consultor & Gestor de Projeto | SmartVision',
+    description: 'Implementação do novo modelo de atendimento multicanal no projeto "LAJES DO PICO +PERTO DOS MUNÍCIPES".',
+    type: 'professional',
+    status: 'completed',
+    year: '2020-2022',
+    challenge: 'Desenvolver e implementar modelo de atendimento multicanal adaptado às necessidades específicas do município.',
+    solution: 'Consultoria especializada com gestão completa de projeto, incluindo calendarização, entrega de marcos e reporte ao executivo.',
+    results: [
+      'Modelo multicanal implementado',
+      'Proximidade aos munícipes aumentada',
+      'Eficiência no atendimento melhorada',
+      'Satisfação dos cidadãos elevada'
+    ],
+    technologies: ['BPMN', 'Bonita Studio', 'Word', 'Excel'],
+    featured: false
+  },
+
+  {
+    id: 'smartvision-madalena-pico',
+    title: 'Transformação Digital - Madalena do Pico',
+    subtitle: 'Consultor & Gestor de Projeto | SmartVision',
+    description: 'Implementação do modelo de atendimento e transformação digital no projeto "Madalena do Pico@ Serviços Online".',
+    type: 'professional',
+    status: 'completed',
+    year: '2020-2022',
+    challenge: 'Transformar digitalmente os serviços municipais com foco na disponibilização online e melhor atendimento.',
+    solution: 'Consultoria de modernização com gestão de projeto focada em planeamento, reporte e monitorização da execução.',
+    results: [
+      'Serviços online implementados',
+      'Transformação digital concluída',
+      'Atendimento modernizado',
+      'Processos digitalizados'
+    ],
+    technologies: ['BPMN', 'Bonita Studio', 'Word', 'Excel'],
+    featured: false
+  },
+
+  // Personal Projects
   {
     id: 'portfolio-website',
     title: 'Portfolio Pessoal com IA',
     subtitle: 'Desenvolvedor & Product Owner',
-    description: 'Website de portfólio desenvolvido através de vibe-coding com agentes de IA, explorando ferramentas modernas de desenvolvimento e democratização da programação.',
+    description: 'Website de portfólio desenvolvido através de vibe-coding com agentes de IA, explorando ferramentas modernas de desenvolvimento.',
     type: 'personal',
     status: 'in-progress',
     year: '2024',
-    challenge: 'Criar um website profissional moderno sem conhecimentos avançados de programação, explorando o potencial dos agentes de IA no desenvolvimento web.',
-    solution: 'Utilização de múltiplos agentes de IA (Lovable, Devin.ai, ChatGPT Agent, Manus) para desenvolvimento iterativo, combinado com estudos de mercado para soluções open-source e implementação moderna.',
+    challenge: 'Criar um website profissional moderno sem conhecimentos avançados de programação, explorando o potencial dos agentes de IA.',
+    solution: 'Utilização de múltiplos agentes de IA para desenvolvimento iterativo, combinado com estudos de mercado para soluções open-source.',
     results: [
-      'Website completamente funcional e moderno',
+      'Website funcional e moderno',
       'Experiência prática com 4+ agentes de IA',
       'Domínio de ferramentas como Vercel e GitHub',
-      'Base sólida para futuros projetos de desenvolvimento'
+      'Base sólida para futuros projetos'
     ],
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Lovable', 'Vercel', 'GitHub'],
-    featured: true
+    featured: false
   },
+
   {
     id: 'ai-assisted-pm',
     title: 'AI-Assisted Project Management',
     subtitle: 'Investigador & Implementador',
-    description: 'Exploração e implementação de soluções de IA para otimização de processos de gestão de projetos, automação e análise preditiva.',
+    description: 'Exploração e implementação de soluções de IA para otimização de processos de gestão de projetos.',
     type: 'personal',
     status: 'in-progress',
     year: '2024',
-    challenge: 'Identificar oportunidades de otimização em processos de gestão de projetos através da implementação estratégica de ferramentas de IA.',
-    solution: 'Desenvolvimento de pipeline de automação com integração de APIs de IA, criação de dashboards preditivos e implementação de workflows inteligentes.',
+    challenge: 'Identificar oportunidades de otimização em processos de gestão através da implementação estratégica de IA.',
+    solution: 'Desenvolvimento de pipeline de automação com integração de APIs de IA e criação de dashboards preditivos.',
     results: [
-      'Redução de 40% no tempo de análise de projetos',
+      'Redução de 40% no tempo de análise',
       'Automação de 60% das tarefas repetitivas',
-      'Insights preditivos para tomada de decisão',
-      'Framework replicável para outras organizações'
+      'Insights preditivos para decisão',
+      'Framework replicável desenvolvido'
     ],
     technologies: ['Python', 'Machine Learning', 'GPT API', 'Power BI', 'Automation'],
-    featured: false
-  },
-  {
-    id: 'digital-transformation-platform',
-    title: 'Plataforma de Transformação Digital',
-    subtitle: 'Product Owner & Líder de Programa',
-    description: 'Liderança no desenvolvimento de uma plataforma enterprise para gestão de processos de transformação digital em organizações de grande escala.',
-    type: 'professional',
-    status: 'completed',
-    year: '2023',
-    challenge: 'Desenvolver uma plataforma integrada capaz de gerir iniciativas complexas de transformação digital, garantindo escalabilidade e integração com sistemas legados.',
-    solution: 'Implementação de arquitetura de microserviços com API Gateway, metodologias ágeis adaptadas ao contexto enterprise e integração estratégica com stakeholders.',
-    results: [
-      'Redução de 35% no tempo de implementação',
-      'Integração com 15+ sistemas legados',
-      'Base para uniformização nacional',
-      'ROI de 250% no primeiro ano'
-    ],
-    technologies: ['Microserviços', 'API Gateway', 'React', 'Node.js', 'PostgreSQL', 'Kubernetes'],
-    featured: true
-  },
-  {
-    id: 'innovation-lab',
-    title: 'Innovation Lab Framework',
-    subtitle: 'Arquiteto de Inovação',
-    description: 'Framework completo para criação e gestão de laboratórios de inovação, incluindo metodologias, ferramentas e processos measuráveis.',
-    type: 'professional',
-    status: 'completed',
-    year: '2023',
-    challenge: 'Estabelecer um framework estruturado para fomentar inovação de forma consistente e mensurável em organizações enterprise.',
-    solution: 'Desenvolvimento de metodologia híbrida combinando Design Thinking, Lean Startup e OKRs, com métricas específicas de inovação e processos de governança.',
-    results: [
-      '12 ideias implementadas com sucesso',
-      'Framework adotado por 3+ organizações',
-      'ROI médio de 180% por projeto',
-      'Redução de 50% no time-to-market'
-    ],
-    technologies: ['Design Thinking', 'Lean Startup', 'OKRs', 'Innovation Metrics'],
     featured: false
   }
 ];
@@ -281,7 +388,7 @@ const Projects = () => {
 
         {/* CTA */}
         <div className="text-center space-y-4">
-          <p className="text-lg text-gray-600">Interessado em saber mais?</p>
+          <p className="text-lg text-gray-600">Interessado em colaborar?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/about">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">
@@ -297,9 +404,6 @@ const Projects = () => {
           </div>
         </div>
       </div>
-
-      {/* Contact CTA */}
-      <ContactCTA />
     </div>
     </>
   );
