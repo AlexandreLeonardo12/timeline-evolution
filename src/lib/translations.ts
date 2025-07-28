@@ -77,7 +77,8 @@ const translations = {
         "Conecte‑se para networking e atualizações profissionais",
       contactConsultingDesc:
         "Discussão estratégica para projetos complexos",
-      contactCTA: "Iniciar Conversa",
+      // The main contact CTA button has been removed from the landing page.
+      contactCTA: "",
       contactEmailCTA: "Enviar Email",
       contactLinkedInCTA: "Conectar",
       contactConsultingCTA: "Agendar",
@@ -166,7 +167,8 @@ const translations = {
       contactEmailDesc: "Quick response for specific questions",
       contactLinkedInDesc: "Connect for networking and professional updates",
       contactConsultingDesc: "Strategic discussion for complex projects",
-      contactCTA: "Start conversation",
+      // The main contact CTA button has been removed from the landing page.
+      contactCTA: "",
       contactEmailCTA: "Send Email",
       contactLinkedInCTA: "Connect",
       contactConsultingCTA: "Schedule",
@@ -183,7 +185,8 @@ const translations = {
     footer: {
       contact: "Contact",
       linkedin: "LinkedIn",
-      github: "GitHub",
+      // Removed GitHub from the footer; no translation needed
+      // github: "GitHub",
     },
   },
 } as const;
