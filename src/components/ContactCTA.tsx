@@ -1,78 +1,56 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MessageCircle, Calendar } from "lucide-react";
+import { Mail, Linkedin, Calendar } from "lucide-react";
 
-/**
- * A simple call-to-action section encouraging visitors to get in touch.
- *
- * This component displays three contact methods: email, chat (e.g. LinkedIn) and
- * meeting scheduling. It does not rely on any translation infrastructure and
- * can easily be extended with new contact channels.
- */
 export default function ContactCTA() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-background/50 to-muted">
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
-            Interessado em colaborar?
+        <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Prontos para o próximo desafio?
           </h2>
           <p className="text-muted-foreground">
-            Escolha a forma de contacto que melhor se adequa às suas necessidades.
+            Se está a enfrentar desafios de transformação digital ou a procurar acelerar a inovação na sua organização, vamos conversar.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* E-mail Card */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* Email Direto */}
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-6 text-center space-y-4">
               <Mail className="h-8 w-8 mx-auto text-primary" />
-              <h3 className="text-xl font-semibold">Enviar E-mail</h3>
+              <h3 className="text-xl font-semibold">Email Direto</h3>
               <p className="text-muted-foreground">
-                Fale directamente comigo para discutir potenciais projectos ou parcerias.
+                Resposta rápida para questões específicas
               </p>
-              <Button asChild variant="outline">
-                <a href="mailto:alexandreleonardo.pt@gmail.com">Enviar email</a>
-              </Button>
+              <Button variant="outline">Enviar Email</Button>
             </CardContent>
           </Card>
-          {/* Chat Card */}
+          {/* LinkedIn */}
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-6 text-center space-y-4">
-              <MessageCircle className="h-8 w-8 mx-auto text-primary" />
-              <h3 className="text-xl font-semibold">Contactar pelo LinkedIn</h3>
+              <Linkedin className="h-8 w-8 mx-auto text-primary" />
+              <h3 className="text-xl font-semibold">LinkedIn</h3>
               <p className="text-muted-foreground">
-                Entre em contacto através da minha rede profissional para saber mais.
+                Conecte-se para networking e atualizações profissionais
               </p>
-              <Button asChild variant="outline">
-                <a
-                  href="https://www.linkedin.com/in/alexandre-leonardo/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visitar LinkedIn
-                </a>
-              </Button>
+              <Button variant="outline">Conectar</Button>
             </CardContent>
           </Card>
-          {/* Meeting Card */}
+          {/* Consultoria */}
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-6 text-center space-y-4">
               <Calendar className="h-8 w-8 mx-auto text-primary" />
-              <h3 className="text-xl font-semibold">Marcar Reunião</h3>
+              <h3 className="text-xl font-semibold">Consultoria</h3>
               <p className="text-muted-foreground">
-                Agende uma reunião para discutir como posso ajudar a sua organização.
+                Discussão estratégica para projetos complexos
               </p>
-              <Button asChild variant="outline">
-                <a
-                  href="https://calendly.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Agendar reunião
-                </a>
-              </Button>
+              <Button variant="outline">Agendar</Button>
             </CardContent>
           </Card>
+        </div>
+        <div className="text-center mt-12">
+          <Button size="lg">Iniciar Conversa</Button>
         </div>
       </div>
     </section>
