@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+              <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
