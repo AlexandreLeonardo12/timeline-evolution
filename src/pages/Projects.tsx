@@ -3,177 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, Briefcase, ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface Project {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  type: "personal" | "professional";
-  status: "completed" | "in-progress" | "planned";
-  year: string;
-  challenge: string;
-  solution: string;
-  results: string[];
-  technologies: string[];
-  featured?: boolean;
-}
+// Import the centralised projects data. This ensures that extended
+// information defined in src/data/projects.ts is available for both the
+// listing and detail views.
+// When this file resides in src/pages, the data is located one level up in src/data.
+import { projects, Project } from "../data/projects";
 
-const projects: Project[] = [
-  {
-    id: "ey-irn-prr",
-    title: "Projetos Estratégicos IRN - Plano de Recuperação e Resiliência",
-    subtitle: "Product Owner & Gestor de Programa | EY",
-    description: "Gestão integrada de múltiplos projetos estratégicos do Registo Comercial, supervisionando equipa multidisciplinar.",
-    type: "professional",
-    status: "in-progress",
-    year: "2024-Present",
-    challenge: "Gerir múltiplos projetos tecnológicos com impacto institucional e equipas complexas.",
-    solution: "Implementação de metodologias ágeis, sessões de ideação e gestão de backlog de produto focado em valor.",
-    results: [
-      "Supervisão operacional de 31 elementos",
-      "Coordenação de fornecedores e alinhamento estratégico",
-    ],
-    technologies: ["Miro", "Product Management", "Agile Methodologies", "Stakeholder Management"],
-    featured: true,
-  },
-  {
-    id: "wrightia-irn-rc",
-    title: "Projetos Estratégicos Registo Comercial",
-    subtitle: "Gestor de Projetos | Wrightia",
-    description: "Gestão de projetos estratégicos do Registo Comercial com equipas de 36 elementos e implementação do EOL 2.0.",
-    type: "professional",
-    status: "completed",
-    year: "2022-2024",
-    challenge: "Articular área de negócio com equipas de desenvolvimento e alinhar soluções tecnológicas.",
-    solution: "Gestão integral do ciclo de vida dos projetos com implementação do EOL 2.0 e facilitação de sessões de trabalho.",
-    results: [
-      "Implementação do EOL 2.0",
-      "Digitalização e simplificação de processos",
-    ],
-    technologies: ["OpenProject", "MS Project", "Bizagi", "Camunda", "Excel Avançado"],
-    featured: true,
-  },
-  {
-    id: "smartvision-munlab",
-    title: "Observatório de Transformação Digital - MunLab",
-    subtitle: "Business Development Manager | SmartVision",
-    description: "Liderança de projeto de transformação digital de 150.000€ para a CIMAA e municípios associados.",
-    type: "professional",
-    status: "completed",
-    year: "2019-2022",
-    challenge: "Implementar transformação digital estruturada em múltiplos municípios.",
-    solution: "Análise de requisitos, gestão orçamental e implementação de soluções de modernização administrativa.",
-    results: [
-      "Modernização de vários municípios",
-      "ROI superior às expectativas",
-    ],
-    technologies: ["Power BI", "Excel", "Process Management", "Digital Transformation"],
-    featured: false,
-  },
-  {
-    id: "smartvision-nisa-monforte",
-    title: "Modernização Administrativa - Nisa e Monforte",
-    subtitle: "Consultor de Modernização | SmartVision",
-    description: "Apoio técnico e funcional à modernização administrativa com foco na reorganização interna e transição digital.",
-    type: "professional",
-    status: "completed",
-    year: "2021-2022",
-    challenge: "Implementar novos modelos de atendimento e reorganização interna.",
-    solution: "Consultoria especializada em modernização com gestão de projeto e acompanhamento.",
-    results: [
-      "Modernização administrativa completa",
-      "Novos modelos de atendimento implementados",
-    ],
-    technologies: ["Excel", "Process Management", "Project Planning"],
-    featured: false,
-  },
-  {
-    id: "smartvision-cimac",
-    title: "Práticas de Atendimento - CIMAC (13 Municípios)",
-    subtitle: "Business Development Manager | SmartVision",
-    description: "Implementação de práticas de atendimento presencial e serviços online para 13 municípios da CIMAC.",
-    type: "professional",
-    status: "completed",
-    year: "2019-2022",
-    challenge: "Uniformizar práticas de atendimento e implementar serviços online em 13 municípios.",
-    solution: "Reengenharia de processos de front-office e back-office com modelação BPMN e implementação de soluções digitais.",
-    results: [
-      "Atendimento uniformizado e serviços online",
-      "Processos otimizados e documentados",
-    ],
-    technologies: ["BPMN", "Bonita Studio", "Word", "Excel"],
-    featured: false,
-  },
-  {
-    id: "smartvision-lajes-pico",
-    title: "Atendimento Multicanal - Lajes do Pico",
-    subtitle: "Consultor & Gestor de Projeto | SmartVision",
-    description: "Implementação de modelo de atendimento multicanal no projeto 'Lajes do Pico +Perto dos Munícipes'.",
-    type: "professional",
-    status: "completed",
-    year: "2020-2022",
-    challenge: "Desenvolver modelo de atendimento multicanal adaptado às necessidades locais.",
-    solution: "Gestão completa de projeto, incluindo calendarização e entrega de marcos.",
-    results: [
-      "Modelo multicanal implementado",
-      "Satisfação dos cidadãos elevada",
-    ],
-    technologies: ["BPMN", "Bonita Studio", "Word", "Excel"],
-    featured: false,
-  },
-  {
-    id: "smartvision-madalena-pico",
-    title: "Transformação Digital - Madalena do Pico",
-    subtitle: "Consultor & Gestor de Projeto | SmartVision",
-    description: "Transformação digital dos serviços municipais de Madalena do Pico com foco na disponibilização online.",
-    type: "professional",
-    status: "completed",
-    year: "2020-2022",
-    challenge: "Transformar digitalmente os serviços municipais e melhorar o atendimento.",
-    solution: "Gestão de projeto focada em planeamento, reporte e monitorização da execução.",
-    results: [
-      "Serviços online implementados",
-      "Atendimento modernizado",
-    ],
-    technologies: ["BPMN", "Bonita Studio", "Word", "Excel"],
-    featured: false,
-  },
-  {
-    id: "portfolio-website",
-    title: "Portfolio Pessoal com IA",
-    subtitle: "Desenvolvedor & Product Owner",
-    description: "Website de portfólio criado com ferramentas modernas de vibe-coding e agentes de IA.",
-    type: "personal",
-    status: "in-progress",
-    year: "2024",
-    challenge: "Criar um website profissional sem conhecimentos avançados de programação.",
-    solution: "Utilização de agentes de IA para desenvolvimento iterativo e pesquisa de soluções open-source.",
-    results: [
-      "Website funcional e moderno",
-      "Experiência prática com agentes de IA",
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel", "GitHub"],
-    featured: false,
-  },
-  {
-    id: "ai-assisted-pm",
-    title: "AI-Assisted Project Management",
-    subtitle: "Investigador & Implementador",
-    description: "Exploração de IA para otimização de processos de gestão de projetos.",
-    type: "personal",
-    status: "in-progress",
-    year: "2024",
-    challenge: "Identificar oportunidades de otimização através de IA.",
-    solution: "Desenvolvimento de pipeline de automação com integração de APIs de IA e dashboards preditivos.",
-    results: [
-      "Redução de 40% no tempo de análise",
-      "Automação de 60% das tarefas repetitivas",
-    ],
-    technologies: ["Python", "Machine Learning", "GPT API", "Power BI", "Automation"],
-    featured: false,
-  },
-];
-
+/**
+ * Renders a list of projects separated into professional and personal
+ * categories. Each card displays high‑level information and a CTA to
+ * view the project details.
+ */
 const Projects = () => {
   const personalProjects = projects.filter((p) => p.type === "personal");
   const professionalProjects = projects.filter((p) => p.type === "professional");
@@ -264,7 +104,11 @@ const Projects = () => {
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap gap-1">
             {project.technologies.slice(0, 4).map((tech) => (
-              <Badge key={tech} variant="outline" className="text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700">
+              <Badge
+                key={tech}
+                variant="outline"
+                className="text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700"
+              >
                 {tech}
               </Badge>
             ))}
