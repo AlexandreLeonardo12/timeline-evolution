@@ -21,7 +21,9 @@ export default function ContactCTA() {
               <Mail className="h-8 w-8 mx-auto text-primary" />
               <h3 className="text-xl font-semibold">Email Direto</h3>
               <p className="text-muted-foreground">{t.contactEmailDesc}</p>
-              <Button variant="outline">{t.contactEmailCTA}</Button>
+              <Button variant="outline" asChild>
+                <a href="mailto:alexandreleonardo3746@gmail.com">{t.contactEmailCTA}</a>
+              </Button>
             </CardContent>
           </Card>
           {/* LinkedIn card */}
@@ -30,7 +32,15 @@ export default function ContactCTA() {
               <Linkedin className="h-8 w-8 mx-auto text-primary" />
               <h3 className="text-xl font-semibold">LinkedIn</h3>
               <p className="text-muted-foreground">{t.contactLinkedInDesc}</p>
-              <Button variant="outline">{t.contactLinkedInCTA}</Button>
+              <Button variant="outline" asChild>
+                <a
+                  href="https://www.linkedin.com/in/alexandre-leonardo-976830151"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.contactLinkedInCTA}
+                </a>
+              </Button>
             </CardContent>
           </Card>
           {/* Consulting card */}
@@ -39,13 +49,19 @@ export default function ContactCTA() {
               <Calendar className="h-8 w-8 mx-auto text-primary" />
               <h3 className="text-xl font-semibold">Consultoria</h3>
               <p className="text-muted-foreground">{t.contactConsultingDesc}</p>
-              <Button variant="outline">{t.contactConsultingCTA}</Button>
+              <Button variant="outline" asChild>
+                <a
+                  href="https://calendly.com/alexandreleonardo3746"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.contactConsultingCTA}
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
-        <div className="text-center mt-12">
-          <Button size="lg">{t.contactCTA}</Button>
-        </div>
+        {/* Removed the bottom CTA button as contact options above serve as entry points */}
       </div>
     </section>
   );

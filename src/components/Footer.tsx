@@ -5,7 +5,7 @@ import translations from "../lib/translations";
 /**
  * Footer component.
  *
- * Displays copyright information and simple links to contact, LinkedIn and GitHub.
+ * Displays copyright information and simple links to contact and LinkedIn.
  * The link labels are translated according to the current language context.
  */
 export default function Footer() {
@@ -18,28 +18,21 @@ export default function Footer() {
         &copy; {year} Alexandre Leonardo. Todos os direitos reservados.
       </p>
       <div className="mt-2 space-x-4">
-        <a
-          href="mailto:contact@alexandreleonardo.pt"
-          className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
-        >
-          {t.contact}
-        </a>
-        <a
-          href="https://www.linkedin.com/in/alexandreleonardo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
-        >
-          {t.linkedin}
-        </a>
-        <a
-          href="https://github.com/AlexandreLeonardo12"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
-        >
-          {t.github}
-        </a>
+            <a
+              href="mailto:alexandreleonardo3746@gmail.com"
+              className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+            >
+              {t.contact}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/alexandre-leonardo-976830151"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+            >
+              {t.linkedin}
+            </a>
+            {/* Removed GitHub link as requested */}
       </div>
     </footer>
   );
