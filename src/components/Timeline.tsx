@@ -28,11 +28,14 @@ const Timeline: React.FC = () => {
   useEffect(() => {
     const fetchTimelineData = async () => {
       try {
+        console.log('Tentando carregar dados da timeline...');
         const response = await fetch('/data/certifications.json');
+        console.log('Response status:', response.status);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data: TimelineData = await response.json();
+        console.log('Dados carregados:', data);
         setTimelineData(data.timeline);
       } catch (err) {
         console.error('Error fetching timeline data:', err);
