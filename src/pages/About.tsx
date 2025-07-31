@@ -1,189 +1,119 @@
 import React from 'react';
 
-/**
- * About page
- *
- * Provides a detailed biography of Alexandre Leonardo, outlines his core
- * values and displays a timeline of his certifications and training.
- * At the end of the page a call‑to‑action invites visitors to explore
- * further projects or get in touch. This page is intentionally rich in
- * content to give visitors a deep understanding of Alexandre's
- * professional background.
- */
+import SEOHead from '@/components/SEOHead';
 import Timeline from '@/components/Timeline';
-import { Card, CardContent } from '@/components/ui/card';
+
+// Experiências profissionais para o percurso de Alexandre Leonardo. Cada entrada
+// contém o período, a organização, o cargo ocupado e uma breve descrição do
+// trabalho desenvolvido. Estes dados foram sintetizados a partir do currículo
+// fornecido e destinam‑se a ilustrar o percurso profissional de forma
+// cronológica numa timeline vertical.
+const experiences = [
+  {
+    period: '2023 – presente',
+    company: 'IRN PRR (EY)',
+    role: 'Program Manager & Product Owner',
+    description:
+      'Liderança do programa de modernização do Registo e Notariado no âmbito do PRR, actuando como Product Owner e gestor de programa na EY.',
+  },
+    {
+    period: '2022 – 2023',
+    company: 'Empresa Online 2.0',
+    role: 'Gestor de Projecto (Wrightia/EY)',
+    description:
+      'Gestão do projecto EOL 2.0 para digitalizar o ciclo de vida das empresas, coordenando equipas multidisciplinares e garantindo entrega contínua.',
+  },
+  {
+    period: '2021 – 2022',
+    company: 'MunLab / CIM Algarve',
+    role: 'Consultor de Transformação Digital',
+    description:
+      'Definição de estratégia e implementação de laboratório municipal de inovação, promovendo a adopção de soluções digitais nos municípios do Algarve.',
+  },
+  {
+    period: '2020 – 2021',
+    company: 'Municípios de Nisa & Monforte',
+    role: 'Gestor de Projecto',
+    description:
+      'Condução de iniciativas de modernização administrativa e implementação de novos modelos de atendimento.',
+  },
+  {
+    period: '2019 – 2020',
+    company: 'CIMAC',
+    role: 'Consultor de Inovação',
+    description:
+      'Apoio à definição de arquitectura tecnológica e roadmap de transformação digital para os municípios da Comunidade Intermunicipal do Alentejo Central.',
+  },
+  {
+    period: '2018 – 2019',
+    company: 'Lajes do Pico',
+    role: 'Consultor',
+    description:
+      'Coordenação da modernização dos serviços municipais, incluindo a introdução de plataformas de atendimento online.',
+  },
+  {
+    period: '2017 – 2018',
+    company: 'Madalena do Pico',
+    role: 'Consultor',
+    description:
+      'Desenvolvimento e implementação de soluções de gestão urbana e melhoria da relação com o munícipe.',
+  },
+];
 
 const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Section */}
+      <SEOHead
+        title="Sobre"
+        description="Conheça o percurso profissional de Alexandre Leonardo"
+      />
+
+      {/* Secção de cabeçalho e biografia */}
       <div className="container mx-auto px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
             Sobre mim
           </h1>
-          
           <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
             <p>
-              O meu nome é Alexandre Leonardo, atualmente trabalho como consultor em transformação digital e inovação estratégica na EY. Ao longo dos últimos anos, tenho trabalhado com organizações que enfrentam o desafio de modernizar os seus processos e serviços, contribuindo para transformar modelos operacionais com soluções digitais simples, eficazes e com impacto real.
+              O meu nome é Alexandre Leonardo; trabalho actualmente como consultor em transformação digital e inovação estratégica na EY. Ao longo dos últimos anos tenho apoiado organizações na modernização de processos e serviços, contribuindo para transformar modelos operacionais com soluções digitais simples, eficazes e com impacto real.
             </p>
-            
             <p>
-              Acredito que a transformação não é apenas tecnológica — é feita por pessoas, para pessoas. O meu foco está em redesenhar processos de forma inteligente, com base em dados, sistemas robustos e equipas comprometidas com a mudança. Isso implica compreender a complexidade de cada organização, saber onde intervir e ter coragem para assumir que gerar valor sustentável envolve risco - mas que o risco faz parte de qualquer evolução positiva. O que me move é transformar ideias em soluções concretas, ajudar equipas a trabalhar melhor, e garantir que cada entrega melhora de forma tangível a vida das pessoas e o funcionamento da organização.
+              Acredito que a transformação não é apenas tecnológica — é feita por pessoas, para pessoas. O meu foco está em redesenhar processos de forma inteligente, com base em dados, sistemas robustos e equipas comprometidas com a mudança. O que me move é transformar ideias em soluções concretas, ajudar equipas a trabalhar melhor e garantir que cada entrega melhora de forma tangível a vida das pessoas e o funcionamento da organização.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Experiência Profissional */}
+      {/* Secção de Experiência Profissional com timeline vertical */}
       <div className="bg-muted/30 py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center text-foreground">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-10 text-center text-foreground">
               Experiência Profissional
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Experiência 1 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Projetos Estratégicos IRN – PRR
+            <div className="relative pl-8 border-l-2 border-primary/30">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="mb-10 ml-2 relative">
+                  {/* marcador circular */}
+                  <span className="absolute -left-4 top-1 flex h-3 w-3 rounded-full bg-primary"></span>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {exp.company}
                   </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Product Owner &amp; Gestor de Programa | EY
+                  <p className="text-sm text-muted-foreground">
+                    {exp.period} · {exp.role}
                   </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2024–presente
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {exp.description}
                   </p>
-                  <p className="text-muted-foreground">
-                    Gestão integrada de múltiplos projetos estratégicos do Registo Comercial,
-                    supervisionando uma equipa multidisciplinar e alinhando expectativas de
-                    stakeholders no âmbito do Plano de Recuperação e Resiliência.
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Experiência 2 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Projetos Estratégicos Registo Comercial
-                  </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Gestor de Projetos | Wrightia
-                  </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2022–2024
-                  </p>
-                  <p className="text-muted-foreground">
-                    Gestão integral do ciclo de vida de projetos do Registo Comercial,
-                    coordenando 36 elementos e liderando a implementação da plataforma
-                    Empresa Online 2.0 (EOL 2.0) com foco na digitalização e na simplificação
-                    dos processos.
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Experiência 3 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Observatório de Transformação Digital – MunLab
-                  </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Business Development Manager | SmartVision
-                  </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2019–2022
-                  </p>
-                  <p className="text-muted-foreground">
-                    Liderança de um projeto de transformação digital de 150&nbsp;000 € para a
-                    Comunidade Intermunicipal do Alentejo Central e municípios associados,
-                    envolvendo análise de requisitos, gestão orçamental e implementação de
-                    soluções de modernização administrativa.
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Experiência 4 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Modernização Administrativa – Nisa e Monforte
-                  </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Consultor de Modernização | SmartVision
-                  </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2021–2022
-                  </p>
-                  <p className="text-muted-foreground">
-                    Apoio técnico e funcional à modernização administrativa destes municípios,
-                    com foco na reorganização interna, transição digital e implementação de
-                    novos modelos de atendimento.
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Experiência 5 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Práticas de Atendimento – CIMAC (13 Municípios)
-                  </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Business Development Manager | SmartVision
-                  </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2019–2022
-                  </p>
-                  <p className="text-muted-foreground">
-                    Implementação de práticas de atendimento presenciais e serviços online em
-                    13 municípios da CIMAC, uniformizando processos e modernizando o
-                    relacionamento com os munícipes.
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Experiência 6 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Atendimento Multicanal – Lajes do Pico
-                  </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Consultor &amp; Gestor de Projeto | SmartVision
-                  </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2020–2022
-                  </p>
-                  <p className="text-muted-foreground">
-                    Desenvolvimento e implementação de um modelo de atendimento multicanal
-                    adaptado às necessidades locais no projeto “Lajes do Pico +Perto dos
-                    Munícipes”.
-                  </p>
-                </CardContent>
-              </Card>
-              {/* Experiência 7 */}
-              <Card className="p-6 bg-background/80">
-                <CardContent>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Transformação Digital – Madalena do Pico
-                  </h3>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Função:</strong> Consultor &amp; Gestor de Projeto | SmartVision
-                  </p>
-                  <p className="text-muted-foreground mb-1">
-                    <strong>Duração:</strong> 2020–2022
-                  </p>
-                  <p className="text-muted-foreground">
-                    Transformação digital dos serviços municipais, com planeamento e
-                    monitorização da execução, assegurando a disponibilização online de
-                    serviços e a modernização do atendimento.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Timeline Section */}
+      {/* Secção de Formação e Certificações */}
       <div className="py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
@@ -195,36 +125,7 @@ const About: React.FC = () => {
                 Percurso de aprendizagem contínua e desenvolvimento profissional, com foco em transformação digital e gestão estratégica
               </p>
             </div>
-            
             <Timeline />
-          </div>
-        </div>
-      </div>
-
-      {/*
-        Call-to-Action Section
-
-        This section encourages visitors to get in touch or explore further after
-        they finish reading the about page. It is intentionally placed only on
-        the About page to avoid repetition across the site. Feel free to
-        customise the text or link destination to better fit future content.
-      */}
-      <div className="bg-muted/30 py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">
-              Prontos para o próximo desafio?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Estou sempre à procura de novos projectos e colaborações.
-              Vamos conversar sobre como posso ajudar a sua organização a evoluir.
-            </p>
-            <a
-              href="/projects"
-              className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-            >
-              Ver Projetos
-            </a>
           </div>
         </div>
       </div>
