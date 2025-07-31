@@ -35,56 +35,146 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      {/* Values Section */}
+      {/* Experiência Profissional */}
       <div className="bg-muted/30 py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center text-foreground">
-              Valores-Chave
+              Experiência Profissional
             </h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
-              Princípios que orientam a minha abordagem à transformação digital
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-timeline-primary" />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Simplicidade Estratégica
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Simplifico processos complexos, desenhando soluções intuitivas e centradas nas pessoas - com planos concretos e garantindo que as entregas são úteis e dentro dos prazos.
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Experiência 1 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Projetos Estratégicos IRN – PRR
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Product Owner &amp; Gestor de Programa | EY
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2024–presente
+                  </p>
+                  <p className="text-muted-foreground">
+                    Gestão integrada de múltiplos projetos estratégicos do Registo Comercial,
+                    supervisionando uma equipa multidisciplinar e alinhando expectativas de
+                    stakeholders no âmbito do Plano de Recuperação e Resiliência.
                   </p>
                 </CardContent>
               </Card>
-
-              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-timeline-completed" />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Arquitetura de negócio flexível
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Concebo soluções com visão de longo prazo, com impacto real e mensurável no dia a dia - respeitando as especificidades do negócio mas adaptáveis ao crescimento e a inovação contínua.
+              {/* Experiência 2 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Projetos Estratégicos Registo Comercial
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Gestor de Projetos | Wrightia
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2022–2024
+                  </p>
+                  <p className="text-muted-foreground">
+                    Gestão integral do ciclo de vida de projetos do Registo Comercial,
+                    coordenando 36 elementos e liderando a implementação da plataforma
+                    Empresa Online 2.0 (EOL 2.0) com foco na digitalização e na simplificação
+                    dos processos.
                   </p>
                 </CardContent>
               </Card>
-
-              <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-3 h-3 rounded-full bg-accent" />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Equilíbrio entre rigor e agilidade
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Compreendo rapidamente estruturas organizacionais, alinho stakeholders e antecipo obstáculos antes de se tornarem problemas. Integro frameworks sólidas com metodologias ágeis, ajustando a abordagem à maturidade e realidade de cada contexto.
+              {/* Experiência 3 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Observatório de Transformação Digital – MunLab
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Business Development Manager | SmartVision
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2019–2022
+                  </p>
+                  <p className="text-muted-foreground">
+                    Liderança de um projeto de transformação digital de 150&nbsp;000 € para a
+                    Comunidade Intermunicipal do Alentejo Central e municípios associados,
+                    envolvendo análise de requisitos, gestão orçamental e implementação de
+                    soluções de modernização administrativa.
+                  </p>
+                </CardContent>
+              </Card>
+              {/* Experiência 4 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Modernização Administrativa – Nisa e Monforte
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Consultor de Modernização | SmartVision
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2021–2022
+                  </p>
+                  <p className="text-muted-foreground">
+                    Apoio técnico e funcional à modernização administrativa destes municípios,
+                    com foco na reorganização interna, transição digital e implementação de
+                    novos modelos de atendimento.
+                  </p>
+                </CardContent>
+              </Card>
+              {/* Experiência 5 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Práticas de Atendimento – CIMAC (13 Municípios)
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Business Development Manager | SmartVision
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2019–2022
+                  </p>
+                  <p className="text-muted-foreground">
+                    Implementação de práticas de atendimento presenciais e serviços online em
+                    13 municípios da CIMAC, uniformizando processos e modernizando o
+                    relacionamento com os munícipes.
+                  </p>
+                </CardContent>
+              </Card>
+              {/* Experiência 6 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Atendimento Multicanal – Lajes do Pico
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Consultor &amp; Gestor de Projeto | SmartVision
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2020–2022
+                  </p>
+                  <p className="text-muted-foreground">
+                    Desenvolvimento e implementação de um modelo de atendimento multicanal
+                    adaptado às necessidades locais no projeto “Lajes do Pico +Perto dos
+                    Munícipes”.
+                  </p>
+                </CardContent>
+              </Card>
+              {/* Experiência 7 */}
+              <Card className="p-6 bg-background/80">
+                <CardContent>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Transformação Digital – Madalena do Pico
+                  </h3>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Função:</strong> Consultor &amp; Gestor de Projeto | SmartVision
+                  </p>
+                  <p className="text-muted-foreground mb-1">
+                    <strong>Duração:</strong> 2020–2022
+                  </p>
+                  <p className="text-muted-foreground">
+                    Transformação digital dos serviços municipais, com planeamento e
+                    monitorização da execução, assegurando a disponibilização online de
+                    serviços e a modernização do atendimento.
                   </p>
                 </CardContent>
               </Card>

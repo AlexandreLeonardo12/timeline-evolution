@@ -7,11 +7,35 @@ import ContactCTA from "@/components/ContactCTA";
 import SEOHead from "@/components/SEOHead";
 
 const Home = () => {
+  // Indicadores de performance actualizados: experiência, projectos, equipa e entidades públicas.
   const metrics = [
-    { icon: TrendingUp, label: "Anos de experiência", value: "10+", description: "Anos moldando o futuro digital" },
-    { icon: Target, label: "Projetos desenvolvidos", value: "760k€+", description: "Valor em projetos executados" },
-    { icon: Users, label: "Equipas lideradas", value: "50+", description: "Profissionais liderados" },
-    { icon: Award, label: "Clientes impactados", value: "18+", description: "Organizações transformadas" },
+    {
+      icon: TrendingUp,
+      label: "Anos de experiência",
+      // Actualizado de 10+ para 6+ e removida a descrição redundante
+      value: "6+",
+      description: "",
+    },
+    {
+      icon: Target,
+      label: "Projetos desenvolvidos",
+      value: "760k€+",
+      description: "Valor em projetos executados",
+    },
+    {
+      icon: Users,
+      // Indicador de equipa: passa a referir membros liderados em vez de equipas
+      label: "Membros de equipa liderados",
+      value: "37+",
+      description: "",
+    },
+    {
+      icon: Award,
+      // Indicador de entidades públicas apoiadas (inclui nota sobre clientes impactados)
+      label: "Entidades Públicas apoiadas",
+      value: "10+",
+      description: "dos quais impactaram 18+ clientes",
+    },
   ];
 
   const values = [
