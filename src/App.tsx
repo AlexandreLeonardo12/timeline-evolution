@@ -10,6 +10,7 @@ import Projects from "./pages/Projects";
 import Framework from "./pages/Framework";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/projects" element={<Projects />} />
             <Route path="/framework" element={<Framework />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
             {/* Catch‑all route for 404 pages */}
             <Route path="*" element={<NotFound />} />
           </Routes>
