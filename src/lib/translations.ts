@@ -29,9 +29,10 @@ const translations = {
         "Resultados mensuráveis em múltiplos sectores e organizações",
       metrics: [
         {
-          value: "10+",
+          // Ajustado para refletir a experiência mais recente
+          value: "6+",
           label: "Anos de experiência",
-          description: "Anos moldando o futuro digital",
+          description: "",
         },
         {
           value: "760k€+",
@@ -39,14 +40,14 @@ const translations = {
           description: "Valor em projetos executados",
         },
         {
-          value: "50+",
-          label: "Equipas lideradas",
-          description: "Profissionais liderados",
+          value: "37+",
+          label: "Membros de equipa liderados",
+          description: "",
         },
         {
-          value: "18+",
-          label: "Clientes impactados",
-          description: "Organizações transformadas",
+          value: "10+",
+          label: "Entidades Públicas apoiadas",
+          description: "dos quais impactaram 18+ clientes",
         },
       ],
       valuesTitle: "Valores‑Chave",
@@ -56,17 +57,17 @@ const translations = {
         {
           title: "Simplicidade Estratégica",
           description:
-            "Simplifico processos complexos, desenhando soluções intuitivas e centradas nas pessoas.",
+            "Simplifico processos complexos, desenhando soluções intuitivas focadas no valor e na experiência do utilizador.",
         },
         {
           title: "Arquitetura Flexível",
           description:
-            "Concebo soluções com visão de longo prazo, com impacto real e mensurável.",
+            "Desenho arquiteturas de negócio modulares e escaláveis, com visão de longo prazo e impacto real.",
         },
         {
           title: "Rigor e Agilidade",
           description:
-            "Integro frameworks sólidas com metodologias ágeis, ajustando à realidade de cada contexto.",
+            "Integro rigor de gestão e governação com metodologias ágeis e lean, ajustando a abordagem à maturidade e realidade de cada contexto.",
         },
       ],
       contactTitle: "Prontos para o próximo desafio?",
@@ -121,9 +122,9 @@ const translations = {
         "Measurable results across multiple sectors and organisations",
       metrics: [
         {
-          value: "10+",
+          value: "6+",
           label: "Years of experience",
-          description: "Years shaping the digital future",
+          description: "",
         },
         {
           value: "€760k+",
@@ -131,14 +132,14 @@ const translations = {
           description: "Value in executed projects",
         },
         {
-          value: "50+",
-          label: "Teams led",
-          description: "Professionals led",
+          value: "37+",
+          label: "Team members led",
+          description: "",
         },
         {
-          value: "18+",
-          label: "Clients impacted",
-          description: "Organisations transformed",
+          value: "10+",
+          label: "Public entities supported",
+          description: "through which 18+ clients were impacted",
         },
       ],
       valuesTitle: "Core Values",
@@ -148,17 +149,17 @@ const translations = {
         {
           title: "Strategic Simplicity",
           description:
-            "I simplify complex processes, designing intuitive, people‑centred solutions.",
+            "I simplify complex processes, designing intuitive solutions focused on value and user experience.",
         },
         {
           title: "Flexible Architecture",
           description:
-            "I conceive solutions with a long‑term vision, creating real and measurable impact.",
+            "I design modular and scalable business architectures with a long‑term vision and real impact.",
         },
         {
           title: "Rigour and Agility",
           description:
-            "I integrate robust frameworks with agile methodologies, adapting to each context.",
+            "I integrate management rigour and governance with agile and lean methodologies, adapting the approach to the maturity and reality of each context.",
         },
       ],
       contactTitle: "Ready for the next challenge?",
