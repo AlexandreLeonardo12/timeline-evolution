@@ -92,18 +92,23 @@ export const projects: Project[] = [
   },
   {
     id: "wrightia-irn-rc",
-    title: "Projetos Estratégicos Registo Comercial",
+    // Este projeto representa a implementação da plataforma Empresa Online 2.0
+    // para o Registo Comercial, substituindo os antigos projetos estratégicos.
+    title: "Empresa Online 2.0",
     subtitle: "Gestor de Projetos | Wrightia",
     description:
-      "Gestão de projetos estratégicos do Registo Comercial com equipas de 36 elementos e implementação do EOL 2.0.",
+      "Gestão de projetos estratégicos com equipas de 36 elementos, liderando o desenvolvimento e implementação da plataforma Empresa Online 2.0 para o Registo Comercial.",
     type: "professional",
     status: "completed",
     year: "2022-2024",
     challenge:
-      "Articular área de negócio com equipas de desenvolvimento e alinhar soluções tecnológicas.",
+      "Simplificar o processo de constituição de empresas e modernizar o registo comercial, articulando as necessidades do negócio com equipas de desenvolvimento.",
     solution:
-      "Gestão integral do ciclo de vida dos projetos com implementação do EOL 2.0 e facilitação de sessões de trabalho.",
-    results: ["Implementação do EOL 2.0", "Digitalização e simplificação de processos"],
+      "Gestão integral de projeto e produto do EOL 2.0, utilizando metodologias ágeis, definindo requisitos, coordenando equipas e garantindo alinhamento com stakeholders.",
+    results: [
+      "Implementação bem‑sucedida do EOL 2.0",
+      "Redução do tempo de constituição de empresas e simplificação de processos",
+    ],
     technologies: [
       "OpenProject",
       "MS Project",
