@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../lib/translations";
 
@@ -15,14 +16,22 @@ export default function ContactCTA() {
           <p className="text-muted-foreground">{t.contactSubtitle}</p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          {/* Email card */}
+          {/* Formulário de contacto */}
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-6 text-center space-y-4">
               <Mail className="h-8 w-8 mx-auto text-primary" />
-              <h3 className="text-xl font-semibold">Email Direto</h3>
-              <p className="text-muted-foreground">{t.contactEmailDesc}</p>
+              <h3 className="text-xl font-semibold">
+                {language === 'pt' ? 'Contacto' : 'Contact'}
+              </h3>
+              <p className="text-muted-foreground">
+                {language === 'pt'
+                  ? 'Envie-me uma mensagem através do formulário'
+                  : 'Send me a message via the form'}
+              </p>
               <Button variant="outline" asChild>
-                <a href="mailto:alexandreleonardo3746@gmail.com">{t.contactEmailCTA}</a>
+                <Link to="/contact">
+                  {language === 'pt' ? 'Formulário' : 'Form'}
+                </Link>
               </Button>
             </CardContent>
           </Card>
@@ -47,7 +56,9 @@ export default function ContactCTA() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardContent className="p-6 text-center space-y-4">
               <Calendar className="h-8 w-8 mx-auto text-primary" />
-              <h3 className="text-xl font-semibold">Consultoria</h3>
+              <h3 className="text-xl font-semibold">
+                {language === 'pt' ? 'Consultoria' : 'Consulting'}
+              </h3>
               <p className="text-muted-foreground">{t.contactConsultingDesc}</p>
               <Button variant="outline" asChild>
                 <a
