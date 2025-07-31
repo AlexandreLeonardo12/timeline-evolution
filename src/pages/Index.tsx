@@ -21,6 +21,7 @@ const Home = () => {
       description: "Simplifico processos complexos, desenhando soluções intuitivas e centradas nas pessoas.",
     },
     {
+   
       icon: Layers,
       title: "Arquitetura Flexível",
       description: "Concebo soluções com visão de longo prazo, com impacto real e mensurável.",
@@ -31,6 +32,7 @@ const Home = () => {
       description:
         "Integro frameworks sólidas com metodologias ágeis, ajustando à realidade de cada contexto.",
     },
+  
   ];
 
   return (
@@ -51,6 +53,7 @@ const Home = () => {
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-4">
               Gestor de Programa | Transformação Digital e Inovação Estratégica
             </h2>
+
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-6">
               Tornar as experiências digitais mais simples, ágeis e centradas nas pessoas.
             </p>
@@ -89,6 +92,7 @@ const Home = () => {
             Transformação Digital com Impacto
           </h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+       
             Resultados mensuráveis em múltiplos sectores e organizações
           </p>
           <div className="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
@@ -101,6 +105,7 @@ const Home = () => {
                     {label}
                   </CardDescription>
                 </CardHeader>
+                
                 <CardContent>
                   <p className="text-muted-foreground">{description}</p>
                 </CardContent>
@@ -123,6 +128,7 @@ const Home = () => {
                   <CardTitle>{title}</CardTitle>
                 </CardHeader>
                 <CardContent>
+             
                   <p className="text-muted-foreground">{description}</p>
                 </CardContent>
               </Card>
@@ -135,4 +141,6 @@ const Home = () => {
   );
 };
 
+
 export default Home;
+
