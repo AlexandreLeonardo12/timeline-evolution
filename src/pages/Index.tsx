@@ -83,13 +83,32 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/projects">
-                <Button size="lg" className="group">
+                {/*
+                 * O botão principal utiliza agora a cor de destaque (laranja) para um contraste
+                 * superior sobre o fundo azul petróleo. A classe de grupo permite a animação
+                 * do ícone para a direita no hover, e a transição é herdada do componente
+                 * Button. A classe bg-accent aplica a cor de fundo, e text-accent-foreground
+                 * garante texto legível.
+                 */}
+                <Button
+                  size="lg"
+                  className="group bg-accent hover:bg-accent/80 text-accent-foreground"
+                >
                   Ver Projetos
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
               <Link to="/#contact">
-                <Button variant="outline" size="lg">
+                {/*
+                 * O botão secundário utiliza o fundo azul petróleo (primary) com texto claro,
+                 * assegurando contraste suficiente. A variante default é mantida para
+                 * herdar as propriedades base do componente e adiciona-se classes para
+                 * alterar cores.
+                 */}
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/80 text-primary-foreground"
+                >
                   Entrar em contacto
                 </Button>
               </Link>
@@ -99,7 +118,11 @@ const Home = () => {
             <div className="relative w-full h-full rounded-xl overflow-hidden border border-border/20 shadow-lg">
               <img
                 src="/alexandre-leonardo.jpg"
-                alt="Alexandre Leonardo"
+                /*
+                 * Texto alternativo mais descritivo para melhorar a acessibilidade.
+                 * Especifica que se trata de uma fotografia de Alexandre Leonardo.
+                 */
+                alt="Fotografia de Alexandre Leonardo"
                 className="object-cover w-full h-full"
               />
             </div>

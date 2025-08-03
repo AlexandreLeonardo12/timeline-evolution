@@ -61,7 +61,7 @@ const Projects = () => {
         <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{project.description}</p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 p-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-red-50 dark:bg-red-900/30 flex items-center justify-center">
@@ -119,7 +119,14 @@ const Projects = () => {
             )}
           </div>
           <Link to={`/projects/${project.id}`}>
-            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
+            {/*
+             * Ajuste das cores do CTA "Ver detalhes" para melhorar o contraste.
+             * Utiliza a cor de destaque (accent) em vez de azul genérico.
+             */}
+            <Button
+              size="sm"
+              className="bg-accent hover:bg-accent/80 text-accent-foreground"
+            >
               Ver detalhes
             </Button>
           </Link>
@@ -165,13 +172,26 @@ const Projects = () => {
         </section>
 
         <div className="text-center space-y-4">
-          <p className="text-lg text-gray-600 dark:text-gray-300">Interessado em colaborar?</p>
+          <p className="text-lg text-muted-foreground">Interessado em colaborar?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/about">
-              <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">Entrar em Contacto</Button>
+              {/*
+               * Botão de contacto com alto contraste utilizando a cor de destaque (accent).
+               */}
+              <Button
+                className="bg-accent hover:bg-accent/80 text-accent-foreground"
+              >
+                Entrar em Contacto
+              </Button>
             </Link>
             <Link to="/">
-              <Button variant="outline" className="group">
+              {/*
+               * Botão de retorno ao início com contorno e transição suave.
+               */}
+              <Button
+                variant="outline"
+                className="group border-primary text-primary hover:bg-primary/10"
+              >
                 Voltar ao Início
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

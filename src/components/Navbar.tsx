@@ -19,11 +19,12 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200"
+      // Use design tokens for navbar colors and borders
+      className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-xl font-bold text-gray-900">
+          <Link to="/" className="text-xl font-bold text-foreground">
             ALEXANDRE LEONARDO
           </Link>
           {/* Desktop navigation */}
@@ -31,31 +32,31 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <NavLink
                 to="/"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 {nav.home}
               </NavLink>
               <NavLink
                 to="/about"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 {nav.about}
               </NavLink>
               <NavLink
                 to="/projects"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 {nav.projects}
               </NavLink>
               <NavLink
                 to="/framework"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 {nav.framework}
               </NavLink>
               <NavLink
                 to="/blog"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 {nav.blog}
               </NavLink>
@@ -63,10 +64,10 @@ export default function Navbar() {
           </div>
           {/* Desktop right actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-2 text-sm font-medium text-gray-900 hover:text-blue-600"
-            >
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
               {language === 'pt' ? 'EN' : 'PT'}
             </button>
           </div>
@@ -88,40 +89,40 @@ export default function Navbar() {
       </div>
       {/* Mobile navigation */}
       <div
-        className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-white/90 backdrop-blur-sm border-b border-gray-200`}
+        className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-background/90 backdrop-blur-sm border-b border-border`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <NavLink
             to="/"
-            className="block text-gray-900 hover:text-blue-600 px-3 py-2 text-base font-medium"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {nav.home}
           </NavLink>
           <NavLink
             to="/about"
-            className="block text-gray-900 hover:text-blue-600 px-3 py-2 text-base font-medium"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {nav.about}
           </NavLink>
           <NavLink
             to="/projects"
-            className="block text-gray-900 hover:text-blue-600 px-3 py-2 text-base font-medium"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {nav.projects}
           </NavLink>
           <NavLink
             to="/framework"
-            className="block text-gray-900 hover:text-blue-600 px-3 py-2 text-base font-medium"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {nav.framework}
           </NavLink>
           <NavLink
             to="/blog"
-            className="block text-gray-900 hover:text-blue-600 px-3 py-2 text-base font-medium"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {nav.blog}
@@ -132,7 +133,7 @@ export default function Navbar() {
               toggleLanguage();
               setIsMenuOpen(false);
             }}
-            className="block w-full text-left text-gray-900 hover:text-blue-600 px-3 py-2 text-base font-medium"
+            className="block w-full text-left text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
           >
             {language === 'pt' ? 'EN' : 'PT'}
           </button>

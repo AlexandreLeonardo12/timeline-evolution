@@ -17,17 +17,20 @@ const Home = () => {
     {
       icon: Lightbulb,
       title: "Inovação",
-      description: "Desenvolvemos soluções criativas e eficazes para desafios complexos.",
+      // Ajustado para primeira pessoa do singular
+      description: "Desenvolvo soluções criativas e eficazes para desafios complexos.",
     },
     {
       icon: Users,
       title: "Colaboração",
-      description: "Trabalhamos lado a lado com os clientes para garantir sucesso conjunto.",
+      // Ajustado para primeira pessoa do singular
+      description: "Trabalho lado a lado com os clientes para garantir sucesso conjunto.",
     },
     {
       icon: Rocket,
       title: "Impacto",
-      description: "Focamo-nos em resultados que geram valor real e mensurável.",
+      // Ajustado para primeira pessoa do singular
+      description: "Foco‑me em resultados que geram valor real e mensurável.",
     },
   ];
 
@@ -44,10 +47,10 @@ const Home = () => {
             Transformação digital e inovação estratégica
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-            Transformamos ideias em resultados concretos
+            Transformo ideias em resultados concretos
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ajudamos organizações e líderes a desenhar, implementar e gerir programas de
+            Ajudo organizações e líderes a desenhar, implementar e gerir programas de
             transformação digital com foco em pessoas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -84,7 +87,7 @@ const Home = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4 space-y-8">
-          <h2 className="text-3xl font-bold text-center">Valores que nos guiam</h2>
+          <h2 className="text-3xl font-bold text-center">Valores que me guiam</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {values.map(({ icon: Icon, title, description }, index) => (
               <Card key={index} className="text-center p-6">

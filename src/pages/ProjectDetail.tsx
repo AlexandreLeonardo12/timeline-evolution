@@ -94,7 +94,12 @@ const ProjectDetail = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
-              alt={project.title}
+              /*
+               * Utilize um texto alternativo mais descritivo para cada imagem de projecto.
+               * Em vez de apenas o título, descrevemos que a imagem ilustra
+               * o projecto, melhorando a acessibilidade e SEO.
+               */
+              alt={`Imagem ilustrativa do projeto ${project.title}`}
               className="w-full h-full object-cover object-center"
             />
           </div>
