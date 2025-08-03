@@ -10,53 +10,25 @@ import Timeline from '@/components/Timeline';
 // cronológica numa timeline vertical.
 const experiences = [
   {
-    period: '2023 – presente',
-    company: 'IRN PRR (EY)',
-    role: 'Program Manager & Product Owner',
+    period: '07/2024 – presente',
+    company: 'EY',
+    role: 'Senior Consultant',
     description:
-      'Liderança do programa de modernização do Registo e Notariado no âmbito do PRR, actuando como Product Owner e gestor de programa na EY.',
-  },
-    {
-    period: '2022 – 2023',
-    company: 'Empresa Online 2.0',
-    role: 'Gestor de Projecto (Wrightia/EY)',
-    description:
-      'Gestão do projecto EOL 2.0 para digitalizar o ciclo de vida das empresas, coordenando equipas multidisciplinares e garantindo entrega contínua.',
+      'Consultor sénior na EY, liderando iniciativas de consultoria em transformação digital e inovação desde Julho de 2024.',
   },
   {
-    period: '2021 – 2022',
-    company: 'MunLab / CIM Algarve',
-    role: 'Consultor de Transformação Digital',
+    period: '07/2022 – 07/2024',
+    company: 'Wrightia',
+    role: 'Project & Program Manager',
     description:
-      'Definição de estratégia e implementação de laboratório municipal de inovação, promovendo a adopção de soluções digitais nos municípios do Algarve.',
+      'Gestor de projectos e programas na Wrightia, coordenando equipas e implementando soluções digitais de Julho de 2022 a Julho de 2024.',
   },
   {
-    period: '2020 – 2021',
-    company: 'Municípios de Nisa & Monforte',
-    role: 'Gestor de Projecto',
+    period: '08/2019 – 07/2022',
+    company: 'Smartvision',
+    role: 'Business Analyst & Project Manager',
     description:
-      'Condução de iniciativas de modernização administrativa e implementação de novos modelos de atendimento.',
-  },
-  {
-    period: '2019 – 2020',
-    company: 'CIMAC',
-    role: 'Consultor de Inovação',
-    description:
-      'Apoio à definição de arquitectura tecnológica e roadmap de transformação digital para os municípios da Comunidade Intermunicipal do Alentejo Central.',
-  },
-  {
-    period: '2018 – 2019',
-    company: 'Lajes do Pico',
-    role: 'Consultor',
-    description:
-      'Coordenação da modernização dos serviços municipais, incluindo a introdução de plataformas de atendimento online.',
-  },
-  {
-    period: '2017 – 2018',
-    company: 'Madalena do Pico',
-    role: 'Consultor',
-    description:
-      'Desenvolvimento e implementação de soluções de gestão urbana e melhoria da relação com o munícipe.',
+      'Analista de negócio e gestor de projectos na Smartvision, definindo requisitos e liderando iniciativas de 2019 a 2022.',
   },
 ];
 
