@@ -8,9 +8,9 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 0204 33% 97%0% 100%;
+    --foreground: 222.2 84% 4.201 100% 18%%;
+204 33% 97%
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 
@@ -36,9 +36,23 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
-    
-    /* Timeline design tokens */
+  /* Updated color palette for Alexandre Leonardo website */
+  --background: 204 33% 97%;
+  --foreground: 201 100% 18%;
+  --card: 204 33% 97%;
+  --card-foreground: 201 100% 18%;
+  --popover: 204 33% 97%;
+  --popover-foreground: 201 100% 18%;
+  --primary: 201 100% 18%;
+  --primary-foreground: 204 33% 97%;
+  --secondary: 204 33% 97%;
+  --secondary-foreground: 201 100% 18%;
+  --accent: 13 68% 62%;
+  --accent-foreground: 0 0% 100%;
+
+  
+  
+ /* Timeline design tokens */
     --timeline-primary: 220 90% 56%;
     --timeline-primary-light: 220 90% 90%;
     --timeline-completed: 142 71% 45%;
