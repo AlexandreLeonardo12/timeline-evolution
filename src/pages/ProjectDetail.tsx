@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, Briefcase, CheckCircle } from "lucide-react";
 import translations from "@/lib/translations";
 import { useLanguage } from "@/context/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 // When this file resides in src/pages, the data is located one level up in src/data.
 import { projects, Project } from "../data/projects";
 
@@ -27,6 +28,8 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className="container mx-auto px-4 py-12 max-w-5xl">
+        {/* Fallback SEO for página inexistente */}
+        <SEOHead title={t.notFound} description={t.notFound} />
         <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
         <div className="mt-6 text-center">
           <Link to="/projects">
@@ -58,6 +61,13 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* SEO meta tags based on project data */}
+      <SEOHead
+        title={`${project.title} – ${project.subtitle}`}
+        description={project.overview || project.description}
+        keywords={`${project.title}, ${project.technologies.join(", ")}`}
+        ogImage={project.image || undefined}
+      />
       <div className="container mx-auto px-4 py-12 max-w-5xl space-y-12">
         {/* Back to projects */}
         <div>

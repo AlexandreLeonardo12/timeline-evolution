@@ -10,6 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 // listing and detail views.
 // When this file resides in src/pages, the data is located one level up in src/data.
 import { projects, Project } from "../data/projects";
+import SEOHead from "@/components/SEOHead";
 
 /**
  * Renders a list of projects separated into professional and personal
@@ -147,6 +148,12 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* SEO meta tags for projects listing */}
+      <SEOHead
+        title={`${t.title} – Alexandre Leonardo`}
+        description={t.subtitle}
+        keywords={"projetos, transformação digital, inovação"}
+      />
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">{t.title}</h1>
