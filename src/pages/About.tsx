@@ -2,6 +2,8 @@ import React from 'react';
 
 import SEOHead from '@/components/SEOHead';
 import Timeline from '@/components/Timeline';
+import translations from '@/lib/translations';
+import { useLanguage } from '@/context/LanguageContext';
 
 // Experiências profissionais para o percurso de Alexandre Leonardo. Cada entrada
 // contém o período, a organização, o cargo ocupado e uma breve descrição do
@@ -33,18 +35,21 @@ const experiences = [
 ];
 
 const About: React.FC = () => {
+  // Use language context to fetch translation strings specific to the About page
+  const { language } = useLanguage();
+  const t = translations[language].aboutPage;
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Sobre"
-        description="Conheça o percurso profissional de Alexandre Leonardo"
+        title={t.title}
+        description={t.description}
       />
 
       {/* Secção de cabeçalho e biografia */}
       <div className="container mx-auto px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Sobre mim
+            {t.header}
           </h1>
           <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
             <p>
@@ -62,7 +67,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-10 text-center text-foreground">
-              Experiência Profissional
+              {t.experienceTitle}
             </h2>
             <div className="relative pl-8 border-l-2 border-primary/30">
               {experiences.map((exp, idx) => (
@@ -91,7 +96,7 @@ const About: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-foreground">
-                Formação e Certificações
+                {t.educationTitle}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 Percurso de aprendizagem contínua e desenvolvimento profissional, com foco em transformação digital e gestão estratégica
