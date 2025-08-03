@@ -64,6 +64,44 @@ export default function SEOHead({
     updateMetaTag("og:type", "website", true);
     updateMetaTag("og:url", currentUrl, true);
     updateMetaTag("og:image", ogImage, true);
+
+    // Set canonical link. If a canonical tag already exists, update its href,
+    // otherwise create one. Canonical tags help a página principal a
+    // consolidar sinais de indexação quando existem múltiplas URLs que podem
+    // servir o mesmo conteúdo.
+    let canonicalTag = document.querySelector("link[rel='canonical']");
+    if (!canonicalTag) {
+      canonicalTag = document.createElement("link");
+      canonicalTag.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalTag);
+    }
+    canonicalTag.setAttribute("href", currentUrl);
+
+    // Inject structured data (JSON-LD) for the Person schema. This data
+    // descreve o proprietário do site e ajuda os motores de busca a
+    // entender a entidade por detrás da página. Caso já exista um script
+    // JSON‑LD, ele será actualizado; caso contrário, será criado.
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexandre Leonardo",
+      "url": "https://www.alexandreleonardo.pt/",
+      "jobTitle": "Gestor de Programa",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "EY"
+      }
+    };
+    let ldScript = document.querySelector(
+      'script[type="application/ld+json"]#person-schema',
+    );
+    if (!ldScript) {
+      ldScript = document.createElement("script");
+      ldScript.setAttribute("type", "application/ld+json");
+      ldScript.setAttribute("id", "person-schema");
+      document.head.appendChild(ldScript);
+    }
+    ldScript.textContent = JSON.stringify(schemaData);
   }, [title, description, keywords, ogImage, currentUrl]);
 
   return null;
