@@ -3,10 +3,13 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+  // Configure SPA routing. The filesystem handle ensures that existing
+  // files and assets in the dist directory are served normally. Any
+  // other request is redirected to index.html so that client‑side
+  // routing (react‑router) can resolve the path. Without this, routes
+  // like /projects/ey-irn-prr would return 404 on Vercel.
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
   ]
 }
