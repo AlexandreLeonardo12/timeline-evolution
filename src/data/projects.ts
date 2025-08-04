@@ -1,4 +1,4 @@
-e/*
+/*
  * Project data definitions for the portfolio website.
  *
  * This file centralises all project metadata used by both the projects
@@ -94,79 +94,80 @@ export const projects: Project[] = [
     id: "wrightia-irn-rc",
     // Este projeto representa a implementação da plataforma Empresa Online 2.0
     // para o Registo Comercial, substituindo os antigos projetos estratégicos.
-  {
-    id: "wrightia-irn-rc",
-    // Projeto Empresa Online 2.0 – nova geração do registo comercial digital
-    title: "Empresa Online 2.0",
-    subtitle: "Gestor de Projectos | Wrightia",
+    title: "Empresa Online 2.0",
+    subtitle: "Gestor de Projetos | Wrightia",
     description:
-      "Condução da transformação digital do registo comercial, substituindo a plataforma de 2006 por uma solução web unificada que reduz drasticamente a burocracia e o tempo necessário para constituir uma empresa.",
+      "Gestão integral do ciclo de vida do projeto que concebeu e lançou a nova plataforma de constituição de empresas 100 % digital. Coordenação de uma equipa multidisciplinar de 36 elementos, garantindo a entrega da Empresa Online 2.0 dentro do prazo e do orçamento.",
     type: "professional",
     status: "completed",
     year: "2022-2024",
     challenge:
-      "Modernizar o registo comercial e criar um serviço digital que permita constituir sociedades em minutos, integrando sistemas heterogéneos (IRN, AT, Segurança Social, SIBS, Autenticação.gov, RCBE) e garantindo conformidade legal e usabilidade.",
+      "Modernizar em tempo recorde o processo de criação de empresas num contexto público, substituindo a plataforma de 2006 por uma solução intuitiva que reduz drasticamente a burocracia e integra diversos organismos e serviços.",
     solution:
-      "Liderança integral do projecto Empresa Online 2.0, desde a definição de requisitos com stakeholders até à entrega de uma plataforma unificada. O trabalho incluiu reengenharia de processos, adopção de metodologias ágeis e desenvolvimento de uma aplicação responsiva com autenticação forte (Cartão de Cidadão, Chave Móvel Digital e eIDAS), assinatura digital qualificada, pagamentos electrónicos (MB Way, referência multibanco) e integração profunda com sistemas de registo, tributação e segurança social. A versão inicial foi lançada em Maio de 2023 e evoluída em 2024 com o registo de sucursais e a recolha do beneficiário efectivo.",
+      "Conceção e gestão de produto com foco no utilizador, adopção de metodologias ágeis e coordenação de equipas internas e externas. Implementação de uma arquitectura escalável, integração de autenticação electrónica, assinatura digital e pagamentos online, e criação de APIs para interoperabilidade com Finanças, Segurança Social e outras entidades.",
     results: [
-      "Constituição de sociedades totalmente online em cerca de 10 minutos",
-      "Eliminação de deslocações e redução de mais de 80% da burocracia",
-      "A maioria das novas empresas passou a ser constituída online",
-      "Integração efectiva com Autoridade Tributária, Segurança Social, RCBE e sistemas de back‑office do IRN",
+      "Lançamento da Plataforma Empresa Online 2.0 com constituição de sociedades em menos de 10 minutos",
+      "Integração com 6+ serviços públicos e privados (AT, SS, RCBE, Autenticação, Pagamentos)",
+      "Aumento substancial da percentagem de empresas constituídas online e reconhecimento internacional como caso de sucesso",
     ],
     technologies: [
       "Gestão de Produto",
-      "Scrum / Agile",
-      "UX / UI Design",
+      "Agile & Scrum",
+      "UX/UI Design",
       "Integração de APIs",
-      "Transformação Digital",
+      "Assinatura Digital",
+      "Gateway de Pagamentos",
     ],
     featured: true,
     overview:
-      "O Empresa Online 2.0 é um serviço público de nova geração que substituiu a plataforma de 2006 e permite criar sociedades de forma totalmente digital. Alinhado com o Plano de Recuperação e Resiliência (PRR), o projecto visou reduzir o tempo de constituição de dias para minutos, simplificando os requisitos legais e criando uma experiência intuitiva para empreendedores e profissionais. Envolveu a reengenharia dos processos internos do registo comercial, o desenho de uma nova arquitectura de software e a integração com vários organismos públicos para recolha e validação automática de dados.",
+      "A Empresa Online 2.0 é uma plataforma inovadora que substituiu a versão original de 2006, permitindo a constituição de sociedades totalmente online em poucos minutos. O projeto, financiado pelo PRR e liderado pelo Instituto do Registo Comercial, visou tornar Portugal um dos países mais rápidos para abrir negócios, eliminando burocracia e deslocações e integrando de forma transparente diversos serviços públicos.",
     steps: [
       {
-        title: "Análise e desenho de processos",
+        title: "Análise & Planeamento",
         description:
-          "Mapeamento dos requisitos legais e funcionais, redesenho dos fluxos de constituição de empresas e definição de integrações com serviços públicos e privados.",
+          "Imersão nos processos legais existentes e definição de uma nova arquitectura funcional. Identificação de requisitos com stakeholders, revisão de legislação e desenho de fluxos orientados para o utilizador.",
       },
       {
-        title: "Desenvolvimento da plataforma e experiência de utilizador",
+        title: "Desenvolvimento da Plataforma",
         description:
-          "Construção de uma aplicação web responsiva com formulários inteligentes, orientação passo‑a‑passo e suporte bilingue, garantindo acessibilidade e simplicidade.",
+          "Construção do front‑end intuitivo e de um back‑end escalável. Integração de módulos de autenticação, assinatura digital e pagamento. Desenvolvimento de APIs para comunicação com serviços fiscais, de segurança social e de beneficiário efectivo.",
       },
       {
-        title: "Integração de sistemas e serviços",
+        title: "Integração & Testes",
         description:
-          "Integração com Autenticação.gov para login seguro, módulos de assinatura digital e pagamentos (MB Way/referência), e interoperabilidade com AT, Segurança Social, RCBE e CTT para validação de dados e notificações.",
+          "Integração com o novo sistema de registo comercial e com serviços externos. Realização de testes unitários, integrados e pilotos com utilizadores e conservadores para assegurar robustez, segurança e usabilidade.",
       },
       {
-        title: "Lançamento e evolução contínua",
+        title: "Lançamento & Evolução",
         description:
-          "Lançamento da versão inicial em Maio de 2023, acompanhado por testes piloto e sessões de formação; evolução em 2024 com registo de sucursais, integração do beneficiário efectivo e planeamento de novas funcionalidades.",
+          "Lançamento oficial em 2023 e desenvolvimento de evolutivos em 2024, incluindo registo de sucursais e recolha do beneficiário efectivo no mesmo fluxo. Melhoria contínua da experiência de utilizador e expansão da área reservada.",
       },
     ],
     impact: {
       functionality:
-        "≈10 minutos – Tempo médio para constituição de sociedades graças a um processo digital integrado",
+        "10 min – Tempo médio de constituição de empresas após lançamento, comparado com dias no processo presencial",
       agents:
-        "6+ integrações governamentais – Autenticação, assinatura digital, pagamentos, AT, Segurança Social, RCBE e conservatórias",
+        "6+ Integrações Governamentais – Comunicação automática com Finanças, Segurança Social, RCBE, Autenticação.gov e SIBS",
       reduction:
-        ">80% redução de burocracia – Eliminação de deslocações e simplificação profunda dos procedimentos",
+        ">80 % Redução de Burocracia – Eliminação de deslocações e papéis, aumento da eficiência interna",
     },
     lessons: [
-      "Colocar o utilizador no centro é essencial para a adoção de serviços digitais",
-      "A interoperabilidade entre sistemas públicos multiplica a eficiência e reduz erros",
-      "Reformular processos e requisitos legais é tão crítico quanto desenvolver tecnologia",
-      "Metodologias ágeis e entregas incrementais permitem ajustar e melhorar continuamente o serviço",
+      "A experiência centrada no utilizador é crítica para a adopção de serviços públicos digitais",
+      "A interoperabilidade entre organismos reduz drasticamente a burocracia e melhora a eficiência",
+      "Metodologias ágeis e colaboração multidisciplinar permitem entregas rápidas e iterativas",
+      "Modernizar sistemas legados requer coordenação entre inovação tecnológica e revisão legislativa",
     ],
     nextSteps: [
-      "Estender a plataforma a outros actos societários como alterações de capital, dissoluções e fusões",
-      "Disponibilizar o portal em mais línguas para atrair investidores estrangeiros",
-      "Aprofundar a integração com AT e Segurança Social para automatizar declarações e inscrições futuras",
+      "Expandir a plataforma para outros actos societários, como aumentos de capital e dissoluções",
+      "Disponibilizar a interface em mais idiomas para atrair investidores internacionais",
+      "Integrar assistentes inteligentes para apoio em tempo real ao utilizador",
+      "Implementar dashboards analíticos para monitorizar métricas de desempenho e recolher feedback contínuo",
     ],
     image: "/projects/hero.jpg",
-  },  title: "Observatório de Transformação Digital - MunLab",
+  },
+  {
+    id: "smartvision-munlab",
+    title: "Observatório de Transformação Digital - MunLab",
     subtitle: "Business Development Manager | SmartVision",
     description:
       "Liderança de projeto de transformação digital de 150.000€ para a CIMAA e municípios associados.",
@@ -319,6 +320,76 @@ export const projects: Project[] = [
       "Criação de tutoriais sobre vibe‑coding",
     ],
     image: "/projects/portfolio-website-image.png",
+  },
+  {
+    id: "irn-registo-comercial",
+    // Projeto de modernização do Registo Comercial Português no âmbito do PRR
+    title: "Modernização do Registo Comercial",
+    subtitle: "Gestor de Programa | EY",
+    description:
+      "Coordenação do programa de renovação dos sistemas de informação do Registo Comercial, com foco na migração de sistemas legados e na implementação de funcionalidades escaláveis e interoperáveis.",
+    type: "professional",
+    status: "in-progress",
+    year: "2021-2025",
+    challenge:
+      "Substituir uma plataforma tecnológica obsoleta e assegurar conformidade com diretivas europeias, garantindo ao mesmo tempo continuidade do serviço durante a migração.",
+    solution:
+      "Gestão multidisciplinar envolvendo equipas de TI e jurídicas para definir requisitos, seleccionar fornecedores e desenvolver uma nova arquitectura. Implementação de módulos de workflow, base de dados central, APIs para BRIS e RCBE e mecanismos de assinatura e autenticação digitais.",
+    results: [
+      "Nova plataforma de registo comercial em produção, interoperável com o sistema europeu BRIS",
+      "Integração do registo de sucursais e actos societários complexos via portal online",
+      "Redução dos tempos de processamento e eliminação de papel em mais de 80 % dos atos",
+    ],
+    technologies: [
+      "Gestão de Programa",
+      "Análise de Requisitos",
+      "Arquitectura de Sistemas",
+      "Integração de APIs",
+      "Workflow/BPM",
+      "Gestão de Stakeholders",
+    ],
+    overview:
+      "A Modernização do Registo Comercial é um projeto estratégico financiado pelo PRR que visa reconstruir os sistemas centrais que suportam os registos de empresas em Portugal. O objectivo é migrar de um software legado para uma plataforma moderna, digital, segura e preparada para interconexão europeia, melhorando a eficiência interna das conservatórias e disponibilizando novos serviços online aos cidadãos e empresas.",
+    steps: [
+      {
+        title: "Análise & Levantamento",
+        description:
+          "Inventariação dos sistemas legados, recolha de requisitos técnicos e legais e consulta a stakeholders internos (conservadores) e externos (ordens profissionais, reguladores europeus).",
+      },
+      {
+        title: "Desenvolvimento & Arquitectura",
+        description:
+          "Concepção da nova arquitectura de software, escolha de tecnologias e desenvolvimento dos módulos de workflow, bases de dados e interfaces de utilizador, seguindo metodologias ágeis.",
+      },
+      {
+        title: "Integração & Migração",
+        description:
+          "Migração de dados do sistema antigo para a nova plataforma, integração com BRIS, RCBE e outros serviços públicos e realização de testes de performance e segurança.",
+      },
+      {
+        title: "Lançamento & Rollout",
+        description:
+          "Implementação faseada da solução nas conservatórias, activação de novas funcionalidades como registo de sucursais e automação de actos de insolvência, formação de utilizadores e optimização contínua.",
+      },
+    ],
+    impact: {
+      functionality: "5,5 M€ Investimento PRR – Modernização completa da infraestrutura registral",
+      agents: "100 % Digitalização – Processos totalmente desmaterializados e integrados",
+      reduction: ">80 % Adesão Online – Meta de actos registados eletronicamente até 2026",
+    },
+    lessons: [
+      "Modernizar sistemas core requer planeamento estruturado combinado com entregas ágeis",
+      "Alinhar requisitos legais e tecnológicos desde o início evita retrabalho",
+      "Envolver utilizadores finais (conservadores) melhora a adopção e a usabilidade",
+      "Formação e gestão de mudança são tão importantes quanto a tecnologia em si",
+    ],
+    nextSteps: [
+      "Completar o rollout nacional e estabilizar o sistema até 2025",
+      "Desenvolver dashboards de BI para monitorizar KPIs de registo comercial",
+      "Expor APIs para consulta pública de dados regitais com autorização",
+      "Partilhar lições aprendidas em conferências e publicações para inspirar outros programas de modernização",
+    ],
+    image: "/projects/hero.jpg",
   },
   {
     id: "ai-assisted-pm",
