@@ -1,4 +1,4 @@
-/*
+e/*
  * Project data definitions for the portfolio website.
  *
  * This file centralises all project metadata used by both the projects
@@ -94,33 +94,79 @@ export const projects: Project[] = [
     id: "wrightia-irn-rc",
     // Este projeto representa a implementação da plataforma Empresa Online 2.0
     // para o Registo Comercial, substituindo os antigos projetos estratégicos.
-    title: "Empresa Online 2.0",
-    subtitle: "Gestor de Projetos | Wrightia",
+  {
+    id: "wrightia-irn-rc",
+    // Projeto Empresa Online 2.0 – nova geração do registo comercial digital
+    title: "Empresa Online 2.0",
+    subtitle: "Gestor de Projectos | Wrightia",
     description:
-      "Gestão de projetos estratégicos com equipas de 36 elementos, liderando o desenvolvimento e implementação da plataforma Empresa Online 2.0 para o Registo Comercial.",
+      "Condução da transformação digital do registo comercial, substituindo a plataforma de 2006 por uma solução web unificada que reduz drasticamente a burocracia e o tempo necessário para constituir uma empresa.",
     type: "professional",
     status: "completed",
     year: "2022-2024",
     challenge:
-      "Simplificar o processo de constituição de empresas e modernizar o registo comercial, articulando as necessidades do negócio com equipas de desenvolvimento.",
+      "Modernizar o registo comercial e criar um serviço digital que permita constituir sociedades em minutos, integrando sistemas heterogéneos (IRN, AT, Segurança Social, SIBS, Autenticação.gov, RCBE) e garantindo conformidade legal e usabilidade.",
     solution:
-      "Gestão integral de projeto e produto do EOL 2.0, utilizando metodologias ágeis, definindo requisitos, coordenando equipas e garantindo alinhamento com stakeholders.",
+      "Liderança integral do projecto Empresa Online 2.0, desde a definição de requisitos com stakeholders até à entrega de uma plataforma unificada. O trabalho incluiu reengenharia de processos, adopção de metodologias ágeis e desenvolvimento de uma aplicação responsiva com autenticação forte (Cartão de Cidadão, Chave Móvel Digital e eIDAS), assinatura digital qualificada, pagamentos electrónicos (MB Way, referência multibanco) e integração profunda com sistemas de registo, tributação e segurança social. A versão inicial foi lançada em Maio de 2023 e evoluída em 2024 com o registo de sucursais e a recolha do beneficiário efectivo.",
     results: [
-      "Implementação bem‑sucedida do EOL 2.0",
-      "Redução do tempo de constituição de empresas e simplificação de processos",
+      "Constituição de sociedades totalmente online em cerca de 10 minutos",
+      "Eliminação de deslocações e redução de mais de 80% da burocracia",
+      "A maioria das novas empresas passou a ser constituída online",
+      "Integração efectiva com Autoridade Tributária, Segurança Social, RCBE e sistemas de back‑office do IRN",
     ],
     technologies: [
-      "OpenProject",
-      "MS Project",
-      "Bizagi",
-      "Camunda",
-      "Excel Avançado",
+      "Gestão de Produto",
+      "Scrum / Agile",
+      "UX / UI Design",
+      "Integração de APIs",
+      "Transformação Digital",
     ],
     featured: true,
-  },
-  {
-    id: "smartvision-munlab",
-    title: "Observatório de Transformação Digital - MunLab",
+    overview:
+      "O Empresa Online 2.0 é um serviço público de nova geração que substituiu a plataforma de 2006 e permite criar sociedades de forma totalmente digital. Alinhado com o Plano de Recuperação e Resiliência (PRR), o projecto visou reduzir o tempo de constituição de dias para minutos, simplificando os requisitos legais e criando uma experiência intuitiva para empreendedores e profissionais. Envolveu a reengenharia dos processos internos do registo comercial, o desenho de uma nova arquitectura de software e a integração com vários organismos públicos para recolha e validação automática de dados.",
+    steps: [
+      {
+        title: "Análise e desenho de processos",
+        description:
+          "Mapeamento dos requisitos legais e funcionais, redesenho dos fluxos de constituição de empresas e definição de integrações com serviços públicos e privados.",
+      },
+      {
+        title: "Desenvolvimento da plataforma e experiência de utilizador",
+        description:
+          "Construção de uma aplicação web responsiva com formulários inteligentes, orientação passo‑a‑passo e suporte bilingue, garantindo acessibilidade e simplicidade.",
+      },
+      {
+        title: "Integração de sistemas e serviços",
+        description:
+          "Integração com Autenticação.gov para login seguro, módulos de assinatura digital e pagamentos (MB Way/referência), e interoperabilidade com AT, Segurança Social, RCBE e CTT para validação de dados e notificações.",
+      },
+      {
+        title: "Lançamento e evolução contínua",
+        description:
+          "Lançamento da versão inicial em Maio de 2023, acompanhado por testes piloto e sessões de formação; evolução em 2024 com registo de sucursais, integração do beneficiário efectivo e planeamento de novas funcionalidades.",
+      },
+    ],
+    impact: {
+      functionality:
+        "≈10 minutos – Tempo médio para constituição de sociedades graças a um processo digital integrado",
+      agents:
+        "6+ integrações governamentais – Autenticação, assinatura digital, pagamentos, AT, Segurança Social, RCBE e conservatórias",
+      reduction:
+        ">80% redução de burocracia – Eliminação de deslocações e simplificação profunda dos procedimentos",
+    },
+    lessons: [
+      "Colocar o utilizador no centro é essencial para a adoção de serviços digitais",
+      "A interoperabilidade entre sistemas públicos multiplica a eficiência e reduz erros",
+      "Reformular processos e requisitos legais é tão crítico quanto desenvolver tecnologia",
+      "Metodologias ágeis e entregas incrementais permitem ajustar e melhorar continuamente o serviço",
+    ],
+    nextSteps: [
+      "Estender a plataforma a outros actos societários como alterações de capital, dissoluções e fusões",
+      "Disponibilizar o portal em mais línguas para atrair investidores estrangeiros",
+      "Aprofundar a integração com AT e Segurança Social para automatizar declarações e inscrições futuras",
+    ],
+    image: "/projects/hero.jpg",
+  },  title: "Observatório de Transformação Digital - MunLab",
     subtitle: "Business Development Manager | SmartVision",
     description:
       "Liderança de projeto de transformação digital de 150.000€ para a CIMAA e municípios associados.",
