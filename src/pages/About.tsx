@@ -21,7 +21,7 @@ const experiences = [
   {
     period: '07/2022 – 07/2024',
     company: 'Wrightia',
-    role: 'Project & Program Manager',
+    role: 'Gestor de Projetos e Programas',
     description:
       'Gestor de projectos e programas na Wrightia, coordenando equipas e implementando soluções digitais de Julho de 2022 a Julho de 2024.',
   },

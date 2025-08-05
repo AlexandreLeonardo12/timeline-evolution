@@ -98,7 +98,7 @@ const Home = () => {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link to="/#contact">
+              <Link to="/contact">
                 {/*
                  * O botão secundário utiliza o fundo azul petróleo (primary) com texto claro,
                  * assegurando contraste suficiente. A variante default é mantida para
@@ -128,7 +128,7 @@ const Home = () => {
             </div>
             <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full flex items-center space-x-2 shadow-md">
               <span className="h-2 w-2 rounded-full bg-green-500"></span>
-              <span className="text-sm font-medium">Program Manager</span>
+              <span className="text-sm font-medium">Gestor de Programa</span>
             </div>
           </div>
         </div>
