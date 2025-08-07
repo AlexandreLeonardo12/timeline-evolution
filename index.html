@@ -36,9 +36,20 @@
     <script async src="https://cdn.iubenda.com/cs/gpp/stub.js"></script>
     <script async src="https://cdn.iubenda.com/cs/autoblocking.js"></script>
     <script async src="https://cdn.iubenda.com/cs/iubenda_cs.js"></script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPZM4QZEH7"></script>
-    <script>
+    <!-- Google Analytics (blocked until consent) -->
+    <!--
+      The following scripts are loaded with type="text/plain" and a
+      data-cookieconsent attribute so that Iubenda's autoblocking will
+      prevent them from executing until the user provides analytics
+      consent. When consent is given, Iubenda will automatically
+      transform these scripts back to executable JavaScript.
+    -->
+    <script
+      type="text/plain"
+      data-cookieconsent="analytics"
+      src="https://www.googletagmanager.com/gtag/js?id=G-YPZM4QZEH7"
+    ></script>
+    <script type="text/plain" data-cookieconsent="analytics">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -46,6 +57,13 @@
       gtag("js", new Date());
       gtag("config", "G-YPZM4QZEH7");
     </script>
+
+    <!-- Vercel Analytics (blocked until consent) -->
+    <script
+      type="text/plain"
+      data-cookieconsent="analytics"
+      src="/_vercel/insights/script.js"
+    ></script>
   </head>
   <body>
     <div id="root"></div>
