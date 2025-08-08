@@ -111,16 +111,14 @@ export default {
 						opacity: '1'
 					}
 				},
-                // Updated timeline-fill animation to use transform instead of width
-                // Animating transform avoids reflow and reduces cumulative layout shift (CLS).
-                'timeline-fill': {
-                    '0%': {
-                        transform: 'scaleX(0)'
-                    },
-                    '100%': {
-                        transform: 'scaleX(1)'
-                    }
-                }
+				'timeline-fill': {
+					'0%': {
+						width: '0%'
+					},
+					'100%': {
+						width: '100%'
+					}
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
