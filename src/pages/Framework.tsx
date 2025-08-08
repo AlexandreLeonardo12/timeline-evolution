@@ -46,7 +46,13 @@ export default function Framework() {
   ];
 
   return (
-    <section className="min-h-screen py-20 bg-muted">
+    /*
+     * Apply a generous top padding to offset the fixed navigation bar. Without
+     * this margin the first heading can be obscured on small viewports. The
+     * container uses the same horizontal padding and spacing as other pages
+     * for consistency.
+     */
+    <section className="min-h-screen bg-muted pt-24 pb-20">
       <div className="container mx-auto px-4 space-y-8">
         <h1 className="text-4xl font-bold text-center">{t.title}</h1>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto">

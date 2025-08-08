@@ -53,7 +53,13 @@ export default function Blog() {
   ];
 
   return (
-    <section className="min-h-screen py-20 bg-muted">
+    /*
+     * Similar to the frameworks page, add a top padding to compensate for the
+     * fixed navbar. This prevents the page heading from being overlapped on
+     * scroll or page load. The bottom padding mirrors other sections for
+     * consistent vertical rhythm.
+     */
+    <section className="min-h-screen bg-muted pt-24 pb-20">
       <div className="container mx-auto px-4 space-y-8">
         <h1 className="text-4xl font-bold text-center">{t.title}</h1>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto">
