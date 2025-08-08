@@ -111,14 +111,15 @@ export default {
 						opacity: '1'
 					}
 				},
-				'timeline-fill': {
-					'0%': {
-						width: '0%'
-					},
-					'100%': {
-						width: '100%'
-					}
-				}
+                // Updated timeline-fill animation to use transform instead of width
+                'timeline-fill': {
+                    '0%': {
+                        transform: 'scaleX(0)'
+                    },
+                    '100%': {
+                        transform: 'scaleX(1)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
