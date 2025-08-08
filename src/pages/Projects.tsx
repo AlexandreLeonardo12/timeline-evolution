@@ -158,6 +158,7 @@ const Projects = () => {
         title={`${t.title} – Alexandre Leonardo`}
         description={t.subtitle}
         keywords={"projetos, transformação digital, inovação"}
+        lang={language === 'en' ? 'en' : 'pt-PT'}
       />
       {/* Apply top padding to offset the fixed navbar and ensure the header
           does not overlap the page title. */}

@@ -11,6 +11,13 @@ export interface SEOHeadProps {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  /**
+   * Optional language code for the page. Defaults to "pt-PT". When provided,
+   * it updates the <meta name="language"> tag to reflect the current
+   * language (e.g. "en" for English). This helps search engines serve
+   * the correct language version of the page.
+   */
+  lang?: string;
 }
 
 const defaultTitle =
@@ -26,6 +33,7 @@ export default function SEOHead({
   description = defaultDescription,
   keywords = defaultKeywords,
   ogImage = defaultOgImage,
+  lang = "pt-PT",
 }: SEOHeadProps) {
   const location = useLocation();
   const currentUrl = `https://www.alexandreleonardo.pt${location.pathname}`;
@@ -55,7 +63,10 @@ export default function SEOHead({
     updateMetaTag("keywords", keywords);
     updateMetaTag("author", "Alexandre Leonardo");
     updateMetaTag("robots", "index, follow");
-    updateMetaTag("language", "pt-PT");
+    // The language meta tag is dynamic based on the lang prop. If no lang
+    // is provided, default to pt-PT. This helps Google and other search
+    // engines serve the appropriate language version.
+    updateMetaTag("language", lang);
     updateMetaTag("revisit-after", "7 days");
 
     // Open Graph tags

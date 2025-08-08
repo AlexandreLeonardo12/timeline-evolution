@@ -65,7 +65,7 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title={t.title} description={t.description} />
+      <SEOHead title={t.title} description={t.description} lang={language === 'en' ? 'en' : 'pt-PT'} />
 
       {/* Header and biography section */}
       <div className="container mx-auto px-6 pt-24 pb-16">

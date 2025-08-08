@@ -79,6 +79,9 @@ const Home: React.FC = () => {
       <SEOHead
         title={`${t.title} – Alexandre Leonardo`}
         description={t.description}
+        // Set the language meta based on the current locale. English pages use
+        // 'en', Portuguese pages use 'pt-PT'.
+        lang={language === 'en' ? 'en' : 'pt-PT'}
       />
       {/* Hero section */}
       <section className="min-h-screen flex items-center justify-between bg-background relative overflow-hidden">

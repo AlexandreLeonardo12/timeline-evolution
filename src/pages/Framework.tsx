@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import SEOHead from "@/components/SEOHead";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../lib/translations";
 
@@ -53,6 +54,13 @@ export default function Framework() {
      * for consistency.
      */
     <section className="min-h-screen bg-muted pt-24 pb-20">
+      {/* SEO meta tags for the framework page. The language meta tag is
+          derived from the current locale. */}
+      <SEOHead
+        title={`${t.title} – Alexandre Leonardo`}
+        description={t.subtitle}
+        lang={language === 'en' ? 'en' : 'pt-PT'}
+      />
       <div className="container mx-auto px-4 space-y-8">
         <h1 className="text-4xl font-bold text-center">{t.title}</h1>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto">

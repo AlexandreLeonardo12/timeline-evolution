@@ -183,6 +183,26 @@ const translations = {
       experienceTitle: "Experiência Profissional",
       educationTitle: "Formação e Certificações",
     },
+
+    /**
+     * Traduções para a página de contacto. Estas chaves definem os
+     * rótulos e mensagens utilizados no formulário de contacto. Ao
+     * incluir esta secção aqui, o componente Contact pode obter
+     * facilmente as strings apropriadas para cada idioma.
+     */
+    contactPage: {
+      title: "Contacto",
+      formTitle: "Contacto",
+      description:
+        "Preencha o formulário abaixo para entrar em contacto. Responderei o mais rápido possível.",
+      nameLabel: "Nome",
+      emailLabel: "E‑mail",
+      messageLabel: "Mensagem",
+      sendButton: "Enviar",
+      statusSuccess: "Mensagem enviada com sucesso! 😊",
+      statusError:
+        "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.",
+    },
   },
   en: {
     nav: {
@@ -352,6 +372,26 @@ const translations = {
       description: "Learn about Alexandre Leonardo's professional journey",
       experienceTitle: "Professional Experience",
       educationTitle: "Education and Certifications",
+    },
+
+    /**
+     * Translations for the contact page. These keys define labels and
+     * messages used in the contact form. Adding this section allows
+     * the Contact component to render a fully translated experience
+     * when the language is set to English.
+     */
+    contactPage: {
+      title: "Contact",
+      formTitle: "Get in Touch",
+      description:
+        "Fill in the form below to get in touch. I will reply as soon as possible.",
+      nameLabel: "Name",
+      emailLabel: "E‑mail",
+      messageLabel: "Message",
+      sendButton: "Send",
+      statusSuccess: "Message sent successfully! 😊",
+      statusError:
+        "There was an error sending your message. Please try again later.",
     },
   },
 } as const;

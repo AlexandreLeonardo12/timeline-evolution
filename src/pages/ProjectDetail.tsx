@@ -43,7 +43,7 @@ const ProjectDetail = () => {
     return (
       <div className="container mx-auto px-4 pt-24 pb-12 max-w-5xl">
         {/* Fallback SEO for non‑existent page */}
-        <SEOHead title={t.notFound} description={t.notFound} />
+        <SEOHead title={t.notFound} description={t.notFound} lang={language === 'en' ? 'en' : 'pt-PT'} />
         <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
         <div className="mt-6 text-center">
           <Link to="/projects">
@@ -82,6 +82,7 @@ const ProjectDetail = () => {
         description={project.overview || project.description}
         keywords={`${project.title}, ${project.technologies.join(", ")}`}
         ogImage={project.image || undefined}
+        lang={language === 'en' ? 'en' : 'pt-PT'}
       />
       <div className="container mx-auto px-4 pt-24 pb-12 max-w-5xl space-y-12">
         {/* Back to projects */}

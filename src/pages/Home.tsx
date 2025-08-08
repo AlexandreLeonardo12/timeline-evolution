@@ -39,6 +39,7 @@ const Home = () => {
       <SEOHead
         title="Alexandre Leonardo – Gestão de Programa e Inovação"
         description="Gestor de programa especializado em transformação digital e inovação estratégica."
+        lang="pt-PT"
       />
       <section className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 pointer-events-none" />

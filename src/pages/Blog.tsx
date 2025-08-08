@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "../context/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 import translations from "../lib/translations";
 
 /**
@@ -61,6 +62,9 @@ export default function Blog() {
      */
     <section className="min-h-screen bg-muted pt-24 pb-20">
       <div className="container mx-auto px-4 space-y-8">
+        {/* SEO meta tags. Use the language from context to set the
+            appropriate lang attribute. */}
+        <SEOHead title={t.title} description={t.subtitle} lang={language === 'en' ? 'en' : 'pt-PT'} />
         <h1 className="text-4xl font-bold text-center">{t.title}</h1>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto">
           {t.subtitle}
