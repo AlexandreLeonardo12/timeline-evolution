@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+    
+    /* Timeline design tokens */
+    --timeline-primary: 220 90% 56%;
+    --timeline-primary-light: 220 90% 90%;
+    --timeline-completed: 142 71% 45%;
+    --timeline-planned: 220 13% 78%;
+    --timeline-node-size: 1rem;
+    --timeline-line-height: 2px;
+    --timeline-spacing: 6rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Synchronize dark mode variables with light mode to avoid unexpected dark backgrounds */
+  .dark {
+    --background: var(--background);
+    --foreground: var(--foreground);
+    --card: var(--card);
+    --card-foreground: var(--card-foreground);
+    --popover: var(--popover);
+    --popover-foreground: var(--popover-foreground);
+    --primary: var(--primary);
+    --primary-foreground: var(--primary-foreground);
+    --secondary: var(--secondary);
+    --secondary-foreground: var(--secondary-foreground);
+    --muted: var(--muted);
+    --muted-foreground: var(--muted-foreground);
+    --accent: var(--accent);
+    --accent-foreground: var(--accent-foreground);
+    --destructive: var(--destructive);
+    --destructive-foreground: var(--destructive-foreground);
+    --border: var(--border);
+    --input: var(--input);
+    --ring: var(--ring);
+    --sidebar-background: var(--sidebar-background);
+    --sidebar-foreground: var(--sidebar-foreground);
+    --sidebar-primary: var(--sidebar-primary);
+    --sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --sidebar-accent: var(--sidebar-accent);
+    --sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --sidebar-border: var(--sidebar-border);
+    --sidebar-ring: var(--sidebar-ring);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

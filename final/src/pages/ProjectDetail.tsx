@@ -25,22 +25,10 @@ const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project: Project | undefined = projects.find((p) => p.id === id);
 
-  // Map of additional images for specific projects. These images are
-  // displayed below the main hero image. If a project has no entry
-  // here, no gallery will be rendered. Image paths are relative to
-  // the public directory.
-  const imagesMap: Record<string, string[]> = {
-    "ey-irn-prr": ["/projects/irn-prr-photo.jpg"],
-    "wrightia-irn-rc": ["/projects/eol2-photo.jpg"],
-    "smartvision-cimac": ["/projects/cimac-photo.jpg"],
-  };
-
-  const additionalImages: string[] = id && imagesMap[id] ? imagesMap[id] : [];
-
   if (!project) {
     return (
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-        {/* Fallback SEO for non‑existent page */}
+        {/* Fallback SEO for página inexistente */}
         <SEOHead title={t.notFound} description={t.notFound} />
         <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
         <div className="mt-6 text-center">
@@ -54,16 +42,15 @@ const ProjectDetail = () => {
     );
   }
 
-  const typeBadge =
-    project.type === "personal"
-      ? {
-          label: t.typePersonal,
-          color: "blue",
-        }
-      : {
-          label: t.typeProfessional,
-          color: "green",
-        };
+  const typeBadge = project.type === "personal"
+    ? {
+        label: t.typePersonal,
+        color: "blue",
+      }
+    : {
+        label: t.typeProfessional,
+        color: "green",
+      };
 
   const statusLabel =
     project.status === "completed"
@@ -88,6 +75,7 @@ const ProjectDetail = () => {
             {t.back}
           </Link>
         </div>
+
         {/* Hero section with badges and header */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
@@ -99,14 +87,12 @@ const ProjectDetail = () => {
             </Badge>
             {project.featured && (
               <Badge variant="outline" className="text-xs border-orange-300 text-orange-600">
-                {t.featured}
+                Projeto Destaque
               </Badge>
             )}
             <Badge
               variant="outline"
-              className={`text-xs border-${project.status === "completed" ? "green" : "yellow"}-300 text-${
-                project.status === "completed" ? "green" : "yellow"
-              }-600`}
+              className={`text-xs border-${project.status === "completed" ? "green" : "yellow"}-300 text-${project.status === "completed" ? "green" : "yellow"}-600`}
             >
               {statusLabel}
             </Badge>
@@ -132,31 +118,15 @@ const ProjectDetail = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
+              /*
+               * Utilize um texto alternativo mais descritivo para cada imagem de projecto.
+               * Em vez de apenas o título, descrevemos que a imagem ilustra
+               * o projecto, melhorando a acessibilidade e SEO.
+               */
               alt={`Imagem ilustrativa do projeto ${project.title}`}
               className="w-full h-full object-cover object-center"
             />
           </div>
-        )}
-
-        {/* Additional gallery images */}
-        {additionalImages.length > 0 && (
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              {language === 'en' ? 'Photo Gallery' : 'Galeria de Fotos'}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {additionalImages.map((src, index) => (
-                <div key={index} className="w-full h-60 rounded-lg overflow-hidden shadow-md">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={src}
-                    alt={`${project.title} imagem ${index + 1}`}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
         )}
 
         {/* Overview section */}
@@ -169,31 +139,26 @@ const ProjectDetail = () => {
           </section>
         )}
 
-        {/* Challenge, Solution e Results cards
-           As cores foram harmonizadas com a paleta definida no ficheiro index.css. São utilizadas
-           tonalidades do accent e do primary para garantir coerência visual e melhor contraste. */}
+        {/* Challenge, Solution, Results cards */}
         <section className="grid md:grid-cols-3 gap-6">
-          {/* Carta de Desafio */}
-          <div className="rounded-lg p-6 border border-accent/20 dark:border-accent/30 bg-accent/10 dark:bg-accent/20 space-y-3">
-            <h3 className="text-lg font-semibold text-accent">{t.challenge}</h3>
+          <div className="rounded-lg p-6 border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/30 space-y-3">
+            <h3 className="text-lg font-semibold text-red-700 dark:text-red-400">{t.challenge}</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               {project.challenge}
             </p>
           </div>
-          {/* Carta de Solução */}
-          <div className="rounded-lg p-6 border border-primary/20 dark:border-primary/30 bg-primary/10 dark:bg-primary/20 space-y-3">
-            <h3 className="text-lg font-semibold text-primary">{t.solution}</h3>
+          <div className="rounded-lg p-6 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 space-y-3">
+            <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400">{t.solution}</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               {project.solution}
             </p>
           </div>
-          {/* Carta de Resultados */}
-          <div className="rounded-lg p-6 border border-primary/20 dark:border-primary/30 bg-primary/5 dark:bg-primary/10 space-y-3">
-            <h3 className="text-lg font-semibold text-primary">{t.results}</h3>
+          <div className="rounded-lg p-6 border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/30 space-y-3">
+            <h3 className="text-lg font-semibold text-green-700 dark:text-green-400">{t.results}</h3>
             <ul className="space-y-2">
               {project.results.map((result, index) => (
                 <li key={index} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-4 w-4 text-green-500 dark:text-green-400 mt-0.5 flex-shrink-0" />
                   {result}
                 </li>
               ))}
@@ -246,26 +211,26 @@ const ProjectDetail = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6 rounded-lg bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 space-y-2">
                 <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
-                  {project.impact.functionality.split(' – ')[0]}
+                  {project.impact.functionality.split(" – ")[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.impact.functionality.split(' – ').slice(1).join(' – ')}
+                  {project.impact.functionality.split(" – ").slice(1).join(" – ")}
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 space-y-2">
                 <h3 className="text-3xl font-bold text-green-700 dark:text-green-400">
-                  {project.impact.agents.split(' – ')[0]}
+                  {project.impact.agents.split(" – ")[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.impact.agents.split(' – ').slice(1).join(' – ')}
+                  {project.impact.agents.split(" – ").slice(1).join(" – ")}
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 space-y-2">
                 <h3 className="text-3xl font-bold text-purple-700 dark:text-purple-400">
-                  {project.impact.reduction.split(' – ')[0]}
+                  {project.impact.reduction.split(" – ")[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.impact.reduction.split(' – ').slice(1).join(' – ')}
+                  {project.impact.reduction.split(" – ").slice(1).join(" – ")}
                 </p>
               </div>
             </div>
