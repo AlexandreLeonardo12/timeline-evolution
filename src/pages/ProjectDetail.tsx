@@ -126,6 +126,18 @@ const ProjectDetail = () => {
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             {project.description}
           </p>
+
+        {/*
+         * If the current language is English (en), display a note to inform
+         * visitors that the case study content is still in Portuguese. This
+         * ensures transparency while translations are being prepared. The
+         * translation string is defined in translations.ts.
+         */}
+        {language === 'en' && (
+          <p className="text-sm italic text-gray-500 dark:text-gray-400 mt-2">
+            {translations.en.projectDetail.translationNote}
+          </p>
+        )}
         </div>
 
         {/* Project image if provided */}

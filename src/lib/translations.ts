@@ -129,6 +129,15 @@ const translations = {
       ctaInterested: "Interessado em projetos similares?",
       ctaViewOther: "Ver Outros Projetos",
       ctaContact: "Entrar em Contacto",
+
+      /**
+       * Nota sobre a disponibilidade de traduções completas para cada projecto.
+       * Quando as versões em inglês dos textos do projecto não estão
+       * disponíveis, esta nota informa o utilizador que o conteúdo está em
+       * português e que uma tradução será fornecida no futuro.
+       */
+      translationNote:
+        "Nota: Este caso de estudo está disponível apenas em português. Em breve haverá uma versão em inglês.",
     },
 
     /**
@@ -293,6 +302,15 @@ const translations = {
       ctaInterested: "Interested in similar projects?",
       ctaViewOther: "See Other Projects",
       ctaContact: "Get in Touch",
+
+      /**
+       * Note about the availability of full translations for each project.
+       * When English versions of the project content are not yet provided,
+       * this informs the reader that the case study is currently in
+       * Portuguese only and that a translation is planned.
+       */
+      translationNote:
+        "Note: This case study is currently available in Portuguese only. An English version is coming soon.",
     },
 
     /**
