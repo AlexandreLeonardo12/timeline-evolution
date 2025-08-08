@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import translations from "../lib/translations";
 
@@ -18,12 +19,13 @@ export default function Footer() {
         &copy; {year} Alexandre Leonardo. Todos os direitos reservados.
       </p>
       <div className="mt-2 space-x-4">
-            <a
-              href="mailto:alexandreleonardo3746@gmail.com"
+            {/* Contact link points to the contact page instead of a mailto link */}
+            <Link
+              to="/contact"
               className="text-sm text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
             >
               {t.contact}
-            </a>
+            </Link>
             <a
               href="https://www.linkedin.com/in/alexandre-leonardo-976830151"
               target="_blank"

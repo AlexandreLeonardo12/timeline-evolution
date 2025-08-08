@@ -1,0 +1,109 @@
+{
+  "timeline": [
+    {
+      "id": 1,
+      "title": "Licenciatura em Administração Pública",
+      "institution": "Instituto Politécnico de Leiria",
+      "date": "2019-08-01",
+      "status": "completed",
+      "description": "Licenciatura em Administração Pública concluída em 08/2019"
+    },
+    {
+      "id": 2,
+      "title": "Pós‑graduação em Gestão de Projetos",
+      "institution": "Instituto Politécnico de Leiria",
+      "date": "2022-07-01",
+      "status": "completed",
+      "description": "Pós‑graduação em Gestão de Projetos concluída entre 10/2021 e 07/2022"
+    },
+    {
+      "id": 3,
+      "title": "Mestrado em Gestão de Sistemas de Informação",
+      "institution": "NOVA IMS",
+      "date": "2025-10-01",
+      "status": "planned",
+      "description": "Mestrado em Gestão de Sistemas de Informação iniciado em 07/2023, com conclusão prevista em 10/2025"
+    },
+    {
+      "id": 4,
+      "title": "CCP — Certificação de Formadores",
+      "institution": "ENA / IEFP",
+      "date": "2021-04-01",
+      "status": "completed",
+      "description": "Certificação de Competências Pedagógicas emitida em 04/2021"
+    },
+    {
+      "id": 5,
+      "title": "Certified Project Management Associate",
+      "institution": "IPMA",
+      "date": "2022-09-01",
+      "status": "completed",
+      "description": "Certificação IPMA nível D/C em gestão de projectos emitida em 09/2022"
+    },
+    {
+      "id": 6,
+      "title": "GPM‑b Certified Green Project Manager",
+      "institution": "PMI",
+      "date": "2022-12-01",
+      "status": "completed",
+      "description": "Certificação GPM‑b com selo PMI emitida em 12/2022"
+    }
+    ,
+    {
+      "id": 7,
+      "title": "Product Owner (PSPO)",
+      "institution": "Scrum.org",
+      "date": "2025-12-01",
+      "status": "planned",
+      "description": "Certificação de Product Owner (Professional Scrum Product Owner) planeada para obtenção em breve"
+    },
+    {
+      "id": 8,
+      "title": "TOGAF®",
+      "institution": "The Open Group",
+      "date": "2026-06-01",
+      "status": "planned",
+      "description": "Certificação TOGAF® em arquitetura empresarial planeada"
+    },
+    {
+      "id": 9,
+      "title": "BIZBOK©",
+      "institution": "Business Architecture Guild",
+      "date": "2026-09-01",
+      "status": "planned",
+      "description": "Formação BIZBOK© (Business Architecture Body of Knowledge) planeada"
+    },
+    {
+      "id": 10,
+      "title": "CBAP®",
+      "institution": "IIBA",
+      "date": "2026-12-01",
+      "status": "planned",
+      "description": "Certificação Certified Business Analysis Professional planeada"
+    },
+    {
+      "id": 11,
+      "title": "SAFe®",
+      "institution": "Scaled Agile",
+      "date": "2025-06-01",
+      "status": "planned",
+      "description": "Certificação SAFe® (Scaled Agile Framework) planeada"
+    },
+    {
+      "id": 12,
+      "title": "CMMI",
+      "institution": "CMMI Institute",
+      "date": "2026-03-01",
+      "status": "planned",
+      "description": "Formação em Capability Maturity Model Integration planeada"
+    },
+    {
+      "id": 13,
+      "title": "MBA (instituição a definir)",
+      "institution": "Por confirmar",
+      "date": "2027-06-01",
+      "status": "planned",
+      "description": "Plano de obtenção de MBA em instituição a definir"
+    }
+  ]
+}

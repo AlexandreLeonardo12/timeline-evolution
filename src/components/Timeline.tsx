@@ -229,16 +229,18 @@ const Timeline: React.FC = () => {
                         </div>
                         {/* Title */}
                         <h3 className="font-semibold text-lg leading-tight group-hover:text-timeline-primary transition-colors">
-                          {item.title}
+                          {language === 'en' && (item as any).title_en ? (item as any).title_en : item.title}
                         </h3>
                         {/* Institution */}
                         <div className="flex items-center gap-2 text-muted-foreground">
                           <MapPin className="h-4 w-4" />
-                          <span className="font-medium">{item.institution}</span>
+                          <span className="font-medium">
+                            {language === 'en' && (item as any).institution_en ? (item as any).institution_en : item.institution}
+                          </span>
                         </div>
                         {/* Description */}
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          {item.description}
+                          {language === 'en' && (item as any).description_en ? (item as any).description_en : item.description}
                         </p>
                       </div>
                     </CardContent>

@@ -10,12 +10,12 @@ import { useLanguage } from '@/context/LanguageContext';
 // needed, ensuring both languages have the same number of entries.
 const biography: Record<string, string[]> = {
   pt: [
-    'O meu nome é Alexandre Leonardo; trabalho actualmente como consultor em transformação digital e inovação estratégica na EY. Ao longo dos últimos anos tenho apoiado organizações na modernização de processos e serviços, contribuindo para transformar modelos operacionais com soluções digitais simples, eficazes e com impacto real.',
-    'Acredito que a transformação não é apenas tecnológica — é feita por pessoas, para pessoas. O meu foco está em redesenhar processos de forma inteligente, com base em dados, sistemas robustos e equipas comprometidas com a mudança. O que me move é transformar ideias em soluções concretas, ajudar equipas a trabalhar melhor e garantir que cada entrega melhora de forma tangível a vida das pessoas e o funcionamento da organização.',
+    'Chamo‑me Alexandre Leonardo e sou consultor em transformação digital e inovação estratégica na EY. Nos últimos anos acompanhei organizações na modernização de processos e serviços, ajudando‑as a redesenhar modelos operacionais com soluções digitais simples, eficazes e de impacto real.',
+    'A transformação é feita por pessoas. Gosto de trabalhar com equipas para desenhar processos inteligentes baseados em dados e sistemas robustos, garantindo que cada solução melhora de forma tangível a experiência do utilizador e o desempenho da organização. O que me motiva é transformar ideias em soluções concretas e ajudar equipas a crescer.',
   ],
   en: [
-    'My name is Alexandre Leonardo; I currently work as a consultant in digital transformation and strategic innovation at EY. Over the last years I have supported organisations in modernising processes and services, helping to transform operating models with simple, effective and real‑impact digital solutions.',
-    'I believe that transformation is not just technological — it is made by people, for people. My focus is on intelligently redesigning processes based on data, robust systems and teams committed to change. What drives me is turning ideas into tangible solutions, helping teams work better and ensuring that each delivery measurably improves people’s lives and the organisation’s operations.',
+    'My name is Alexandre Leonardo and I am a consultant in digital transformation and strategic innovation at EY. In recent years I have helped organisations modernise processes and services, redesigning their operating models with simple and effective digital solutions that deliver real impact.',
+    'Transformation is driven by people. I enjoy working with teams to design intelligent processes based on data and robust systems, ensuring that each solution tangibly improves the user experience and organisational performance. What drives me is turning ideas into concrete solutions and helping teams grow.',
   ],
 };
 

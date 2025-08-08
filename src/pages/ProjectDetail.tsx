@@ -47,9 +47,8 @@ const ProjectDetail = () => {
         <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
         <div className="mt-6 text-center">
           <Link to="/projects">
-            <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
-              {t.back}
-            </Button>
+            {/* Use default button variant for consistent styling */}
+            <Button>{t.back}</Button>
           </Link>
         </div>
       </div>
@@ -303,16 +302,13 @@ const ProjectDetail = () => {
           <p className="text-lg text-gray-700 dark:text-gray-300">{t.ctaInterested}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/projects">
-              <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
-                {t.ctaViewOther}
-              </Button>
+              {/* Default button variant provides hover and color styles consistent with the design system */}
+              <Button>{t.ctaViewOther}</Button>
             </Link>
-            <a
-              href="mailto:alexandreleonardo3746@gmail.com"
-              className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
-            >
-              {t.ctaContact}
-            </a>
+            {/* Contact call‑to‑action uses the Button component in outline variant and links to the contact page */}
+            <Button variant="outline" asChild>
+              <Link to="/contact">{t.ctaContact}</Link>
+            </Button>
           </div>
         </section>
       </div>
