@@ -2,6 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Briefcase, CheckCircle } from "lucide-react";
+import translations from "@/lib/translations";
+import { useLanguage } from "@/context/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 // When this file resides in src/pages, the data is located one level up in src/data.
 import { projects, Project } from "../data/projects";
 
@@ -14,17 +17,36 @@ import { projects, Project } from "../data/projects";
  * cannot be found, a simple error message is shown.
  */
 const ProjectDetail = () => {
+  // Access current language from context and select the corresponding
+  // translation namespace for project details. This allows the UI
+  // labels to switch dynamically between Portuguese and English.
+  const { language } = useLanguage();
+  const t = translations[language].projectDetail;
   const { id } = useParams<{ id: string }>();
   const project: Project | undefined = projects.find((p) => p.id === id);
+
+  // Map of additional images for specific projects. These images are
+  // displayed below the main hero image. If a project has no entry
+  // here, no gallery will be rendered. Image paths are relative to
+  // the public directory.
+  const imagesMap: Record<string, string[]> = {
+    "ey-irn-prr": ["/projects/irn-prr-photo.jpg"],
+    "wrightia-irn-rc": ["/projects/eol2-photo.jpg"],
+    "smartvision-cimac": ["/projects/cimac-photo.jpg"],
+  };
+
+  const additionalImages: string[] = id && imagesMap[id] ? imagesMap[id] : [];
 
   if (!project) {
     return (
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-        <p className="text-center text-gray-600 dark:text-gray-300">Projeto não encontrado.</p>
+        {/* Fallback SEO for non‑existent page */}
+        <SEOHead title={t.notFound} description={t.notFound} />
+        <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
         <div className="mt-6 text-center">
           <Link to="/projects">
             <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
-              Voltar aos Projetos
+              {t.back}
             </Button>
           </Link>
         </div>
@@ -32,26 +54,40 @@ const ProjectDetail = () => {
     );
   }
 
-  const typeBadge = project.type === "personal" ? {
-    label: "Projeto Pessoal",
-    color: "blue",
-  } : {
-    label: "Projeto Profissional",
-    color: "green",
-  };
+  const typeBadge =
+    project.type === "personal"
+      ? {
+          label: t.typePersonal,
+          color: "blue",
+        }
+      : {
+          label: t.typeProfessional,
+          color: "green",
+        };
 
-  const statusLabel = project.status === "completed" ? "Concluído" : project.status === "in-progress" ? "Em Progresso" : "Planeado";
+  const statusLabel =
+    project.status === "completed"
+      ? t.statusCompleted
+      : project.status === "in-progress"
+      ? t.statusInProgress
+      : t.statusPlanned;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* SEO meta tags based on project data */}
+      <SEOHead
+        title={`${project.title} – ${project.subtitle}`}
+        description={project.overview || project.description}
+        keywords={`${project.title}, ${project.technologies.join(", ")}`}
+        ogImage={project.image || undefined}
+      />
       <div className="container mx-auto px-4 py-12 max-w-5xl space-y-12">
         {/* Back to projects */}
         <div>
           <Link to="/projects" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-            ← Voltar aos Projetos
+            {t.back}
           </Link>
         </div>
-
         {/* Hero section with badges and header */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
@@ -63,12 +99,14 @@ const ProjectDetail = () => {
             </Badge>
             {project.featured && (
               <Badge variant="outline" className="text-xs border-orange-300 text-orange-600">
-                Projeto Destaque
+                {t.featured}
               </Badge>
             )}
             <Badge
               variant="outline"
-              className={`text-xs border-${project.status === "completed" ? "green" : "yellow"}-300 text-${project.status === "completed" ? "green" : "yellow"}-600`}
+              className={`text-xs border-${project.status === "completed" ? "green" : "yellow"}-300 text-${
+                project.status === "completed" ? "green" : "yellow"
+              }-600`}
             >
               {statusLabel}
             </Badge>
@@ -94,21 +132,37 @@ const ProjectDetail = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
-              /*
-               * Utilize um texto alternativo mais descritivo para cada imagem de projecto.
-               * Em vez de apenas o título, descrevemos que a imagem ilustra
-               * o projecto, melhorando a acessibilidade e SEO.
-               */
               alt={`Imagem ilustrativa do projeto ${project.title}`}
               className="w-full h-full object-cover object-center"
             />
           </div>
         )}
 
+        {/* Additional gallery images */}
+        {additionalImages.length > 0 && (
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+              {language === 'en' ? 'Photo Gallery' : 'Galeria de Fotos'}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {additionalImages.map((src, index) => (
+                <div key={index} className="w-full h-60 rounded-lg overflow-hidden shadow-md">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={`${project.title} imagem ${index + 1}`}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Overview section */}
         {project.overview && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Visão Geral</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.overview}</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               {project.overview}
             </p>
@@ -118,19 +172,19 @@ const ProjectDetail = () => {
         {/* Challenge, Solution, Results cards */}
         <section className="grid md:grid-cols-3 gap-6">
           <div className="rounded-lg p-6 border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/30 space-y-3">
-            <h3 className="text-lg font-semibold text-red-700 dark:text-red-400">Desafio</h3>
+            <h3 className="text-lg font-semibold text-red-700 dark:text-red-400">{t.challenge}</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               {project.challenge}
             </p>
           </div>
           <div className="rounded-lg p-6 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 space-y-3">
-            <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400">Solução</h3>
+            <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400">{t.solution}</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               {project.solution}
             </p>
           </div>
           <div className="rounded-lg p-6 border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/30 space-y-3">
-            <h3 className="text-lg font-semibold text-green-700 dark:text-green-400">Resultados</h3>
+            <h3 className="text-lg font-semibold text-green-700 dark:text-green-400">{t.results}</h3>
             <ul className="space-y-2">
               {project.results.map((result, index) => (
                 <li key={index} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
@@ -145,7 +199,7 @@ const ProjectDetail = () => {
         {/* Technologies section */}
         {project.technologies.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Tecnologias e Metodologias</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.technologies}</h2>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <Badge
@@ -163,7 +217,7 @@ const ProjectDetail = () => {
         {/* Detailed steps section */}
         {project.steps && project.steps.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Implementação Detalhada</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.implementation}</h2>
             <ol className="space-y-6">
               {project.steps.map((step, index) => (
                 <li key={index} className="flex gap-4 items-start">
@@ -183,30 +237,30 @@ const ProjectDetail = () => {
         {/* Impact metrics section */}
         {project.impact && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Impacto Quantificado</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.impact}</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6 rounded-lg bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 space-y-2">
                 <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
-                  {project.impact.functionality.split(" – ")[0]}
+                  {project.impact.functionality.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.impact.functionality.split(" – ").slice(1).join(" – ")}
+                  {project.impact.functionality.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 space-y-2">
                 <h3 className="text-3xl font-bold text-green-700 dark:text-green-400">
-                  {project.impact.agents.split(" – ")[0]}
+                  {project.impact.agents.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.impact.agents.split(" – ").slice(1).join(" – ")}
+                  {project.impact.agents.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 space-y-2">
                 <h3 className="text-3xl font-bold text-purple-700 dark:text-purple-400">
-                  {project.impact.reduction.split(" – ")[0]}
+                  {project.impact.reduction.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  {project.impact.reduction.split(" – ").slice(1).join(" – ")}
+                  {project.impact.reduction.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
             </div>
@@ -216,7 +270,7 @@ const ProjectDetail = () => {
         {/* Lessons section */}
         {project.lessons && project.lessons.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Aprendizagens</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.lessons}</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
               {project.lessons.map((lesson, index) => (
                 <li key={index}>{lesson}</li>
@@ -228,7 +282,7 @@ const ProjectDetail = () => {
         {/* Next steps section */}
         {project.nextSteps && project.nextSteps.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Próximos Passos</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.nextSteps}</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
               {project.nextSteps.map((step, index) => (
                 <li key={index}>{step}</li>
@@ -239,18 +293,18 @@ const ProjectDetail = () => {
 
         {/* Call to action */}
         <section className="text-center space-y-4">
-          <p className="text-lg text-gray-700 dark:text-gray-300">Interessado em projetos similares?</p>
+          <p className="text-lg text-gray-700 dark:text-gray-300">{t.ctaInterested}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/projects">
               <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
-                Ver Outros Projetos
+                {t.ctaViewOther}
               </Button>
             </Link>
             <a
               href="mailto:alexandreleonardo3746@gmail.com"
               className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
             >
-              Entrar em Contacto
+              {t.ctaContact}
             </a>
           </div>
         </section>
