@@ -1,7 +1,0 @@
-User-agent: *
-Disallow:
-
-# Indica a localização do sitemap para que os rastreadores encontrem facilmente
-# todas as páginas da aplicação. Ajuste o domínio caso a URL final seja
-# diferente.
-Sitemap: https://www.alexandreleonardo.pt/sitemap.xml
