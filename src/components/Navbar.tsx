@@ -48,7 +48,18 @@ export default function Navbar() {
               >
                 {nav.projects}
               </NavLink>
-              {/* Links para Framework e Blog removidos temporariamente */}
+              <NavLink
+                to="/framework"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              >
+                {nav.framework}
+              </NavLink>
+              <NavLink
+                to="/blog"
+                className="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              >
+                {nav.blog}
+              </NavLink>
             </div>
           </div>
           {/* Desktop right actions */}
@@ -102,7 +113,20 @@ export default function Navbar() {
           >
             {nav.projects}
           </NavLink>
-          {/* Links para Framework e Blog removidos temporariamente no menu móvel */}
+          <NavLink
+            to="/framework"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {nav.framework}
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className="block text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {nav.blog}
+          </NavLink>
           {/* Language toggle in mobile menu */}
           <button
             onClick={() => {

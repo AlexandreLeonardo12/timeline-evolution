@@ -2,15 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Briefcase, ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import translations from "@/lib/translations";
-import { useLanguage } from "@/context/LanguageContext";
 
 // Import the centralised projects data. This ensures that extended
 // information defined in src/data/projects.ts is available for both the
 // listing and detail views.
 // When this file resides in src/pages, the data is located one level up in src/data.
 import { projects, Project } from "../data/projects";
-import SEOHead from "@/components/SEOHead";
 
 /**
  * Renders a list of projects separated into professional and personal
@@ -18,10 +15,6 @@ import SEOHead from "@/components/SEOHead";
  * view the project details.
  */
 const Projects = () => {
-  // Access current language and translation namespace for the projects page
-  const { language } = useLanguage();
-  const t = translations[language].projectsPage;
-
   const personalProjects = projects.filter((p) => p.type === "personal");
   const professionalProjects = projects.filter((p) => p.type === "professional");
 
@@ -37,7 +30,7 @@ const Projects = () => {
                 <Briefcase className="h-4 w-4 text-green-600" />
               )}
               <Badge variant={project.type === "personal" ? "default" : "secondary"} className="text-xs">
-                {project.type === "personal" ? t.badgePersonal : t.badgeProfessional}
+                {project.type === "personal" ? "Pessoal" : "Profissional"}
               </Badge>
               {project.featured && (
                 <Badge variant="outline" className="text-xs border-orange-300 text-orange-600">
@@ -57,11 +50,7 @@ const Projects = () => {
                   : "bg-yellow-100 text-yellow-800 border-yellow-200 dark:bg-yellow-200 dark:text-yellow-900"
               }`}
             >
-              {project.status === "completed"
-                ? t.statusCompleted
-                : project.status === "in-progress"
-                ? t.statusInProgress
-                : t.statusPlanned}
+              {project.status === "completed" ? "Concluído" : "Em Progresso"}
             </Badge>
             <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
               <Calendar className="h-3 w-3" />
@@ -78,7 +67,7 @@ const Projects = () => {
             <div className="w-8 h-8 rounded-full bg-red-50 dark:bg-red-900/30 flex items-center justify-center">
               <div className="w-2 h-2 rounded-full bg-red-500 dark:bg-red-400" />
             </div>
-            <h4 className="font-medium text-gray-900 dark:text-gray-100">{t.challenge}</h4>
+            <h4 className="font-medium text-gray-900 dark:text-gray-100">Desafio</h4>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{project.challenge}</p>
         </div>
@@ -88,7 +77,7 @@ const Projects = () => {
             <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
               <div className="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400" />
             </div>
-            <h4 className="font-medium text-gray-900 dark:text-gray-100">{t.solution}</h4>
+            <h4 className="font-medium text-gray-900 dark:text-gray-100">Solução</h4>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{project.solution}</p>
         </div>
@@ -98,7 +87,7 @@ const Projects = () => {
             <div className="w-8 h-8 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center">
               <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400" />
             </div>
-            <h4 className="font-medium text-gray-900 dark:text-gray-100">{t.results}</h4>
+            <h4 className="font-medium text-gray-900 dark:text-gray-100">Resultados</h4>
           </div>
           <ul className="space-y-1">
             {project.results.slice(0, 3).map((result, index) => (
@@ -138,7 +127,7 @@ const Projects = () => {
               size="sm"
               className="bg-accent hover:bg-accent/80 text-accent-foreground"
             >
-              {t.viewDetails}
+              Ver detalhes
             </Button>
           </Link>
         </div>
@@ -148,24 +137,18 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* SEO meta tags for projects listing */}
-      <SEOHead
-        title={`${t.title} – Alexandre Leonardo`}
-        description={t.subtitle}
-        keywords={"projetos, transformação digital, inovação"}
-      />
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">{t.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">Projetos</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            {t.subtitle}
+            Casos de estudo que demonstram experiência em transformação digital e exploração tecnológica
           </p>
         </div>
 
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <Briefcase className="h-6 w-6 text-green-600 dark:text-green-400" />
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.professionalTitle}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Projetos Profissionais</h2>
             <div className="h-px bg-gradient-to-r from-green-300 to-transparent dark:from-green-700 flex-1" />
           </div>
           <div className="space-y-8">
@@ -178,7 +161,7 @@ const Projects = () => {
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <User className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.personalTitle}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Projetos Pessoais</h2>
             <div className="h-px bg-gradient-to-r from-blue-300 to-transparent dark:from-blue-700 flex-1" />
           </div>
           <div className="space-y-8">
@@ -189,7 +172,7 @@ const Projects = () => {
         </section>
 
         <div className="text-center space-y-4">
-          <p className="text-lg text-muted-foreground">{t.ctaInterested}</p>
+          <p className="text-lg text-muted-foreground">Interessado em colaborar?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/about">
               {/*
@@ -198,7 +181,7 @@ const Projects = () => {
               <Button
                 className="bg-accent hover:bg-accent/80 text-accent-foreground"
               >
-                {t.ctaContact}
+                Entrar em Contacto
               </Button>
             </Link>
             <Link to="/">
@@ -209,7 +192,7 @@ const Projects = () => {
                 variant="outline"
                 className="group border-primary text-primary hover:bg-primary/10"
               >
-                {t.ctaBackHome}
+                Voltar ao Início
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>

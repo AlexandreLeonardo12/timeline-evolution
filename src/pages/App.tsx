@@ -7,8 +7,8 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
-// Framework and Blog pages estão temporariamente ocultas. As importações
-// são removidas para evitar que os bundles gerem rotas para estas páginas.
+import Framework from "./pages/Framework";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
@@ -32,7 +32,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
-            {/* Framework e Blog são páginas em revisão e portanto não são registadas nas rotas. */}
+            <Route path="/framework" element={<Framework />} />
+            <Route path="/blog" element={<Blog />} />
             {/* Catch‑all route for 404 pages */}
             <Route path="*" element={<NotFound />} />
           </Routes>

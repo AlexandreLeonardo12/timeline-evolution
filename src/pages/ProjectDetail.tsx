@@ -2,9 +2,6 @@ import { useParams, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Briefcase, CheckCircle } from "lucide-react";
-import translations from "@/lib/translations";
-import { useLanguage } from "@/context/LanguageContext";
-import SEOHead from "@/components/SEOHead";
 // When this file resides in src/pages, the data is located one level up in src/data.
 import { projects, Project } from "../data/projects";
 
@@ -17,24 +14,17 @@ import { projects, Project } from "../data/projects";
  * cannot be found, a simple error message is shown.
  */
 const ProjectDetail = () => {
-  // Access current language from context and select the corresponding
-  // translation namespace for project details. This allows the UI
-  // labels to switch dynamically between Portuguese and English.
-  const { language } = useLanguage();
-  const t = translations[language].projectDetail;
   const { id } = useParams<{ id: string }>();
   const project: Project | undefined = projects.find((p) => p.id === id);
 
   if (!project) {
     return (
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-        {/* Fallback SEO for página inexistente */}
-        <SEOHead title={t.notFound} description={t.notFound} />
-        <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
+        <p className="text-center text-gray-600 dark:text-gray-300">Projeto não encontrado.</p>
         <div className="mt-6 text-center">
           <Link to="/projects">
             <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
-              {t.back}
+              Voltar aos Projetos
             </Button>
           </Link>
         </div>
@@ -42,37 +32,23 @@ const ProjectDetail = () => {
     );
   }
 
-  const typeBadge = project.type === "personal"
-    ? {
-        label: t.typePersonal,
-        color: "blue",
-      }
-    : {
-        label: t.typeProfessional,
-        color: "green",
-      };
+  const typeBadge = project.type === "personal" ? {
+    label: "Projeto Pessoal",
+    color: "blue",
+  } : {
+    label: "Projeto Profissional",
+    color: "green",
+  };
 
-  const statusLabel =
-    project.status === "completed"
-      ? t.statusCompleted
-      : project.status === "in-progress"
-      ? t.statusInProgress
-      : t.statusPlanned;
+  const statusLabel = project.status === "completed" ? "Concluído" : project.status === "in-progress" ? "Em Progresso" : "Planeado";
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* SEO meta tags based on project data */}
-      <SEOHead
-        title={`${project.title} – ${project.subtitle}`}
-        description={project.overview || project.description}
-        keywords={`${project.title}, ${project.technologies.join(", ")}`}
-        ogImage={project.image || undefined}
-      />
       <div className="container mx-auto px-4 py-12 max-w-5xl space-y-12">
         {/* Back to projects */}
         <div>
           <Link to="/projects" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-            {t.back}
+            ← Voltar aos Projetos
           </Link>
         </div>
 
@@ -132,7 +108,7 @@ const ProjectDetail = () => {
         {/* Overview section */}
         {project.overview && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.overview}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Visão Geral</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               {project.overview}
             </p>
@@ -142,19 +118,19 @@ const ProjectDetail = () => {
         {/* Challenge, Solution, Results cards */}
         <section className="grid md:grid-cols-3 gap-6">
           <div className="rounded-lg p-6 border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/30 space-y-3">
-            <h3 className="text-lg font-semibold text-red-700 dark:text-red-400">{t.challenge}</h3>
+            <h3 className="text-lg font-semibold text-red-700 dark:text-red-400">Desafio</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               {project.challenge}
             </p>
           </div>
           <div className="rounded-lg p-6 border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/30 space-y-3">
-            <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400">{t.solution}</h3>
+            <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400">Solução</h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
               {project.solution}
             </p>
           </div>
           <div className="rounded-lg p-6 border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/30 space-y-3">
-            <h3 className="text-lg font-semibold text-green-700 dark:text-green-400">{t.results}</h3>
+            <h3 className="text-lg font-semibold text-green-700 dark:text-green-400">Resultados</h3>
             <ul className="space-y-2">
               {project.results.map((result, index) => (
                 <li key={index} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
@@ -169,7 +145,7 @@ const ProjectDetail = () => {
         {/* Technologies section */}
         {project.technologies.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.technologies}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Tecnologias e Metodologias</h2>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <Badge
@@ -187,7 +163,7 @@ const ProjectDetail = () => {
         {/* Detailed steps section */}
         {project.steps && project.steps.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.implementation}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Implementação Detalhada</h2>
             <ol className="space-y-6">
               {project.steps.map((step, index) => (
                 <li key={index} className="flex gap-4 items-start">
@@ -207,7 +183,7 @@ const ProjectDetail = () => {
         {/* Impact metrics section */}
         {project.impact && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.impact}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Impacto Quantificado</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6 rounded-lg bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 space-y-2">
                 <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
@@ -240,7 +216,7 @@ const ProjectDetail = () => {
         {/* Lessons section */}
         {project.lessons && project.lessons.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.lessons}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Aprendizagens</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
               {project.lessons.map((lesson, index) => (
                 <li key={index}>{lesson}</li>
@@ -252,7 +228,7 @@ const ProjectDetail = () => {
         {/* Next steps section */}
         {project.nextSteps && project.nextSteps.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.nextSteps}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Próximos Passos</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
               {project.nextSteps.map((step, index) => (
                 <li key={index}>{step}</li>
@@ -263,18 +239,18 @@ const ProjectDetail = () => {
 
         {/* Call to action */}
         <section className="text-center space-y-4">
-          <p className="text-lg text-gray-700 dark:text-gray-300">{t.ctaInterested}</p>
+          <p className="text-lg text-gray-700 dark:text-gray-300">Interessado em projetos similares?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/projects">
               <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white">
-                {t.ctaViewOther}
+                Ver Outros Projetos
               </Button>
             </Link>
             <a
               href="mailto:alexandreleonardo3746@gmail.com"
               className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
             >
-              {t.ctaContact}
+              Entrar em Contacto
             </a>
           </div>
         </section>

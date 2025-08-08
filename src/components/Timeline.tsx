@@ -146,6 +146,7 @@ const Timeline: React.FC = () => {
           <Button
             variant="outline"
             size="icon"
+            aria-label="Scroll left"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent"
             onClick={() => scroll('left')}
           >
@@ -157,6 +158,7 @@ const Timeline: React.FC = () => {
           <Button
             variant="outline"
             size="icon"
+            aria-label="Scroll right"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm border-border/50 hover:bg-accent"
             onClick={() => scroll('right')}
           >
@@ -174,9 +176,13 @@ const Timeline: React.FC = () => {
             {/* Timeline Line */}
             <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-timeline-planned -translate-y-1/2">
               {/* Filled portion for completed items */}
-              <div 
-                className="h-full bg-timeline-completed transition-all duration-1000 ease-out animate-timeline-fill"
-                style={{ width: `${fillPercentage}%` }}
+              <div
+                className="h-full bg-timeline-completed transition-transform duration-1000 ease-out"
+                style={{
+                  transform: `scaleX(${fillPercentage / 100})`,
+                  transformOrigin: 'left center',
+                  willChange: 'transform'
+                }}
               />
             </div>
 
