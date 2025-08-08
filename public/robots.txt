@@ -1,7 +1,14 @@
-User-agent: *
-Disallow:
+User-agent: Googlebot
+Allow: /
 
-# Indica a localização do sitemap para que os rastreadores encontrem facilmente
-# todas as páginas da aplicação. Ajuste o domínio caso a URL final seja
-# diferente.
-Sitemap: https://www.alexandreleonardo.pt/sitemap.xml
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
