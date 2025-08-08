@@ -25,21 +25,23 @@ const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project: Project | undefined = projects.find((p) => p.id === id);
 
-  // Map of additional images for specific projects. These images are
-  // displayed below the main hero image. If a project has no entry
-  // here, no gallery will be rendered. Image paths are relative to
-  // the public directory.
+  // Map of additional images for specific projects. Previously used
+  // to render a photo gallery below the hero image. The gallery has
+  // been disabled based on design feedback, but keeping this map
+  // allows future enhancement without breaking TypeScript types.
   const imagesMap: Record<string, string[]> = {
     "ey-irn-prr": ["/projects/irn-prr-photo.jpg"],
     "wrightia-irn-rc": ["/projects/eol2-photo.jpg"],
     "smartvision-cimac": ["/projects/cimac-photo.jpg"],
   };
 
-  const additionalImages: string[] = id && imagesMap[id] ? imagesMap[id] : [];
+  // Disable additional images rendering by returning an empty array. If
+  // needed in the future, set this to imagesMap[id] when available.
+  const additionalImages: string[] = [];
 
   if (!project) {
     return (
-      <div className="container mx-auto px-4 py-12 max-w-5xl">
+      <div className="container mx-auto px-4 pt-24 pb-12 max-w-5xl">
         {/* Fallback SEO for non‑existent page */}
         <SEOHead title={t.notFound} description={t.notFound} />
         <p className="text-center text-gray-600 dark:text-gray-300">{t.notFound}</p>
@@ -81,7 +83,7 @@ const ProjectDetail = () => {
         keywords={`${project.title}, ${project.technologies.join(", ")}`}
         ogImage={project.image || undefined}
       />
-      <div className="container mx-auto px-4 py-12 max-w-5xl space-y-12">
+      <div className="container mx-auto px-4 pt-24 pb-12 max-w-5xl space-y-12">
         {/* Back to projects */}
         <div>
           <Link to="/projects" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
@@ -121,14 +123,17 @@ const ProjectDetail = () => {
               <Calendar className="h-4 w-4" /> {project.year}
             </p>
           </div>
-          <p className="text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             {project.description}
           </p>
         </div>
 
         {/* Project image if provided */}
         {project.image && (
-          <div className="w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-md">
+          // Increased hero image height to emphasise the photo. The
+          // gallery section has been removed, so this image serves as
+          // the primary visual element for the case study.
+          <div className="w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-md">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
@@ -138,26 +143,9 @@ const ProjectDetail = () => {
           </div>
         )}
 
-        {/* Additional gallery images */}
-        {additionalImages.length > 0 && (
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
-              {language === 'en' ? 'Photo Gallery' : 'Galeria de Fotos'}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {additionalImages.map((src, index) => (
-                <div key={index} className="w-full h-60 rounded-lg overflow-hidden shadow-md">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={src}
-                    alt={`${project.title} imagem ${index + 1}`}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* The photo gallery has been removed based on design feedback. If
+            additional images are needed in the future, render them
+            here by iterating over additionalImages. */}
 
         {/* Overview section */}
         {project.overview && (
@@ -244,24 +232,25 @@ const ProjectDetail = () => {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.impact}</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 rounded-lg bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 space-y-2">
-                <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
+              {/* Use a unified colour palette for impact metrics to match the overall theme */}
+              <div className="text-center p-6 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 space-y-2">
+                <h3 className="text-3xl font-bold text-primary">
                   {project.impact.functionality.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   {project.impact.functionality.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
-              <div className="text-center p-6 rounded-lg bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 space-y-2">
-                <h3 className="text-3xl font-bold text-green-700 dark:text-green-400">
+              <div className="text-center p-6 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 space-y-2">
+                <h3 className="text-3xl font-bold text-primary">
                   {project.impact.agents.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   {project.impact.agents.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
-              <div className="text-center p-6 rounded-lg bg-purple-50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 space-y-2">
-                <h3 className="text-3xl font-bold text-purple-700 dark:text-purple-400">
+              <div className="text-center p-6 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 space-y-2">
+                <h3 className="text-3xl font-bold text-primary">
                   {project.impact.reduction.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">

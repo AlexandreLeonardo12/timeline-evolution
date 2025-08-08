@@ -43,7 +43,7 @@ const Projects = () => {
               </Badge>
               {project.featured && (
                 <Badge variant="outline" className="text-xs border-orange-300 text-orange-600">
-                  Destaque
+                  {translations[language].projectDetail.featured}
                 </Badge>
               )}
             </div>
@@ -159,7 +159,9 @@ const Projects = () => {
         description={t.subtitle}
         keywords={"projetos, transformação digital, inovação"}
       />
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+      {/* Apply top padding to offset the fixed navbar and ensure the header
+          does not overlap the page title. */}
+      <div className="container mx-auto px-4 pt-24 pb-12 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">{t.title}</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">

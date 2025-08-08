@@ -68,7 +68,7 @@ const About: React.FC = () => {
       <SEOHead title={t.title} description={t.description} />
 
       {/* Header and biography section */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 pt-24 pb-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">{t.header}</h1>
           <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed space-y-6">
