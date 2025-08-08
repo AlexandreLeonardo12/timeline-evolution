@@ -26,7 +26,9 @@ const Projects = () => {
   const professionalProjects = projects.filter((p) => p.type === "professional");
 
   const ProjectCard = ({ project }: { project: Project }) => (
-    <div className="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
+    <div
+      className="bg-card dark:bg-card rounded-lg border border-border dark:border-border overflow-hidden transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+    >
       <div className="p-6 border-b border-gray-100 dark:border-gray-700">
         <div className="flex items-start justify-between mb-4">
           <div className="space-y-2">
@@ -73,37 +75,40 @@ const Projects = () => {
       </div>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+        {/* Secção Desafio */}
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-red-50 dark:bg-red-900/30 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-red-500 dark:bg-red-400" />
+            <div className="w-8 h-8 rounded-full bg-accent/10 dark:bg-accent/20 flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-accent" />
             </div>
             <h4 className="font-medium text-gray-900 dark:text-gray-100">{t.challenge}</h4>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{project.challenge}</p>
         </div>
 
+        {/* Secção Solução */}
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400" />
+            <div className="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-primary" />
             </div>
             <h4 className="font-medium text-gray-900 dark:text-gray-100">{t.solution}</h4>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{project.solution}</p>
         </div>
 
+        {/* Secção Resultados */}
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center">
-              <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400" />
+            <div className="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+              <CheckCircle className="w-4 h-4 text-primary" />
             </div>
             <h4 className="font-medium text-gray-900 dark:text-gray-100">{t.results}</h4>
           </div>
           <ul className="space-y-1">
             {project.results.slice(0, 3).map((result, index) => (
               <li key={index} className="text-sm text-gray-600 dark:text-gray-300 flex items-start gap-2">
-                <CheckCircle className="w-3 h-3 text-green-500 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                 {result}
               </li>
             ))}

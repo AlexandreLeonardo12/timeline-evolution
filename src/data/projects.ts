@@ -67,28 +67,105 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ey-irn-prr",
-    title: "Projetos Estratégicos IRN - Plano de Recuperação e Resiliência",
+    title: "Projetos Estratégicos IRN – Modernização do Registo Comercial",
     subtitle: "Product Owner & Gestor de Programa | EY",
+    /*
+     * Este projecto combina os antigos casos "Projetos Estratégicos IRN - Plano de Recuperação e Resiliência" e
+     * "Modernização do Registo Comercial". A fusão assegura consistência na informação e evita duplicação de
+     * conteúdos. As descrições, desafios, soluções, resultados e detalhes foram integrados a partir dos dois
+     * registos originais. A cronologia é actualizada para reflectir o arranque em 2022 e a continuação até ao
+     * presente.
+     */
     description:
-      "Gestão integrada de múltiplos projetos estratégicos do Registo Comercial, supervisionando equipa multidisciplinar.",
+      "Gestão integrada de múltiplos projectos estratégicos do Registo Comercial, coordenando o programa de " +
+      "modernização dos sistemas de informação. A iniciativa foca‑se na migração de sistemas legados e na " +
+      "implementação de funcionalidades escaláveis e interoperáveis, supervisionando uma equipa multidisciplinar.",
     type: "professional",
     status: "in-progress",
-    year: "2024-Present",
+    // O projecto iniciou em 2022 e permanece em curso
+    year: "2022-Present",
     challenge:
-      "Gerir múltiplos projetos tecnológicos com impacto institucional e equipas complexas.",
+      "Gerir múltiplos projectos tecnológicos com impacto institucional e equipas complexas, substituindo uma " +
+      "plataforma tecnológica obsoleta e assegurando conformidade com directivas europeias, mantendo a continuidade " +
+      "do serviço durante a migração.",
     solution:
-      "Implementação de metodologias ágeis, sessões de ideação e gestão de backlog de produto focado em valor.",
+      "Gestão multidisciplinar com equipas de TI e jurídicas, definindo requisitos, seleccionando fornecedores e " +
+      "desenvolvendo uma nova arquitectura com módulos de workflow, base de dados central, APIs para BRIS e RCBE e " +
+      "mecanismos de assinatura e autenticação digitais. Implementação de metodologias ágeis, sessões de ideação e " +
+      "gestão de backlog de produto focado em valor.",
     results: [
       "Supervisão operacional de 31 elementos",
       "Coordenação de fornecedores e alinhamento estratégico",
+      "Nova plataforma de registo comercial em produção, interoperável com o sistema europeu BRIS",
+      "Integração do registo de sucursais e actos societários complexos via portal online",
+      "Redução dos tempos de processamento e eliminação de papel em mais de 80 % dos actos",
     ],
     technologies: [
+      // Lista unificada de competências e ferramentas utilizadas nas várias vertentes do projecto
+      "Gestão de Programa",
+      "Análise de Requisitos",
+      "Arquitectura de Sistemas",
+      "Integração de APIs",
+      "Workflow/BPM",
+      "Gestão de Stakeholders",
       "Miro",
       "Product Management",
       "Agile Methodologies",
       "Stakeholder Management",
     ],
     featured: true,
+    // Detalhes aprofundados (overview, passos, impacto, lições e próximos passos) provenientes do
+    // registo de "Modernização do Registo Comercial".
+    overview:
+      "A Modernização do Registo Comercial é um projecto estratégico financiado pelo PRR que visa reconstruir os " +
+      "sistemas centrais que suportam os registos de empresas em Portugal. O objectivo é migrar de um software " +
+      "legado para uma plataforma moderna, digital, segura e preparada para interconexão europeia, melhorando a " +
+      "eficiência interna das conservatórias e disponibilizando novos serviços online aos cidadãos e empresas.",
+    steps: [
+      {
+        title: "Análise & Levantamento",
+        description:
+          "Inventariação dos sistemas legados, recolha de requisitos técnicos e legais e consulta a stakeholders " +
+          "internos (conservadores) e externos (ordens profissionais, reguladores europeus).",
+      },
+      {
+        title: "Desenvolvimento & Arquitectura",
+        description:
+          "Concepção da nova arquitectura de software, escolha de tecnologias e desenvolvimento dos módulos de " +
+          "workflow, bases de dados e interfaces de utilizador, seguindo metodologias ágeis.",
+      },
+      {
+        title: "Integração & Migração",
+        description:
+          "Migração de dados do sistema antigo para a nova plataforma, integração com BRIS, RCBE e outros " +
+          "serviços públicos e realização de testes de performance e segurança.",
+      },
+      {
+        title: "Lançamento & Rollout",
+        description:
+          "Implementação faseada da solução nas conservatórias, activação de novas funcionalidades como registo de " +
+          "sucursais e automação de actos de insolvência, formação de utilizadores e optimização contínua.",
+      },
+    ],
+    impact: {
+      functionality: "5,5 M€ Investimento PRR – Modernização completa da infraestrutura registral",
+      agents: "100 % Digitalização – Processos totalmente desmaterializados e integrados",
+      reduction: ">80 % Adesão Online – Meta de actos registados eletronicamente até 2026",
+    },
+    lessons: [
+      "Modernizar sistemas core requer planeamento estruturado combinado com entregas ágeis",
+      "Alinhar requisitos legais e tecnológicos desde o início evita retrabalho",
+      "Envolver utilizadores finais (conservadores) melhora a adopção e a usabilidade",
+      "Formação e gestão de mudança são tão importantes quanto a tecnologia em si",
+    ],
+    nextSteps: [
+      "Completar o rollout nacional e estabilizar o sistema até 2025",
+      "Desenvolver dashboards de BI para monitorizar KPIs de registo comercial",
+      "Expor APIs para consulta pública de dados regitais com autorização",
+      "Partilhar lições aprendidas em conferências e publicações para inspirar outros programas de modernização",
+    ],
+    // Utiliza imagem real presente na pasta public/projects para ilustrar o projecto
+    image: "/projects/irn-prr-photo.jpg",
   },
   {
     id: "wrightia-irn-rc",
@@ -163,7 +240,8 @@ export const projects: Project[] = [
       "Integrar assistentes inteligentes para apoio em tempo real ao utilizador",
       "Implementar dashboards analíticos para monitorizar métricas de desempenho e recolher feedback contínuo",
     ],
-    image: "/projects/hero.jpg",
+    // Placeholder hero image removido para garantir que apenas imagens implementadas são utilizadas
+    // image: "/projects/hero.jpg",
   },
   {
     id: "smartvision-munlab",
@@ -232,7 +310,7 @@ export const projects: Project[] = [
       "Integrar dados ambientais e sociais para análises holísticas",
       "Publicar relatórios anuais de maturidade digital",
     ],
-    image: "/projects/hero.jpg",
+    // image property removed for placeholder hero image
   },
   {
     id: "smartvision-nisa-monforte",
@@ -298,7 +376,7 @@ export const projects: Project[] = [
       "Investir em plataformas de participação cidadã online",
       "Continuar a formação periódica para atualização tecnológica",
     ],
-    image: "/projects/hero.jpg",
+    // image property removed for placeholder hero image
   },
   {
     id: "smartvision-cimac",
@@ -365,7 +443,7 @@ export const projects: Project[] = [
       "Incluir serviços de pagamento online para taxas municipais",
       "Actualizar constantemente os standards conforme legislação evolui",
     ],
-    image: "/projects/hero.jpg",
+    // image property removed for placeholder hero image
   },
   {
     id: "smartvision-lajes-pico",
@@ -431,7 +509,7 @@ export const projects: Project[] = [
       "Criar programas de fidelização para munícipes que utilizem canais digitais",
       "Expandir o modelo a outros serviços municipais (eventos, turismo)",
     ],
-    image: "/projects/hero.jpg",
+    // image property removed for placeholder hero image
   },
   {
     id: "smartvision-madalena-pico",
@@ -497,7 +575,7 @@ export const projects: Project[] = [
       "Expandir a digitalização a áreas como ambiente e urbanismo",
       "Estabelecer parcerias com startups locais para inovação contínua",
     ],
-    image: "/projects/hero.jpg",
+    // image property removed for placeholder hero image
   },
   {
     id: "portfolio-website",
@@ -570,76 +648,6 @@ export const projects: Project[] = [
     image: "/projects/portfolio-website-image.jpg",
   },
   {
-    id: "irn-registo-comercial",
-    // Projeto de modernização do Registo Comercial Português no âmbito do PRR
-    title: "Modernização do Registo Comercial",
-    subtitle: "Gestor de Programa | EY",
-    description:
-      "Coordenação do programa de renovação dos sistemas de informação do Registo Comercial, com foco na migração de sistemas legados e na implementação de funcionalidades escaláveis e interoperáveis.",
-    type: "professional",
-    status: "in-progress",
-    year: "2021-2025",
-    challenge:
-      "Substituir uma plataforma tecnológica obsoleta e assegurar conformidade com diretivas europeias, garantindo ao mesmo tempo continuidade do serviço durante a migração.",
-    solution:
-      "Gestão multidisciplinar envolvendo equipas de TI e jurídicas para definir requisitos, seleccionar fornecedores e desenvolver uma nova arquitectura. Implementação de módulos de workflow, base de dados central, APIs para BRIS e RCBE e mecanismos de assinatura e autenticação digitais.",
-    results: [
-      "Nova plataforma de registo comercial em produção, interoperável com o sistema europeu BRIS",
-      "Integração do registo de sucursais e actos societários complexos via portal online",
-      "Redução dos tempos de processamento e eliminação de papel em mais de 80 % dos atos",
-    ],
-    technologies: [
-      "Gestão de Programa",
-      "Análise de Requisitos",
-      "Arquitectura de Sistemas",
-      "Integração de APIs",
-      "Workflow/BPM",
-      "Gestão de Stakeholders",
-    ],
-    overview:
-      "A Modernização do Registo Comercial é um projeto estratégico financiado pelo PRR que visa reconstruir os sistemas centrais que suportam os registos de empresas em Portugal. O objectivo é migrar de um software legado para uma plataforma moderna, digital, segura e preparada para interconexão europeia, melhorando a eficiência interna das conservatórias e disponibilizando novos serviços online aos cidadãos e empresas.",
-    steps: [
-      {
-        title: "Análise & Levantamento",
-        description:
-          "Inventariação dos sistemas legados, recolha de requisitos técnicos e legais e consulta a stakeholders internos (conservadores) e externos (ordens profissionais, reguladores europeus).",
-      },
-      {
-        title: "Desenvolvimento & Arquitectura",
-        description:
-          "Concepção da nova arquitectura de software, escolha de tecnologias e desenvolvimento dos módulos de workflow, bases de dados e interfaces de utilizador, seguindo metodologias ágeis.",
-      },
-      {
-        title: "Integração & Migração",
-        description:
-          "Migração de dados do sistema antigo para a nova plataforma, integração com BRIS, RCBE e outros serviços públicos e realização de testes de performance e segurança.",
-      },
-      {
-        title: "Lançamento & Rollout",
-        description:
-          "Implementação faseada da solução nas conservatórias, activação de novas funcionalidades como registo de sucursais e automação de actos de insolvência, formação de utilizadores e optimização contínua.",
-      },
-    ],
-    impact: {
-      functionality: "5,5 M€ Investimento PRR – Modernização completa da infraestrutura registral",
-      agents: "100 % Digitalização – Processos totalmente desmaterializados e integrados",
-      reduction: ">80 % Adesão Online – Meta de actos registados eletronicamente até 2026",
-    },
-    lessons: [
-      "Modernizar sistemas core requer planeamento estruturado combinado com entregas ágeis",
-      "Alinhar requisitos legais e tecnológicos desde o início evita retrabalho",
-      "Envolver utilizadores finais (conservadores) melhora a adopção e a usabilidade",
-      "Formação e gestão de mudança são tão importantes quanto a tecnologia em si",
-    ],
-    nextSteps: [
-      "Completar o rollout nacional e estabilizar o sistema até 2025",
-      "Desenvolver dashboards de BI para monitorizar KPIs de registo comercial",
-      "Expor APIs para consulta pública de dados regitais com autorização",
-      "Partilhar lições aprendidas em conferências e publicações para inspirar outros programas de modernização",
-    ],
-    image: "/projects/hero.jpg",
-  },
-  {
     id: "ai-assisted-pm",
     title: "AI‑Assisted Project Management",
     subtitle: "Investigador & Implementador",
@@ -704,6 +712,6 @@ export const projects: Project[] = [
       "Explorar novas APIs de IA generativa para relatórios automáticos",
       "Partilhar frameworks abertos com a comunidade de gestão de projectos",
     ],
-    image: "/projects/hero.jpg",
+    // image property removed for placeholder hero image
   },
 ];
