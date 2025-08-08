@@ -232,9 +232,9 @@ const ProjectDetail = () => {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.impact}</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {/* Use a unified colour palette for impact metrics to match the overall theme */}
-              <div className="text-center p-6 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 space-y-2">
-                <h3 className="text-3xl font-bold text-primary">
+              {/* Impact metrics use the site’s colour palette. The first card uses the accent colour, the second uses the primary colour and the third repeats the accent tone. */}
+              <div className="text-center p-6 rounded-lg bg-accent/10 dark:bg-accent/20 border border-accent/20 dark:border-accent/30 space-y-2">
+                <h3 className="text-3xl font-bold text-accent">
                   {project.impact.functionality.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -249,8 +249,8 @@ const ProjectDetail = () => {
                   {project.impact.agents.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
-              <div className="text-center p-6 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 space-y-2">
-                <h3 className="text-3xl font-bold text-primary">
+              <div className="text-center p-6 rounded-lg bg-accent/10 dark:bg-accent/20 border border-accent/20 dark:border-accent/30 space-y-2">
+                <h3 className="text-3xl font-bold text-accent">
                   {project.impact.reduction.split(' – ')[0]}
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
