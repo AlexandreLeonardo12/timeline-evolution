@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Updated color palette for Alexandre Leonardo's website */
+    /* Light theme colours updated for a more modern, less stark appearance.
+       The backgrounds are lightly tinted with blue hues to soften the white
+       without sacrificing contrast. */
+    --background: 208 40% 97%;
+    --foreground: 215 20% 20%;
+
+    --card: 208 40% 96%;
+    --card-foreground: 215 20% 20%;
+
+    --popover: 208 40% 96%;
+    --popover-foreground: 215 20% 20%;
+
+    /* Primary colours remain based on the brand’s azul petróleo. */
+    --primary: 201 100% 25%;
+    --primary-foreground: 208 40% 97%;
+
+    /* Secondary surfaces are slightly darker than cards for hierarchy. */
+    --secondary: 208 40% 94%;
+    --secondary-foreground: 215 20% 20%;
+
+    /* Muted backgrounds for subtle areas such as alternating sections. */
+    --muted: 208 25% 92%;
+    --muted-foreground: 215 15% 40%;
+
+    /* Accent colour is the laranja torrado suave defined by the client. */
+    --accent: 13 68% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 215 90% 30%;
+
+    --radius: 0.5rem;
+    
+    /* Timeline design tokens */
+    --timeline-primary: 220 90% 56%;
+    --timeline-primary-light: 220 90% 90%;
+    --timeline-completed: 142 71% 45%;
+    --timeline-planned: 220 13% 78%;
+    --timeline-node-size: 1rem;
+    --timeline-line-height: 2px;
+    --timeline-spacing: 6rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Define dark mode variables for a modern dark theme. When the `dark`
+     class is applied to the html element, these values override the
+     defaults above. The palette echoes the base colours (azul petróleo
+     profundo e laranja torrado) mas com luminosidade mais baixa. */
+  .dark {
+    --background: 204 33% 10%;
+    --foreground: 204 33% 97%;
+
+    --card: 204 33% 13%;
+    --card-foreground: 204 33% 97%;
+
+    --popover: 204 33% 13%;
+    --popover-foreground: 204 33% 97%;
+
+    --primary: 201 100% 80%;
+    --primary-foreground: 204 33% 10%;
+
+    --secondary: 204 33% 15%;
+    --secondary-foreground: 204 33% 97%;
+
+    --muted: 210 20% 20%;
+    --muted-foreground: 215.4 16.3% 70%;
+
+    --accent: 13 68% 60%;
+    --accent-foreground: 204 33% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 30%;
+    --input: 214.3 31.8% 30%;
+    --ring: 222.2 84% 70%;
+
+    /* Sidebar tokens (not currently used but defined for completeness) */
+    --sidebar-background: 204 33% 13%;
+    --sidebar-foreground: 204 33% 90%;
+    --sidebar-primary: 204 33% 20%;
+    --sidebar-primary-foreground: 204 33% 97%;
+    --sidebar-accent: 13 68% 50%;
+    --sidebar-accent-foreground: 204 33% 10%;
+    --sidebar-border: 214.3 31.8% 25%;
+    --sidebar-ring: 217.2 91.2% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
