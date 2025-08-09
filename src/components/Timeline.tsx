@@ -85,6 +85,33 @@ const Timeline: React.FC = () => {
     }
   }, [timelineData]);
 
+  // Centra o item em progresso (estado 'in_progress') quando a timeline é carregada.
+  useEffect(() => {
+    if (!loading && scrollContainerRef.current) {
+      // Procurar o primeiro item em progresso
+      const inProgressIndex = timelineData.findIndex((item) => item.status === 'in_progress');
+      if (inProgressIndex !== -1) {
+        const container = scrollContainerRef.current;
+        const items = container.querySelectorAll<HTMLElement>('.timeline-item');
+        const anchorEl = items[inProgressIndex] as HTMLElement | undefined;
+        if (anchorEl) {
+          const containerWidth = container.clientWidth;
+          const anchorCenter = anchorEl.offsetLeft + anchorEl.offsetWidth / 2;
+          // Calcular a posição de scroll de forma a centrar o elemento
+          const targetScroll = Math.max(anchorCenter - containerWidth / 2, 0);
+          container.scrollTo({ left: targetScroll, behavior: 'auto' });
+          setScrollPosition(targetScroll);
+          // Garantir que os botões de scroll reflectem a nova posição
+          setTimeout(() => {
+            const { scrollLeft, scrollWidth, clientWidth } = container;
+            setCanScrollLeft(scrollLeft > 0);
+            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+          }, 50);
+        }
+      }
+    }
+  }, [loading, timelineData]);
+
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = 320;
@@ -214,7 +241,13 @@ const Timeline: React.FC = () => {
               {sortedData.map((item, index) => (
                 <div
                   key={item.id}
-                  className="flex flex-col items-center animate-fade-in-up"
+                  /*
+                   * Adiciona a classe "timeline-item" a cada cartão para que possamos
+                   * calcular a posição da ancora do mestrado em curso. Esta classe
+                   * é utilizada pelo hook de efeitos para localizar o elemento
+                   * correspondente na DOM e centrar a scrollbox nesse ponto.
+                   */
+                  className="timeline-item flex flex-col items-center animate-fade-in-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Timeline Node */}
