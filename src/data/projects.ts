@@ -57,6 +57,20 @@ export interface Project {
    * relative to the public directory (e.g. "/projects/project-id.png").
    */
   image?: string;
+
+  /**
+   * Optional news coverage related to the project. Each entry contains
+   * a title, the source/publication name and a URL to the original
+   * article. These items are displayed on the project detail page
+   * when available to provide additional context and credibility. The
+   * summary field may be used for a brief description of the article.
+   */
+  news?: {
+    title: string;
+    source: string;
+    url: string;
+    summary?: string;
+  }[];
 }
 
 /**
@@ -240,8 +254,30 @@ export const projects: Project[] = [
       "Integrar assistentes inteligentes para apoio em tempo real ao utilizador",
       "Implementar dashboards analíticos para monitorizar métricas de desempenho e recolher feedback contínuo",
     ],
-    // Placeholder hero image removido para garantir que apenas imagens implementadas são utilizadas
-    // image: "/projects/hero.jpg",
+    // A imagem original foi removida e substituída por uma fotografia real do projecto.
+    image: "/projects/eol2-photo2.png",
+
+    // Notícias de referência sobre a plataforma Empresa Online 2.0. Estes
+    // artigos comprovam a relevância do projecto e fornecem
+    // contexto adicional para visitantes interessados. As
+    // informações resumidas foram extraídas do artigo citado.
+    news: [
+      {
+        title:
+          "Portugal lança plataforma Empresa Online 2.0 que permite abrir empresa em minutos", // Portuguese headline summarising the news
+        source: "Euro Dicas",
+        url: "https://www.eurodicas.com.br/empresa-online-portugal/",
+        summary:
+          "Artigo relata que a Empresa Online 2.0, lançada pelo governo português, reduz a burocracia e simplifica o processo de criação de empresas, permitindo que cidadãos portugueses e estrangeiros abram uma empresa em poucos minutos【836847190340545†L14-L18】. A versão 2.0 oferece novas funcionalidades, como a possibilidade de constituir sociedades anónimas e unipessoais, e está disponível em português e inglês【836847190340545†L25-L29】【836847190340545†L49-L51】."
+      },
+      {
+        title: "Pagamento facilitado e custos na Empresa Online 2.0",
+        source: "Euro Dicas",
+        url: "https://www.eurodicas.com.br/empresa-online-portugal/",
+        summary:
+          "O mesmo artigo destaca que o custo para abrir uma empresa pela plataforma é de 220 € com contrato social padrão e 360 € para contrato personalizado. A plataforma permite pagamentos via MB Way, o que facilita o processo de constituição【836847190340545†L87-L92】."
+      }
+    ],
   },
   {
     id: "smartvision-munlab",
@@ -443,7 +479,8 @@ export const projects: Project[] = [
       "Incluir serviços de pagamento online para taxas municipais",
       "Actualizar constantemente os standards conforme legislação evolui",
     ],
-    // image property removed for placeholder hero image
+    // Atribuída fotografia real ao projeto CIMAC para servir de hero
+    image: "/projects/cimac-photo2.jpeg",
   },
   {
     id: "smartvision-lajes-pico",

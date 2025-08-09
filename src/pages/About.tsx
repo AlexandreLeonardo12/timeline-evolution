@@ -11,11 +11,19 @@ import { useLanguage } from '@/context/LanguageContext';
 const biography: Record<string, string[]> = {
   pt: [
     'Chamo‑me Alexandre Leonardo e sou consultor em transformação digital e inovação estratégica na EY. Nos últimos anos acompanhei organizações na modernização de processos e serviços, ajudando‑as a redesenhar modelos operacionais com soluções digitais simples, eficazes e de impacto real.',
-    'A transformação é feita por pessoas. Gosto de trabalhar com equipas para desenhar processos inteligentes baseados em dados e sistemas robustos, garantindo que cada solução melhora de forma tangível a experiência do utilizador e o desempenho da organização. O que me motiva é transformar ideias em soluções concretas e ajudar equipas a crescer.',
+    // Segundo parágrafo revisto para transmitir a ideia de que a transformação dos negócios
+    // nasce das pessoas que operam e melhoram continuamente os processos, tirando partido
+    // de sistemas inteligentes. Realça também que cada avanço envolve risco e exige
+    // coragem para inovar, de forma natural e pessoal.
+    'Acredito que a transformação dos negócios é feita por pessoas que, todos os dias, reinventam processos e colocam a tecnologia ao serviço de decisões mais inteligentes. Gosto de desenhar soluções que partem dos dados e se traduzem em experiências simples, sabendo que cada avanço traz consigo riscos e exige coragem para inovar.',
   ],
   en: [
     'My name is Alexandre Leonardo and I am a consultant in digital transformation and strategic innovation at EY. In recent years I have helped organisations modernise processes and services, redesigning their operating models with simple and effective digital solutions that deliver real impact.',
-    'Transformation is driven by people. I enjoy working with teams to design intelligent processes based on data and robust systems, ensuring that each solution tangibly improves the user experience and organisational performance. What drives me is turning ideas into concrete solutions and helping teams grow.',
+    // Updated second paragraph in English to mirror the Portuguese sentiment. It conveys
+    // that transformation happens through people reinventing processes and using
+    // technology to make smarter decisions, while acknowledging that progress
+    // carries risks and requires the courage to innovate.
+    'I believe business transformation happens through people who reinvent processes every day and use technology to make smarter decisions. I enjoy designing solutions that build on data and translate into simple experiences, knowing that every step forward carries risks and requires the courage to innovate.',
   ],
 };
 

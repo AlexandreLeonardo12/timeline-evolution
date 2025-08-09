@@ -138,6 +138,16 @@ const translations = {
        */
       translationNote:
         "Nota: Este caso de estudo está disponível apenas em português. Em breve haverá uma versão em inglês.",
+
+      /**
+       * Cabeçalhos e rótulos para a secção de notícias nas páginas de detalhe
+       * dos projectos. Esta secção lista artigos de imprensa e links
+       * associados ao projecto para reforçar a credibilidade. Os termos
+       * definidos aqui serão reutilizados no componente ProjectDetail.
+       */
+      newsTitle: "Notícias",
+      newsSource: "Fonte",
+      newsReadMore: "Ler artigo completo",
     },
 
     /**
@@ -331,6 +341,13 @@ const translations = {
        */
       translationNote:
         "Note: This case study is currently available in Portuguese only. An English version is coming soon.",
+
+      // Labels for the news section on project detail pages. These
+      // strings provide headings and link prompts when listing news
+      // articles related to a project.
+      newsTitle: "News",
+      newsSource: "Source",
+      newsReadMore: "Read full article",
     },
 
     /**

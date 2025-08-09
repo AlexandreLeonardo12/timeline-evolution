@@ -297,6 +297,45 @@ const ProjectDetail = () => {
           </section>
         )}
 
+        {/* News section */}
+        {project.news && project.news.length > 0 && (
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.newsTitle}</h2>
+            <ul className="space-y-4">
+              {project.news.map((item, index) => (
+                <li
+                  key={index}
+                  className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 border border-border rounded-lg bg-card/50"
+                >
+                  <div className="flex-1 space-y-1">
+                    <h3 className="font-medium text-gray-900 dark:text-gray-100">
+                      {item.title}
+                    </h3>
+                    {item.summary && (
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {item.summary}
+                      </p>
+                    )}
+                    <p className="text-xs italic text-gray-500 dark:text-gray-400">
+                      {t.newsSource}: {item.source}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline text-sm"
+                    >
+                      {t.newsReadMore}
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* Call to action */}
         <section className="text-center space-y-4">
           <p className="text-lg text-gray-700 dark:text-gray-300">{t.ctaInterested}</p>
