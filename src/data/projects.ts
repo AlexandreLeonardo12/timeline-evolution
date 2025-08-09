@@ -208,6 +208,24 @@ export const projects: Project[] = [
       "Integração de APIs",
       "Assinatura Digital",
       "Gateway de Pagamentos",
+      // Tecnologias e metodologias adicionais utilizadas na Empresa Online 2.0
+      // conforme feedback do cliente: desenvolvimento low‑code em OutSystems,
+      // consumo e exposição de APIs REST (JSON) e SOAP (XML), criação de
+      // wireframes em Balsamiq, análise de jornadas de utilizador, SCRUMBAN
+      // com quadros no Trello, exportação de métricas via SQL, utilização
+      // do Service Center e AI Mentor da OutSystems para monitorizar dívida
+      // técnica e integração com Autenticação.gov para autenticação segura.
+      "OutSystems",
+      "REST APIs",
+      "SOAP Web Services",
+      "Wireframing (Balsamiq)",
+      "User Journey Mapping",
+      "SCRUMBAN",
+      "Trello",
+      "SQL & Data Analytics",
+      "OutSystems Service Center",
+      "AI Mentor (OutSystems)",
+      "Autenticação.gov",
     ],
     featured: true,
     overview:
@@ -263,19 +281,13 @@ export const projects: Project[] = [
     // informações resumidas foram extraídas do artigo citado.
     news: [
       {
+        // Resumo único da principal notícia sobre a Empresa Online 2.0.
         title:
-          "Portugal lança plataforma Empresa Online 2.0 que permite abrir empresa em minutos", // Portuguese headline summarising the news
-        source: "Euro Dicas",
+          "Governo lança a plataforma Empresa Online 2.0 e reduz a burocracia na criação de empresas",
+        source: "Euro Dicas",
         url: "https://www.eurodicas.com.br/empresa-online-portugal/",
         summary:
-          "Artigo relata que a Empresa Online 2.0, lançada pelo governo português, reduz a burocracia e simplifica o processo de criação de empresas, permitindo que cidadãos portugueses e estrangeiros abram uma empresa em poucos minutos【836847190340545†L14-L18】. A versão 2.0 oferece novas funcionalidades, como a possibilidade de constituir sociedades anónimas e unipessoais, e está disponível em português e inglês【836847190340545†L25-L29】【836847190340545†L49-L51】."
-      },
-      {
-        title: "Pagamento facilitado e custos na Empresa Online 2.0",
-        source: "Euro Dicas",
-        url: "https://www.eurodicas.com.br/empresa-online-portugal/",
-        summary:
-          "O mesmo artigo destaca que o custo para abrir uma empresa pela plataforma é de 220 € com contrato social padrão e 360 € para contrato personalizado. A plataforma permite pagamentos via MB Way, o que facilita o processo de constituição【836847190340545†L87-L92】."
+          "Artigo relata que a Empresa Online 2.0, lançada pelo governo português, simplifica o processo de criação de empresas e permite que cidadãos portugueses e estrangeiros abram um negócio em poucos minutos, reduzindo a burocracia. A versão 2.0 traz novas funcionalidades, incluindo a possibilidade de constituir diferentes tipos de sociedades, e está disponível em português e inglês."
       }
     ],
   },
