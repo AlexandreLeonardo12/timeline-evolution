@@ -20,7 +20,15 @@ interface TimelineItem {
   title: string;
   institution: string;
   date: string;
-  status: 'completed' | 'planned';
+  /**
+   * Status of the certification or degree. In addition to the existing
+   * "completed" and "planned" states, we introduce an explicit
+   * "in_progress" state to represent items that have started but are
+   * not yet complete. This allows the timeline to distinguish
+   * ongoing activities (e.g. a master’s degree currently underway)
+   * from those merely planned for the future.
+   */
+  status: 'completed' | 'planned' | 'in_progress';
   description: string;
 }
 
@@ -101,6 +109,25 @@ const Timeline: React.FC = () => {
 
   // Determine if a status denotes completion
   const isCompleted = (status: string) => status === 'completed';
+
+  /**
+   * Return the translated status label based on the current language.
+   * The timeline previously mapped only two states (completed vs
+   * planned) directly to translations. With the introduction of the
+   * "in_progress" state, we centralise the logic in this helper
+   * function. Any unrecognised status will default to the planned
+   * label.
+   */
+  const getStatusLabel = (status: string) => {
+    switch (status) {
+      case 'completed':
+        return translations[language].projectDetail.statusCompleted;
+      case 'in_progress':
+        return translations[language].projectDetail.statusInProgress;
+      default:
+        return translations[language].projectDetail.statusPlanned;
+    }
+  };
 
   // Compute how much of the timeline should be filled based on current date
   const getCurrentDatePosition = () => {
@@ -222,9 +249,7 @@ const Timeline: React.FC = () => {
                             }
                           >
                             {/* Status badge translated according to the current language */}
-                            {isCompleted(item.status)
-                              ? translations[language].projectDetail.statusCompleted
-                              : translations[language].projectDetail.statusPlanned}
+                            {getStatusLabel(item.status)}
                           </div>
                         </div>
                         {/* Title */}
