@@ -631,15 +631,27 @@ export const projects: Project[] = [
     title: "Portfolio Pessoal com IA",
     subtitle: "Desenvolvedor & Product Owner",
     description:
-      "Website de portfólio criado com ferramentas modernas de vibe‑coding e agentes de IA.",
+      // Descrição revista: realça o objectivo de demonstrar como ferramentas de IA e
+      // frameworks modernas podem permitir a qualquer profissional construir uma
+      // presença digital sofisticada.
+      "Criação de um website de portfólio pessoal recorrendo a ferramentas de desenvolvimento assistido por IA e frameworks modernas. O objectivo foi mostrar como profissionais sem formação formal em design ou programação podem, com o apoio de agentes inteligentes, desenvolver uma presença digital sofisticada.",
     type: "personal",
     status: "in-progress",
     year: "2024",
     challenge:
-      "Criar um website profissional sem conhecimentos avançados de programação.",
+      // Desafio revisto: destacar a necessidade de conjugar identidade visual e
+      // experiência de utilizador profissional sem formação formal em design.
+      "Conceber uma identidade visual e uma experiência de utilizador profissional sem ter formação avançada em design ou programação.",
     solution:
-      "Utilização de agentes de IA para desenvolvimento iterativo e pesquisa de soluções open‑source.",
-    results: ["Website funcional e moderno", "Experiência prática com agentes de IA"],
+      // Solução revista: combinar a orientação de agentes de IA com ferramentas
+      // open source e trabalho manual para entregar um produto polido.
+      "Combinei a orientação de agentes de IA com pesquisa de soluções open‑source. Utilizei plataformas low‑code e geradores de código para prototipar e iterar rapidamente, depois refinei manualmente o front‑end com React, Tailwind CSS e ferramentas de design. O uso de agentes como Devin.ai e ChatGPT auxiliou na implementação de funcionalidades e na resolução de problemas.",
+    results: [
+      // Resultados revistos: demonstrar impacto concreto do projecto
+      "Portfólio responsivo com design personalizado e integração multilingue",
+      "Implementação de pipeline CI/CD com Vercel e GitHub Actions",
+      "Domínio prático de múltiplos agentes de IA para desenvolvimento web, melhorando a produtividade e a aprendizagem contínua",
+    ],
     technologies: [
       "React",
       "TypeScript",
@@ -650,6 +662,9 @@ export const projects: Project[] = [
       "Manus",
       "Vercel",
       "GitHub",
+      // Tecnologias adicionais utilizadas neste projecto
+      "Vite",
+      "GitHub Actions",
     ],
     overview:
       "Este projecto representa uma exploração profunda no mundo do desenvolvimento assistido por IA. Como gestor de projetos e PO com background técnico avançado, utilizei múltiplos agentes de IA para criar um website completo e profissional. A jornada incluiu experimentação com Lovable, Devin.ai, ChatGPT Agent e Manus, cada um com as suas forças específicas. O projecto também envolveu estudos de mercado para identificar as melhores soluções open‑source, configuração de CI/CD com Vercel e GitHub, e experiência hands‑on com Git. Esta experiência demonstra como a IA pode democratizar o desenvolvimento web e permitir que profissionais de outras áreas criem soluções tecnológicas robustas.",
@@ -701,23 +716,33 @@ export const projects: Project[] = [
     title: "AI‑Assisted Project Management",
     subtitle: "Investigador & Implementador",
     description:
-      "Exploração contínua de ferramentas de inteligência artificial para optimizar o planeamento, a execução e a monitorização de projectos, reduzindo tarefas repetitivas e potenciando decisões baseadas em dados.",
+      // Descrição revista: explica melhor o propósito e as abordagens utilizadas
+      "Este projecto explora o potencial da inteligência artificial para optimizar a gestão de projectos, automatizando tarefas rotineiras e fornecendo previsões baseadas em dados. A iniciativa combina aprendizagem automática, processamento de linguagem natural e dashboards interactivos para apoiar decisões estratégicas.",
     type: "personal",
     status: "in-progress",
     year: "2024",
     challenge:
-      "Identificar tarefas de gestão de projectos passíveis de automatização com IA e integrar diferentes APIs de forma coesa.",
+      // Desafio revisto: salientar a necessidade de assegurar qualidade de dados e integração segura de múltiplas APIs
+      "Identificar actividades de gestão passíveis de automação, garantir a qualidade dos dados e integrar múltiplas APIs de forma segura e eficiente.",
     solution:
-      "Desenvolvimento de um pipeline de automação combinando modelos de machine learning, GPT API e dashboards de BI para análise preditiva e geração de relatórios automatizados.",
+      // Solução revista: detalhar a arquitectura modular e as componentes utilizadas
+      "Desenvolvi uma arquitectura modular que combina modelos de machine learning (classificação, regressão e clustering), a GPT API para resumo automático e geração de relatórios, e dashboards de business intelligence em Power BI. Automatizei a extracção e tratamento de dados via scripts Python e criei pipelines de automação para integrar as várias ferramentas de IA.",
     results: [
-      "Redução de 40 % no tempo gasto em análise de dados",
-      "Automação de 60 % das tarefas repetitivas de gestão",
+      // Resultados revistos: acrescentar impacto adicional e previsões
+      "Redução de 40 % no tempo dedicado à análise de dados e compilação de relatórios",
+      "Automação de 60 % das tarefas repetitivas de gestão, como actualização de cronogramas e notificações",
+      "Melhoria da precisão das previsões de risco através de modelos de machine learning treinados com dados históricos",
     ],
     technologies: [
+      // Tecnologias ampliadas para reflectir a pilha utilizada
       "Python",
-      "Machine Learning",
-      "GPT API",
+      "Pandas",
+      "Scikit‑learn",
+      "OpenAI GPT‑4 API",
+      "SQL",
+      "Airflow",
       "Power BI",
+      "Machine Learning",
       "Automação",
     ],
     overview:
