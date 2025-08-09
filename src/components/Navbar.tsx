@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import translations from '../lib/translations';
 
 /**
@@ -14,6 +15,7 @@ import translations from '../lib/translations';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const nav = translations[language].nav;
 
   return (
@@ -53,6 +55,25 @@ export default function Navbar() {
           </div>
           {/* Desktop right actions */}
           <div className="hidden md:flex items-center space-x-4">
+              {/* Theme toggle */}
+              <button
+                onClick={toggleTheme}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                className="p-2 rounded-md text-foreground hover:text-primary transition-colors"
+              >
+                {theme === 'dark' ? (
+                  // Sun icon for light mode
+                  <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 1v2m0 18v2m9-11h-2m-14 0H1m16.95-7.95l-1.414 1.414M5.343 18.657l-1.414 1.414m14.95 0l-1.414-1.414M5.343 5.343L3.929 3.929" />
+                  </svg>
+                ) : (
+                  // Moon icon for dark mode
+                  <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                  </svg>
+                )}
+              </button>
               <button
                 onClick={toggleLanguage}
                 className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
@@ -113,6 +134,17 @@ export default function Navbar() {
           >
             {language === 'pt' ? 'EN' : 'PT'}
           </button>
+            {/* Theme toggle in mobile menu */}
+            <button
+              onClick={() => {
+                toggleTheme();
+                setIsMenuOpen(false);
+              }}
+              className="block w-full text-left text-foreground hover:text-primary px-3 py-2 text-base font-medium transition-colors"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? '☀︎' : '☾'}
+            </button>
         </div>
       </div>
     </nav>

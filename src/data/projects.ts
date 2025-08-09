@@ -633,41 +633,47 @@ export const projects: Project[] = [
     description:
       // Descrição revista: realça o objectivo de demonstrar como ferramentas de IA e
       // frameworks modernas podem permitir a qualquer profissional construir uma
-      // presença digital sofisticada.
-      "Criação de um website de portfólio pessoal recorrendo a ferramentas de desenvolvimento assistido por IA e frameworks modernas. O objectivo foi mostrar como profissionais sem formação formal em design ou programação podem, com o apoio de agentes inteligentes, desenvolver uma presença digital sofisticada.",
+      // presença digital sofisticada. É destacado que o site integra conteúdos
+      // multilíngues, blog em MDX e um design responsivo alinhado com boas práticas
+      // de performance e acessibilidade.
+      "Desenvolvimento de um website de portfólio pessoal com recurso a agentes de IA e frameworks modernas. O projecto mostra como alguém sem formação formal em design ou programação pode, com apoio inteligente, conceber uma presença digital sofisticada: inclui páginas estáticas e dinâmicas, integração multilingue, blog em MDX e um design responsivo optimizado para desempenho e acessibilidade.",
     type: "personal",
     status: "in-progress",
     year: "2024",
     challenge:
-      // Desafio revisto: destacar a necessidade de conjugar identidade visual e
-      // experiência de utilizador profissional sem formação formal em design.
-      "Conceber uma identidade visual e uma experiência de utilizador profissional sem ter formação avançada em design ou programação.",
+      // Desafio: sintetizar identidade visual e experiência de utilizador de alto nível
+      // sem ter formação avançada em design nem em UI/UX, conciliando múltiplos
+      // conteúdos (biografia, projectos, blog) numa navegação coerente.
+      "Conceber uma identidade visual coesa e uma experiência de utilizador profissional sem formação avançada em design, reunindo biografia, projectos e blog num site único e multilíngue.",
     solution:
-      // Solução revista: combinar a orientação de agentes de IA com ferramentas
-      // open source e trabalho manual para entregar um produto polido.
-      "Combinei a orientação de agentes de IA com pesquisa de soluções open‑source. Utilizei plataformas low‑code e geradores de código para prototipar e iterar rapidamente, depois refinei manualmente o front‑end com React, Tailwind CSS e ferramentas de design. O uso de agentes como Devin.ai e ChatGPT auxiliou na implementação de funcionalidades e na resolução de problemas.",
+      // Solução: combinar orientação de agentes de IA com frameworks modernas e
+      // trabalho manual para entregar um produto polido. Foram usados protótipos
+      // low‑code para definir layouts, e posteriormente React, Vite e Tailwind CSS
+      // para o desenvolvimento definitivo. A tradução e geração de conteúdo foram
+      // assistidas por agentes como ChatGPT e Devin.ai.
+      "Combinei a orientação de agentes de IA com frameworks modernas e ferramentas open‑source. Recorri a plataformas low‑code para prototipar rapidamente layouts e fluxos, depois refiz o front‑end de forma manual com React, Vite e Tailwind CSS. Para conteúdos e traduções multilíngues, utilizei agentes como ChatGPT e Devin.ai, ajustando e refinando a experiência com ferramentas de design.",
     results: [
-      // Resultados revistos: demonstrar impacto concreto do projecto
-      "Portfólio responsivo com design personalizado e integração multilingue",
-      "Implementação de pipeline CI/CD com Vercel e GitHub Actions",
-      "Domínio prático de múltiplos agentes de IA para desenvolvimento web, melhorando a produtividade e a aprendizagem contínua",
+      // Resultados: demonstrar impacto concreto do projecto
+      "Website responsivo com design personalizado, navegação fluida e conteúdos em português e inglês",
+      "Blog estático alimentado por MDX e integração com Google Analytics e SEO avançado",
+      "Pipeline CI/CD configurado com GitHub Actions e Vercel para deploy automático",
+      "Exploração prática de agentes de IA (ChatGPT, Devin.ai) para acelerar desenvolvimento e tradução",
     ],
     technologies: [
       "React",
       "TypeScript",
-      "Tailwind CSS",
-      "Lovable",
-      "Devin.ai",
-      "ChatGPT Agent",
-      "Manus",
-      "Vercel",
-      "GitHub",
-      // Tecnologias adicionais utilizadas neste projecto
       "Vite",
+      "Tailwind CSS",
       "GitHub Actions",
+      "Vercel",
+      "ChatGPT (GPT‑4)",
+      "Devin.ai",
+      "Low‑Code Prototyping",
+      "MDX",
+      "i18n",
     ],
     overview:
-      "Este projecto representa uma exploração profunda no mundo do desenvolvimento assistido por IA. Como gestor de projetos e PO com background técnico avançado, utilizei múltiplos agentes de IA para criar um website completo e profissional. A jornada incluiu experimentação com Lovable, Devin.ai, ChatGPT Agent e Manus, cada um com as suas forças específicas. O projecto também envolveu estudos de mercado para identificar as melhores soluções open‑source, configuração de CI/CD com Vercel e GitHub, e experiência hands‑on com Git. Esta experiência demonstra como a IA pode democratizar o desenvolvimento web e permitir que profissionais de outras áreas criem soluções tecnológicas robustas.",
+      "Este projecto explora o desenvolvimento assistido por inteligência artificial aplicado a um portfólio pessoal. O objectivo foi demonstrar como a combinação de criatividade humana com agentes inteligentes (ChatGPT, Devin.ai) e frameworks modernas permite criar um site robusto e multi‑plataforma. A jornada incluiu pesquisa de soluções open‑source, prototipagem low‑code, configuração de pipelines CI/CD e optimização de desempenho e SEO. Esta experiência demonstra como a IA pode democratizar o desenvolvimento web e capacitar profissionais de outras áreas a criar soluções de qualidade profissional.",
     steps: [
       {
         title: "Investigação & Planeamento",
@@ -716,22 +722,33 @@ export const projects: Project[] = [
     title: "AI‑Assisted Project Management",
     subtitle: "Investigador & Implementador",
     description:
-      // Descrição revista: explica melhor o propósito e as abordagens utilizadas
-      "Este projecto explora o potencial da inteligência artificial para optimizar a gestão de projectos, automatizando tarefas rotineiras e fornecendo previsões baseadas em dados. A iniciativa combina aprendizagem automática, processamento de linguagem natural e dashboards interactivos para apoiar decisões estratégicas.",
+      // Descrição detalhada: explica o propósito de aplicar IA à gestão de projectos
+      // destacando automatização, previsão e apoio à decisão. A iniciativa conjuga
+      // machine learning, processamento de linguagem natural e visualização de dados.
+      "Projeto de investigação aplicado que explora o potencial da inteligência artificial para optimizar a gestão de projectos. A iniciativa automatiza tarefas repetitivas (como actualização de cronogramas e notificações), utiliza modelos de machine learning para prever riscos e desvios e recorre a IA generativa para sintetizar relatórios. Dashboards interactivos fornecem indicadores em tempo real para apoiar a tomada de decisões estratégicas.",
     type: "personal",
     status: "in-progress",
     year: "2024",
     challenge:
-      // Desafio revisto: salientar a necessidade de assegurar qualidade de dados e integração segura de múltiplas APIs
-      "Identificar actividades de gestão passíveis de automação, garantir a qualidade dos dados e integrar múltiplas APIs de forma segura e eficiente.",
+      // Desafio: identificar que tarefas podem ser automatizadas, assegurar a qualidade
+      // e integridade dos dados provenientes de diversas fontes (ERP, folhas de
+      // cálculo, ferramentas de gestão) e integrar várias APIs de forma segura.
+      "Identificar actividades de gestão passíveis de automação, garantir a qualidade e integridade dos dados provenientes de diversas fontes e integrar múltiplas APIs (financeiras, de comunicação, de reporting) de forma segura e eficiente.",
     solution:
-      // Solução revista: detalhar a arquitectura modular e as componentes utilizadas
-      "Desenvolvi uma arquitectura modular que combina modelos de machine learning (classificação, regressão e clustering), a GPT API para resumo automático e geração de relatórios, e dashboards de business intelligence em Power BI. Automatizei a extracção e tratamento de dados via scripts Python e criei pipelines de automação para integrar as várias ferramentas de IA.",
+      // Solução: combinar uma arquitectura modular de processamento de dados com
+      // modelos de machine learning e IA generativa. Dados de projectos são
+      // extraídos via SQL e APIs, tratados com Python/Pandas e depois usados em
+      // modelos de classificação, regressão e clustering para prever riscos e
+      // estimar prazos. A API GPT resume relatórios e gera insights accionáveis.
+      // Dashboards em Power BI permitem visualização em tempo real, enquanto
+      // pipelines de automação (Airflow) coordenam as tarefas e notificações.
+      "Desenhei uma arquitectura modular que extrai dados de sistemas de gestão via SQL e APIs e os trata com Python. Utilizei modelos de machine learning (classificação, regressão e clustering) para prever riscos de projecto e estimar prazos. A API GPT gera resumos e relatórios automáticos, convertendo métricas em insights accionáveis. Criei dashboards interactivos em Power BI para visualização em tempo real e pipelines em Airflow para orquestrar integrações e enviar notificações automatizadas.",
     results: [
-      // Resultados revistos: acrescentar impacto adicional e previsões
+      // Resultados: impacto medido das soluções implementadas
       "Redução de 40 % no tempo dedicado à análise de dados e compilação de relatórios",
-      "Automação de 60 % das tarefas repetitivas de gestão, como actualização de cronogramas e notificações",
-      "Melhoria da precisão das previsões de risco através de modelos de machine learning treinados com dados históricos",
+      "Automação de 60 % das tarefas repetitivas de gestão, como actualização de cronogramas, lembretes e notificações",
+      "Melhoria significativa da precisão das previsões de risco graças à aplicação de modelos de machine learning calibrados",
+      "Aumento da adopção de decisões baseadas em dados pelas equipas de projecto",
     ],
     technologies: [
       // Tecnologias ampliadas para reflectir a pilha utilizada
@@ -744,9 +761,11 @@ export const projects: Project[] = [
       "Power BI",
       "Machine Learning",
       "Automação",
+      "Power Automate",
+      "REST & Webhook APIs",
     ],
     overview:
-      "Este projecto pessoal investiga o uso de IA para potenciar a gestão de projectos. O objectivo é criar soluções que automatizam tarefas rotineiras e fornecem insights preditivos, permitindo que os gestores se concentrem em decisões estratégicas.",
+      "Este projecto pessoal investiga o uso de IA para potenciar a gestão de projectos. O objectivo é criar soluções que automatizem tarefas rotineiras, forneçam insights preditivos e promovam uma cultura de decisão baseada em dados. A investigação abrange desde a extracção e tratamento de dados até à concepção de modelos preditivos e dashboards, incorporando componentes de machine learning, IA generativa e visualização interactiva.",
     steps: [
       {
         title: "Identificação de Oportunidades",

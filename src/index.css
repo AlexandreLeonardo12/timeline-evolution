@@ -9,33 +9,40 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Updated color palette for Alexandre Leonardo's website */
-    --background: 204 33% 97%;
-    --foreground: 201 100% 18%;
+    /* Light theme colours updated for a more modern, less stark appearance.
+       The backgrounds are lightly tinted with blue hues to soften the white
+       without sacrificing contrast. */
+    --background: 208 40% 97%;
+    --foreground: 215 20% 20%;
 
-    --card: 204 33% 97%;
-    --card-foreground: 201 100% 18%;
+    --card: 208 40% 96%;
+    --card-foreground: 215 20% 20%;
 
-    --popover: 204 33% 97%;
-    --popover-foreground: 201 100% 18%;
+    --popover: 208 40% 96%;
+    --popover-foreground: 215 20% 20%;
 
-    --primary: 201 100% 18%;
-    --primary-foreground: 204 33% 97%;
+    /* Primary colours remain based on the brand’s azul petróleo. */
+    --primary: 201 100% 25%;
+    --primary-foreground: 208 40% 97%;
 
-    --secondary: 204 33% 97%;
-    --secondary-foreground: 201 100% 18%;
+    /* Secondary surfaces are slightly darker than cards for hierarchy. */
+    --secondary: 208 40% 94%;
+    --secondary-foreground: 215 20% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted backgrounds for subtle areas such as alternating sections. */
+    --muted: 208 25% 92%;
+    --muted-foreground: 215 15% 40%;
 
-    --accent: 13 68% 62%;
+    /* Accent colour is the laranja torrado suave defined by the client. */
+    --accent: 13 68% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84.2% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 215 90% 30%;
 
     --radius: 0.5rem;
     
@@ -65,35 +72,48 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Synchronize dark mode variables with light mode to avoid unexpected dark backgrounds */
+  /* Define dark mode variables for a modern dark theme. When the `dark`
+     class is applied to the html element, these values override the
+     defaults above. The palette echoes the base colours (azul petróleo
+     profundo e laranja torrado) mas com luminosidade mais baixa. */
   .dark {
-    --background: var(--background);
-    --foreground: var(--foreground);
-    --card: var(--card);
-    --card-foreground: var(--card-foreground);
-    --popover: var(--popover);
-    --popover-foreground: var(--popover-foreground);
-    --primary: var(--primary);
-    --primary-foreground: var(--primary-foreground);
-    --secondary: var(--secondary);
-    --secondary-foreground: var(--secondary-foreground);
-    --muted: var(--muted);
-    --muted-foreground: var(--muted-foreground);
-    --accent: var(--accent);
-    --accent-foreground: var(--accent-foreground);
-    --destructive: var(--destructive);
-    --destructive-foreground: var(--destructive-foreground);
-    --border: var(--border);
-    --input: var(--input);
-    --ring: var(--ring);
-    --sidebar-background: var(--sidebar-background);
-    --sidebar-foreground: var(--sidebar-foreground);
-    --sidebar-primary: var(--sidebar-primary);
-    --sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --sidebar-accent: var(--sidebar-accent);
-    --sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --sidebar-border: var(--sidebar-border);
-    --sidebar-ring: var(--sidebar-ring);
+    --background: 204 33% 10%;
+    --foreground: 204 33% 97%;
+
+    --card: 204 33% 13%;
+    --card-foreground: 204 33% 97%;
+
+    --popover: 204 33% 13%;
+    --popover-foreground: 204 33% 97%;
+
+    --primary: 201 100% 80%;
+    --primary-foreground: 204 33% 10%;
+
+    --secondary: 204 33% 15%;
+    --secondary-foreground: 204 33% 97%;
+
+    --muted: 210 20% 20%;
+    --muted-foreground: 215.4 16.3% 70%;
+
+    --accent: 13 68% 60%;
+    --accent-foreground: 204 33% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 30%;
+    --input: 214.3 31.8% 30%;
+    --ring: 222.2 84% 70%;
+
+    /* Sidebar tokens (not currently used but defined for completeness) */
+    --sidebar-background: 204 33% 13%;
+    --sidebar-foreground: 204 33% 90%;
+    --sidebar-primary: 204 33% 20%;
+    --sidebar-primary-foreground: 204 33% 97%;
+    --sidebar-accent: 13 68% 50%;
+    --sidebar-accent-foreground: 204 33% 10%;
+    --sidebar-border: 214.3 31.8% 25%;
+    --sidebar-ring: 217.2 91.2% 50%;
   }
 }
 

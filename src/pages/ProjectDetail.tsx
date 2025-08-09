@@ -74,7 +74,7 @@ const ProjectDetail = () => {
       : t.statusPlanned;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       {/* SEO meta tags based on project data */}
       <SEOHead
         title={`${project.title} – ${project.subtitle}`}
@@ -113,17 +113,17 @@ const ProjectDetail = () => {
               {statusLabel}
             </Badge>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             {project.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-sm">
-            <p className="font-medium text-blue-600 dark:text-blue-400">{project.subtitle}</p>
-            <span className="text-gray-400 dark:text-gray-500">|</span>
-            <p className="text-gray-600 dark:text-gray-400 flex items-center gap-1">
+            <p className="font-medium text-primary/80 dark:text-primary/70">{project.subtitle}</p>
+            <span className="text-muted-foreground">|</span>
+            <p className="text-muted-foreground flex items-center gap-1">
               <Calendar className="h-4 w-4" /> {project.year}
             </p>
           </div>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             {project.description}
           </p>
 
@@ -134,7 +134,7 @@ const ProjectDetail = () => {
          * translation string is defined in translations.ts.
          */}
         {language === 'en' && (
-          <p className="text-sm italic text-gray-500 dark:text-gray-400 mt-2">
+          <p className="text-sm italic text-muted-foreground mt-2">
             {translations.en.projectDetail.translationNote}
           </p>
         )}
@@ -162,8 +162,8 @@ const ProjectDetail = () => {
         {/* Overview section */}
         {project.overview && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.overview}</h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <h2 className="text-2xl font-semibold text-foreground">{t.overview}</h2>
+            <p className="text-muted-foreground leading-relaxed">
               {project.overview}
             </p>
           </section>
@@ -204,13 +204,13 @@ const ProjectDetail = () => {
         {/* Technologies section */}
         {project.technologies.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.technologies}</h2>
+            <h2 className="text-2xl font-semibold text-foreground">{t.technologies}</h2>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <Badge
                   key={tech}
                   variant="outline"
-                  className="text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700"
+                  className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-foreground border-primary/20 dark:border-primary/30"
                 >
                   {tech}
                 </Badge>
@@ -222,7 +222,7 @@ const ProjectDetail = () => {
         {/* Detailed steps section */}
         {project.steps && project.steps.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.implementation}</h2>
+            <h2 className="text-2xl font-semibold text-foreground">{t.implementation}</h2>
             <ol className="space-y-6">
               {project.steps.map((step, index) => (
                 <li key={index} className="flex gap-4 items-start">
@@ -230,8 +230,8 @@ const ProjectDetail = () => {
                     {index + 1}
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 dark:text-gray-100">{step.title}</h4>
-                    <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{step.description}</p>
+                    <h4 className="font-medium text-foreground">{step.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
                 </li>
               ))}
@@ -242,14 +242,14 @@ const ProjectDetail = () => {
         {/* Impact metrics section */}
         {project.impact && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.impact}</h2>
+            <h2 className="text-2xl font-semibold text-foreground">{t.impact}</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {/* Impact metrics use the site’s colour palette. The first card uses the accent colour, the second uses the primary colour and the third repeats the accent tone. */}
               <div className="text-center p-6 rounded-lg bg-accent/10 dark:bg-accent/20 border border-accent/20 dark:border-accent/30 space-y-2">
                 <h3 className="text-3xl font-bold text-accent">
                   {project.impact.functionality.split(' – ')[0]}
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-muted-foreground">
                   {project.impact.functionality.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
@@ -257,7 +257,7 @@ const ProjectDetail = () => {
                 <h3 className="text-3xl font-bold text-primary">
                   {project.impact.agents.split(' – ')[0]}
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-muted-foreground">
                   {project.impact.agents.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
@@ -265,7 +265,7 @@ const ProjectDetail = () => {
                 <h3 className="text-3xl font-bold text-accent">
                   {project.impact.reduction.split(' – ')[0]}
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-muted-foreground">
                   {project.impact.reduction.split(' – ').slice(1).join(' – ')}
                 </p>
               </div>
@@ -276,8 +276,8 @@ const ProjectDetail = () => {
         {/* Lessons section */}
         {project.lessons && project.lessons.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.lessons}</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <h2 className="text-2xl font-semibold text-foreground">{t.lessons}</h2>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               {project.lessons.map((lesson, index) => (
                 <li key={index}>{lesson}</li>
               ))}
@@ -288,8 +288,8 @@ const ProjectDetail = () => {
         {/* Next steps section */}
         {project.nextSteps && project.nextSteps.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.nextSteps}</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <h2 className="text-2xl font-semibold text-foreground">{t.nextSteps}</h2>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               {project.nextSteps.map((step, index) => (
                 <li key={index}>{step}</li>
               ))}
@@ -300,7 +300,7 @@ const ProjectDetail = () => {
         {/* News section */}
         {project.news && project.news.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">{t.newsTitle}</h2>
+            <h2 className="text-2xl font-semibold text-foreground">{t.newsTitle}</h2>
             <ul className="space-y-4">
               {project.news.map((item, index) => (
                 <li
@@ -308,15 +308,15 @@ const ProjectDetail = () => {
                   className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-4 border border-border rounded-lg bg-card/50"
                 >
                   <div className="flex-1 space-y-1">
-                    <h3 className="font-medium text-gray-900 dark:text-gray-100">
+                    <h3 className="font-medium text-foreground">
                       {item.title}
                     </h3>
                     {item.summary && (
-                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {item.summary}
                       </p>
                     )}
-                    <p className="text-xs italic text-gray-500 dark:text-gray-400">
+                    <p className="text-xs italic text-muted-foreground">
                       {t.newsSource}: {item.source}
                     </p>
                   </div>
@@ -338,7 +338,7 @@ const ProjectDetail = () => {
 
         {/* Call to action */}
         <section className="text-center space-y-4">
-          <p className="text-lg text-gray-700 dark:text-gray-300">{t.ctaInterested}</p>
+          <p className="text-lg text-muted-foreground">{t.ctaInterested}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/projects">
               {/* Default button variant provides hover and color styles consistent with the design system */}

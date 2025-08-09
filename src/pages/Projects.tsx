@@ -152,7 +152,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-background">
       {/* SEO meta tags for projects listing */}
       <SEOHead
         title={`${t.title} – Alexandre Leonardo`}
@@ -164,8 +164,8 @@ const Projects = () => {
           does not overlap the page title. */}
       <div className="container mx-auto px-4 pt-24 pb-12 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">{t.title}</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground">{t.title}</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
